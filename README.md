@@ -12,5 +12,8 @@ graphics editor.
 ### Libraries:
 
 ### Hardware:
+[https://www.waveshare.com/wiki/ESP32-P4-Nano-StartPage#Run_the_First_Arduino_Demo](Waveshare ESP32-P4-Nano Board WIKI) \
 
 ## Learning Resources:
+[https://docs.espressif.com/projects/esp-iot-solution/en/latest/display/lcd/mipi_dsi_lcd.html](Espressif MIPI DSI Detailed Guide) \
+
