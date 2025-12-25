@@ -5,8 +5,8 @@ This repo is a collection of files used to learn and develop graphical HMIs and 
 project started with the development of the faraday cup picoammeter for the CENPA VDG controls upgrade<br>
 project. The general scope is to learn how to design and display interesting and informative graphics<br>
 on displays using microcontrollers. The first iteration of an HMI uses a 40-pin TFT LCD display that<br>
-can be driven by a RA8775 board (supplied by [Adafruit](https://www.adafruit.com/product/1590)) and<br>
-controlled by a RP2350 based MCU. The graphics were designed with Inkscape, an open source vector<br>
+can be driven by a RA8775 board (supplied by [Adafruit](https://www.adafruit.com/product/1590)) and
+controlled by a RP2350 based MCU.<br> The graphics were designed with Inkscape, an open source vector<br>
 graphics editor.
 ## Links:
 ### Libraries:
