@@ -2,6 +2,8 @@
 Created by: Mason Newman
 Date: December 2025
 
+Originally written for Raspberry Pi PICO 2W (RP2350)
+
 This sketch was created to test drawing bitmaps to TFT LCD. The bitmaps include backgrounds as well as dynamic sprites. 
 The goal is to display these sprites in a way that reduces flicker and keeps load on MCU low. 
 The first display used was the 1.44" TFT using a ST7735 driver.
