@@ -15,7 +15,9 @@ graphics editor.
 - [Ardhuno IDE](https://www.arduino.cc/en/software/)
 
 ### Online Tools:
-- [SVG to BMP Converter](https://www.freeconvert.com/svg-to-bmp)
+- [SVG to BMP Converter](https://www.freeconvert.com/svg-to-bmp) (10 Free conversions per day.)
+- [SVG to BMP Converter](https://cloudconvert.com/png-to-bmp) (10 Free conversions per day.)
+- [SVG to BMP Converter](https://image.online-convert.com/convert-to-bmp) (No limit, only 3 at a time.)
 - [Image to C-Array Converter](https://notisrac.github.io/FileToCArray/)
 
 ### Libraries:
