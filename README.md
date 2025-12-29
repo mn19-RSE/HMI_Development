@@ -6,8 +6,11 @@ This repo is a collection of files used to learn and develop graphical HMIs and 
 ## Development Steps:
 1. Design graphics in Inkscape with predetermined screen resolution
 2. Output background and sprites as individual .PNG
-3. Convert .PNG to .BMP with specific pixel width and height
-4. Convert .BMP to C array
+3. ~~Convert .PNG to .BMP with specific pixel width and height~~
+4. Convert ~~.BMP~~ .PNG to C array 
+    - Specify pixel width and height
+    - Select 16-bit RRRRRGGGGGBBBBB (2byte/pixel)
+    - 
 5. Use C array in HMI controller software
 
 ## Links:
