@@ -12,6 +12,9 @@ This repo is a collection of files used to learn and develop graphical HMIs and 
     - Select 16-bit RRRRRGGGGGBBBBB (2byte/pixel)
 5. Copy C array to HMI controller software
 
+## Prototypes:
+### <img src="Ammeter/mini-tft_demo.jpeg" alt="Mini-TFT Ammeter HMI Steup" width= 50%>
+
 ## Links:
 ### Software:
 - [Inkscape](https://inkscape.org/)
