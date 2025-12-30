@@ -23,8 +23,12 @@ Finally, the libraries need to be switched.
 
 #include <Adafruit_GFX.h>     // Core graphics library
 #include <Adafruit_ST7735.h>  // Hardware-specific library for ST7735
-#include <Adafruit_RA8875.h>
+// #include <Adafruit_RA8875.h>
 #include <SPI.h>
+#include <Fonts/FreeSans9pt7b.h>
+#include <Fonts/FreeSans12pt7b.h>
+#include <Fonts/FreeSans18pt7b.h>
+
 
 // For 1.44" and 1.8" TFT with ST7735 use:
 #define TFT_CS 10
@@ -171,6 +175,7 @@ const uint16_t base[] PROGMEM{
   0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000
 };
 
+/*
 // Sprite locations and sizes
 // Cup selection text:
 // Size: 240x90
@@ -181,7 +186,11 @@ const uint16_t base[] PROGMEM{
 // Ranges:
 // Size: 784x105
 // Location: 12, 12
+// Current text:
+// Size: 180.7x96.6
+// Location: 236, 150
 
+*/
 
 const int inpTxtWidth = 38;      // 240 in final imp
 const int inpTxtHeight = 24;     // 90 in final imp
@@ -197,6 +206,9 @@ const int rangeWidth = 125;
 const int rangeHeight = 28;
 const int rangeXLocation = 2;
 const int rangeYLocation = 3;
+
+const int currTxtXLocation = 40;
+const int currTxtYLocation = 44;
 
 const uint16_t odTxt[] PROGMEM{
   0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0943, 0x240c, 0x240c, 0x240c, 0x242c, 0x240c, 0x240c, 0x240c, 0x242c, 0x23eb, 0x0903, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
@@ -1704,8 +1716,10 @@ bool lastRangeButtonState = HIGH;
 unsigned long lastCupPressTime = 0;
 unsigned long lastRangePressTime = 0;
 unsigned long lastMoveTime = 0;
+unsigned long lastTextUpdate = 0;
 const unsigned long debounceDelay = 250;
 const unsigned long meterDelay = 50;
+const unsigned long textDelay = 100;
 const int NUM_CUPS = sizeof(cupTxtBitmaps) / sizeof(cupTxtBitmaps[0]);
 const int NUM_RANGES = sizeof(rangeBitmaps) / sizeof(rangeBitmaps[0]);
 
@@ -1718,11 +1732,12 @@ uint16_t latestADCValue = 0;
 float analogVoltage;
 
 void loop() {
-  analogVoltage = handleUARTReceive();
+  analogVoltage = handleUARTReceive() * 10.0f / 4095.0f;
   int roundedVoltage = round(analogVoltage);
   drawMeterValue(roundedVoltage);
   handleInputSelection();
   handleRangeSelection();
+  drawCurrentText(analogVoltage);
   // handleMeterAnimation();
 }
 
@@ -1752,7 +1767,7 @@ float handleUARTReceive() {
     Serial.println(latestADCValue);
     lastPrint = millis();
   }
-  return (latestADCValue * 10.0f) / 4095.0f;
+  return latestADCValue;
 }
 
 void handleInputSelection() {
@@ -1793,7 +1808,6 @@ void handleRangeSelection() {
   lastRangeButtonState = buttonState;
 }
 
-
 void drawCupText(int cupNum) {
   tft.drawRGBBitmap(inpTxtXLocation, inpTxtYLocation, cupTxtBitmaps[cupNum], inpTxtWidth, inpTxtHeight);
 }
@@ -1804,4 +1818,16 @@ void drawMeterValue(int meterNum) {
 
 void drawRangeSelection(int rangeNum) {
   tft.drawRGBBitmap(rangeXLocation, rangeYLocation, rangeBitmaps[rangeNum], rangeWidth, rangeHeight);
+}
+
+
+void drawCurrentText(float current) {
+  unsigned long now = millis();
+  if (now - lastTextUpdate >= textDelay) {  // Needs work, seems to lock up display sometimes
+    tft.setCursor(currTxtXLocation, currTxtYLocation);    // x, y position
+    tft.setTextColor(0x67f9, 0x0000);                     // text, background
+    tft.setTextSize(2);
+    tft.print(current, 2);
+    lastTextUpdate = now;
+  }
 }
