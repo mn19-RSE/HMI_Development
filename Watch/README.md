@@ -14,3 +14,4 @@ The goal of this project is to create a small wearble device with a display.
 - IMU for gestures
 - ESP32 microcontroller
     - ESP32-S3-WROOM-1-N16R8
+    - Exposed I2C port for scanner functioanlity
