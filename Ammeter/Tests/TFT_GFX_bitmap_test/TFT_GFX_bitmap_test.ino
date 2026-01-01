@@ -189,6 +189,21 @@ const uint16_t base[] PROGMEM{
 // Current text:
 // Size: 180.7x96.6
 // Location: 236, 150
+// OD cup:
+// Size: 14x14
+// Location: 451, 307
+// LE cup:
+// Size: 14x14
+// Location: 398, 307
+// HE cup:
+// Size: 14x14
+// Location: 268, 307
+// OBJ cup:
+// Size: 14x14
+// Location: 241, 307
+// IMG cup:
+// Size: 14x14
+// Location: 197, 361
 
 */
 
@@ -1810,6 +1825,7 @@ void handleRangeSelection() {
 
 void drawCupText(int cupNum) {
   tft.drawRGBBitmap(inpTxtXLocation, inpTxtYLocation, cupTxtBitmaps[cupNum], inpTxtWidth, inpTxtHeight);
+  // Add in cup symbol sprite draw logic 
 }
 
 void drawMeterValue(int meterNum) {
@@ -1830,4 +1846,33 @@ void drawCurrentText(float current) {
     tft.print(current, 2);
     lastTextUpdate = now;
   }
+}
+
+
+void readInputSelection() {
+  delay(2);
+  /*
+  // function to read which pin is being pulled low by the rotary switch
+  for (input pin in array;input in array <= size of array;array value++) {
+    digitalRead(pin);
+  }
+  */
+}
+void setInput(inputSelection) {
+  delay(2);
+  /*
+  // setting the input involves displaying the associated cup text and cup symbol sprite
+  */
+}
+
+
+void readRangeSelection(){
+  delay(2);
+  // function to read momentary button presses to cycle the range up and down
+  // then sends range to setRange()
+}
+void setRange() {
+  delay(2);
+  // setting the range involves displaying the associated range bitmap
+  //  and setting the three current amp range selection inputs correctly
 }
