@@ -28,9 +28,9 @@
      inkscape:deskcolor="#979797"
      inkscape:document-units="px"
      labelstyle="default"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="263.92761"
-     inkscape:cy="356.91215"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="259.15464"
+     inkscape:cy="240.06275"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
      inkscape:window-x="-8"
@@ -6577,9 +6577,9 @@
          transform="matrix(2.3464442,0,0,1.779465,6.2248494,-323.76488)"><tspan
            x="6.7382812"
            y="436.45898"
-           id="tspan577"><tspan
+           id="tspan2"><tspan
              style="font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift"
-             id="tspan576">0</tspan></tspan></text>
+             id="tspan1">0</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text340"
@@ -6587,9 +6587,9 @@
          transform="matrix(2.3464442,0,0,1.779465,7.2248488,-570.76488)"><tspan
            x="6.7382812"
            y="436.45898"
-           id="tspan579"><tspan
+           id="tspan4"><tspan
              style="font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift"
-             id="tspan578">0</tspan></tspan></text>
+             id="tspan3">0</tspan></tspan></text>
       <text
          xml:space="preserve"
          style="text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;fill-opacity:1;stroke:#00cc9d;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"
@@ -6607,9 +6607,9 @@
          transform="matrix(2.3464442,0,0,1.779465,-0.77515119,-578.76488)"><tspan
            x="6.7382812"
            y="436.45898"
-           id="tspan581"><tspan
+           id="tspan6"><tspan
              style="font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift"
-             id="tspan580">0</tspan></tspan></text>
+             id="tspan5">0</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text345"
@@ -6617,9 +6617,9 @@
          transform="matrix(2.3464442,0,0,1.779465,-7.6340094,-586.7336)"><tspan
            x="6.7382812"
            y="436.45898"
-           id="tspan583"><tspan
+           id="tspan8"><tspan
              style="font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift"
-             id="tspan582">1</tspan></tspan></text>
+             id="tspan7">1</tspan></tspan></text>
       <rect
          style="fill:none;fill-opacity:1;stroke:#33ffbb;stroke-width:3.13772;stroke-dasharray:none;stroke-opacity:1"
          id="rect345"
@@ -6692,7 +6692,7 @@
          transform="translate(-1.7491875,24.533203)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan584">A</tspan></text>
+           id="tspan9">A</tspan></text>
       <text
          xml:space="preserve"
          id="text354"
@@ -6700,7 +6700,7 @@
          transform="translate(20.080731,11.533203)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan585">U</tspan></text>
+           id="tspan10">U</tspan></text>
       <text
          xml:space="preserve"
          id="text357"
@@ -6708,11 +6708,11 @@
          transform="translate(-93.284562,7.0343749)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan588"><tspan
+           id="tspan13"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan586">10</tspan><tspan
+             id="tspan11">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan587">-3</tspan></tspan></text>
+             id="tspan12">-3</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text360"
@@ -6720,11 +6720,11 @@
          transform="translate(-175.81356,7.0343749)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan591"><tspan
+           id="tspan16"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan589">10</tspan><tspan
+             id="tspan14">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan590">-4</tspan></tspan></text>
+             id="tspan15">-4</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text363"
@@ -6732,11 +6732,11 @@
          transform="translate(-258.34256,7.0343749)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan594"><tspan
+           id="tspan19"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan592">10</tspan><tspan
+             id="tspan17">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan593">-5</tspan></tspan></text>
+             id="tspan18">-5</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text366"
@@ -6744,11 +6744,11 @@
          transform="translate(-340.87156,7.0343749)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan597"><tspan
+           id="tspan22"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan595">10</tspan><tspan
+             id="tspan20">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan596">-6</tspan></tspan></text>
+             id="tspan21">-6</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text369"
@@ -6756,11 +6756,11 @@
          transform="translate(-423.40056,7.0343749)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan600"><tspan
+           id="tspan25"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan598">10</tspan><tspan
+             id="tspan23">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan599">-7</tspan></tspan></text>
+             id="tspan24">-7</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text372"
@@ -6768,11 +6768,11 @@
          transform="translate(-505.92956,7.0343749)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan603"><tspan
+           id="tspan28"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan601">10</tspan><tspan
+             id="tspan26">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan602">-8</tspan></tspan></text>
+             id="tspan27">-8</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text375"
@@ -6780,11 +6780,11 @@
          transform="translate(-588.45856,7.0343749)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan606"><tspan
+           id="tspan31"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan604">10</tspan><tspan
+             id="tspan29">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan605">-9</tspan></tspan></text>
+             id="tspan30">-9</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text378"
@@ -6792,11 +6792,11 @@
          transform="translate(-670.98756,7.0343749)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan610"><tspan
+           id="tspan34"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan607">10</tspan><tspan
+             id="tspan32">10</tspan><tspan
              style="font-stretch:condensed;font-size:24px;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan609">-10</tspan></tspan></text>
+             id="tspan33">-10</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text379"
@@ -6804,7 +6804,7 @@
          transform="translate(42.578125,-0.49804617)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan611">T</tspan></text>
+           id="tspan35">T</tspan></text>
       <text
          xml:space="preserve"
          id="text380"
@@ -6812,7 +6812,7 @@
          transform="translate(63.156251,-16.115234)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan612">O</tspan></text>
+           id="tspan36">O</tspan></text>
       <text
          xml:space="preserve"
          id="text394"
@@ -6822,9 +6822,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan614"><tspan
+           id="tspan38"><tspan
    style="font-size:42.6667px"
-   id="tspan613">LE</tspan> </tspan></text>
+   id="tspan37">LE</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text396"
@@ -6834,9 +6834,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan616"><tspan
+           id="tspan40"><tspan
    style="font-size:42.6667px"
-   id="tspan615">OBJ</tspan> </tspan></text>
+   id="tspan39">OBJ</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text398"
@@ -6846,9 +6846,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan618"><tspan
+           id="tspan42"><tspan
    style="font-size:42.6667px"
-   id="tspan617">OD</tspan> </tspan></text>
+   id="tspan41">OD</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text400"
@@ -6858,9 +6858,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan620"><tspan
+           id="tspan44"><tspan
    style="font-size:42.6667px"
-   id="tspan619">HE</tspan> </tspan></text>
+   id="tspan43">HE</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text402"
@@ -6870,9 +6870,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan622"><tspan
+           id="tspan46"><tspan
    style="font-size:42.6667px"
-   id="tspan621">IMG</tspan> </tspan></text>
+   id="tspan45">IMG</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text404"
@@ -6882,9 +6882,9 @@
          y="0"><tspan
            x="220.61719"
            y="202.38086"
-           id="tspan624"><tspan
+           id="tspan48"><tspan
    style="font-weight:bold;font-stretch:condensed;font-size:128px;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-   id="tspan623">CUP</tspan> </tspan></text>
+   id="tspan47">CUP</tspan> </tspan></text>
       <path
          style="fill:none;fill-opacity:1;stroke:#00cc88;stroke-width:5;stroke-dasharray:none;stroke-opacity:1"
          d="m 386.83444,313.79552 c 107.33673,0 107.33673,0 107.33673,0 h 0.60288"
@@ -7001,9 +7001,9 @@
          y="0"><tspan
            x="220.61719"
            y="203.94847"
-           id="tspan626"><tspan
+           id="tspan50"><tspan
              style="font-weight:bold;font-stretch:semi-condensed;font-size:133.333px;-inkscape-font-specification:'Bahnschrift Bold Semi-Condensed';fill:#00ffaa"
-             id="tspan625">.</tspan></tspan></text>
+             id="tspan49">.</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text1567-0-2"
@@ -7013,9 +7013,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan628"><tspan
+           id="tspan52"><tspan
    style="font-weight:bold;font-stretch:condensed;font-size:106.667px;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-   id="tspan627">A</tspan> </tspan></text>
+   id="tspan51">A</tspan> </tspan></text>
       <rect
          style="display:inline;fill:#000000;stroke-width:1.79976"
          id="rect1-23-3-2"
@@ -7064,7 +7064,10 @@
          width="14"
          height="14"
          x="197"
-         y="361" />
+         y="361"
+         inkscape:export-filename="Sprites\Cup_Off.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
       <circle
          style="display:inline;fill:none;fill-opacity:1;stroke:#006644;stroke-width:2.79992;stroke-dasharray:none;stroke-opacity:1"
          id="circle1603-92-4"
@@ -7120,9 +7123,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan630"><tspan
+           id="tspan54"><tspan
    style="font-size:42.6667px"
-   id="tspan629">OBJ</tspan> </tspan></text>
+   id="tspan53">OBJ</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text400-2"
@@ -7132,9 +7135,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan632"><tspan
+           id="tspan56"><tspan
    style="font-size:42.6667px"
-   id="tspan631">HE</tspan> </tspan></text>
+   id="tspan55">HE</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text402-8"
@@ -7144,9 +7147,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan634"><tspan
+           id="tspan58"><tspan
    style="font-size:42.6667px"
-   id="tspan633">IMG</tspan> </tspan></text>
+   id="tspan57">IMG</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text398-4"
@@ -7156,9 +7159,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan636"><tspan
+           id="tspan60"><tspan
    style="font-size:42.6667px"
-   id="tspan635">OD</tspan> </tspan></text>
+   id="tspan59">OD</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text394-8"
@@ -7168,9 +7171,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan638"><tspan
+           id="tspan62"><tspan
    style="font-size:42.6667px"
-   id="tspan637">LE</tspan> </tspan></text>
+   id="tspan61">LE</tspan> </tspan></text>
       <text
          xml:space="preserve"
          style="text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;fill-opacity:1;stroke:#00cc9d;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"
@@ -7190,9 +7193,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan640"><tspan
+           id="tspan64"><tspan
              style="font-size:42.6667px"
-             id="tspan639">OD</tspan></tspan></text>
+             id="tspan63">OD</tspan></tspan></text>
       <path
          style="display:inline;fill:#33ffbb;stroke:#33ffbb;stroke-width:2.00007;stroke-dasharray:none;stroke-opacity:1"
          d="m 444,404.00007 c 60.54529,0 59.99983,0 59.99983,0"
@@ -7228,7 +7231,10 @@
          width="14"
          height="14"
          x="451"
-         y="307" />
+         y="307"
+         inkscape:export-filename="Sprites\Cup_On.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
       <rect
          style="display:inline;fill:#000000;fill-opacity:1;stroke-width:1.53407"
          id="rect1-18"
@@ -7291,9 +7297,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan642"><tspan
+           id="tspan66"><tspan
    style="font-size:42.6667px"
-   id="tspan641">OBJ</tspan> </tspan></text>
+   id="tspan65">OBJ</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text398-2"
@@ -7303,9 +7309,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan644"><tspan
+           id="tspan68"><tspan
    style="font-size:42.6667px"
-   id="tspan643">OD</tspan> </tspan></text>
+   id="tspan67">OD</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text400-9"
@@ -7315,9 +7321,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan646"><tspan
+           id="tspan70"><tspan
    style="font-size:42.6667px"
-   id="tspan645">HE</tspan> </tspan></text>
+   id="tspan69">HE</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text402-9"
@@ -7327,9 +7333,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan648"><tspan
+           id="tspan72"><tspan
    style="font-size:42.6667px"
-   id="tspan647">IMG</tspan> </tspan></text>
+   id="tspan71">IMG</tspan> </tspan></text>
       <text
          xml:space="preserve"
          style="text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;fill-opacity:1;stroke:#00cc9d;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"
@@ -7349,9 +7355,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan650"><tspan
+           id="tspan74"><tspan
    style="font-size:42.6667px"
-   id="tspan649">LE</tspan> </tspan></text>
+   id="tspan73">LE</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text796"
@@ -7361,9 +7367,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan652"><tspan
+           id="tspan76"><tspan
    style="font-size:42.6667px"
-   id="tspan651">LE</tspan> </tspan></text>
+   id="tspan75">LE</tspan> </tspan></text>
       <path
          style="display:inline;fill:#33ffbb;stroke:#33ffbb;stroke-width:2.00007;stroke-dasharray:none;stroke-opacity:1"
          d="m 530,404.00007 c 60.54529,0 59.99983,0 59.99983,0"
@@ -7462,9 +7468,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan654"><tspan
+           id="tspan78"><tspan
    style="font-size:42.6667px"
-   id="tspan653">LE</tspan> </tspan></text>
+   id="tspan77">LE</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text396-0"
@@ -7474,9 +7480,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan656"><tspan
+           id="tspan80"><tspan
    style="font-size:42.6667px"
-   id="tspan655">OBJ</tspan> </tspan></text>
+   id="tspan79">OBJ</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text398-1"
@@ -7486,9 +7492,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan658"><tspan
+           id="tspan82"><tspan
    style="font-size:42.6667px"
-   id="tspan657">OD</tspan> </tspan></text>
+   id="tspan81">OD</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text400-93"
@@ -7498,9 +7504,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan660"><tspan
+           id="tspan84"><tspan
    style="font-size:42.6667px"
-   id="tspan659">HE</tspan> </tspan></text>
+   id="tspan83">HE</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text402-6"
@@ -7510,9 +7516,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan662"><tspan
+           id="tspan86"><tspan
    style="font-size:42.6667px"
-   id="tspan661">IMG</tspan> </tspan></text>
+   id="tspan85">IMG</tspan> </tspan></text>
       <text
          xml:space="preserve"
          style="text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;fill-opacity:1;stroke:#00cc9d;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"
@@ -7532,9 +7538,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan664"><tspan
+           id="tspan88"><tspan
    style="font-size:42.6667px"
-   id="tspan663">HE</tspan> </tspan></text>
+   id="tspan87">HE</tspan> </tspan></text>
       <path
          style="display:inline;fill:#33ffbb;stroke:#33ffbb;stroke-width:2.00007;stroke-dasharray:none;stroke-opacity:1"
          d="m 372,446.00007 c 60.54529,0 59.99983,0 59.99983,0"
@@ -7633,9 +7639,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan666"><tspan
+           id="tspan90"><tspan
    style="font-size:42.6667px"
-   id="tspan665">LE</tspan> </tspan></text>
+   id="tspan89">LE</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text396-40"
@@ -7645,9 +7651,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan668"><tspan
+           id="tspan92"><tspan
    style="font-size:42.6667px"
-   id="tspan667">OBJ</tspan> </tspan></text>
+   id="tspan91">OBJ</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text398-6"
@@ -7657,9 +7663,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan670"><tspan
+           id="tspan94"><tspan
    style="font-size:42.6667px"
-   id="tspan669">OD</tspan> </tspan></text>
+   id="tspan93">OD</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text400-4"
@@ -7669,9 +7675,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan672"><tspan
+           id="tspan96"><tspan
    style="font-size:42.6667px"
-   id="tspan671">HE</tspan> </tspan></text>
+   id="tspan95">HE</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text402-97"
@@ -7681,9 +7687,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan674"><tspan
+           id="tspan98"><tspan
    style="font-size:42.6667px"
-   id="tspan673">IMG</tspan> </tspan></text>
+   id="tspan97">IMG</tspan> </tspan></text>
       <text
          xml:space="preserve"
          style="text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;fill-opacity:1;stroke:#00cc9d;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"
@@ -7703,9 +7709,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan676"><tspan
+           id="tspan100"><tspan
    style="font-size:42.6667px"
-   id="tspan675">OBJ</tspan> </tspan></text>
+   id="tspan99">OBJ</tspan> </tspan></text>
       <path
          style="display:inline;fill:#33ffbb;stroke:#33ffbb;stroke-width:2.00007;stroke-dasharray:none;stroke-opacity:1"
          d="m 455,446.00007 c 60.54529,0 59.99983,0 59.99983,0"
@@ -7804,9 +7810,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan678"><tspan
+           id="tspan102"><tspan
    style="font-size:42.6667px"
-   id="tspan677">LE</tspan> </tspan></text>
+   id="tspan101">LE</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text396-6"
@@ -7816,9 +7822,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan680"><tspan
+           id="tspan104"><tspan
    style="font-size:42.6667px"
-   id="tspan679">OBJ</tspan> </tspan></text>
+   id="tspan103">OBJ</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text398-7"
@@ -7828,9 +7834,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan682"><tspan
+           id="tspan106"><tspan
    style="font-size:42.6667px"
-   id="tspan681">OD</tspan> </tspan></text>
+   id="tspan105">OD</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text400-7"
@@ -7840,9 +7846,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan684"><tspan
+           id="tspan108"><tspan
    style="font-size:42.6667px"
-   id="tspan683">HE</tspan> </tspan></text>
+   id="tspan107">HE</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text402-5"
@@ -7852,9 +7858,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan686"><tspan
+           id="tspan110"><tspan
    style="font-size:42.6667px"
-   id="tspan685">IMG</tspan> </tspan></text>
+   id="tspan109">IMG</tspan> </tspan></text>
       <text
          xml:space="preserve"
          style="text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;fill-opacity:1;stroke:#00cc9d;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"
@@ -7874,9 +7880,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan688"><tspan
+           id="tspan112"><tspan
    style="font-size:42.6667px"
-   id="tspan687">IMG</tspan> </tspan></text>
+   id="tspan111">IMG</tspan> </tspan></text>
       <path
          style="display:inline;fill:#33ffbb;stroke:#33ffbb;stroke-width:2.00007;stroke-dasharray:none;stroke-opacity:1"
          d="m 540,446.00007 c 60.54529,0 59.99983,0 59.99983,0"
@@ -7990,7 +7996,7 @@
          transform="translate(-1.7491875,24.533203)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan689">A</tspan></text>
+           id="tspan113">A</tspan></text>
       <text
          xml:space="preserve"
          id="text1370"
@@ -7998,7 +8004,7 @@
          transform="translate(20.080731,11.533203)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan690">U</tspan></text>
+           id="tspan114">U</tspan></text>
       <text
          xml:space="preserve"
          id="text1395"
@@ -8006,7 +8012,7 @@
          transform="translate(42.578125,-0.49804617)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan691">T</tspan></text>
+           id="tspan115">T</tspan></text>
       <text
          xml:space="preserve"
          id="text1396"
@@ -8014,7 +8020,7 @@
          transform="translate(63.156251,-16.115234)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan692">O</tspan></text>
+           id="tspan116">O</tspan></text>
       <path
          style="display:inline;fill:none;fill-opacity:1;stroke:#00cc88;stroke-width:4.73944;stroke-dasharray:none;stroke-opacity:1"
          d="m 678.49801,108.17854 c 107.6303,0 107.6303,0 107.6303,0 V 17.999997"
@@ -8049,11 +8055,11 @@
          transform="translate(-93.28456,7.0343508)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan695"><tspan
+           id="tspan119"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan693">10</tspan><tspan
+             id="tspan117">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan694">-3</tspan></tspan></text>
+             id="tspan118">-3</tspan></tspan></text>
       <rect
          style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.81883;stroke-dasharray:none;stroke-opacity:1"
          id="rect345-6-5-4-8"
@@ -8224,11 +8230,11 @@
          transform="translate(-175.81356,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan698"><tspan
+           id="tspan122"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan696">10</tspan><tspan
+             id="tspan120">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan697">-4</tspan></tspan></text>
+             id="tspan121">-4</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text363-0"
@@ -8236,11 +8242,11 @@
          transform="translate(-258.34256,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan701"><tspan
+           id="tspan125"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan699">10</tspan><tspan
+             id="tspan123">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan700">-5</tspan></tspan></text>
+             id="tspan124">-5</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text366-6"
@@ -8248,11 +8254,11 @@
          transform="translate(-340.87156,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan704"><tspan
+           id="tspan128"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan702">10</tspan><tspan
+             id="tspan126">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan703">-6</tspan></tspan></text>
+             id="tspan127">-6</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text369-13"
@@ -8260,11 +8266,11 @@
          transform="translate(-423.40056,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan707"><tspan
+           id="tspan131"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan705">10</tspan><tspan
+             id="tspan129">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan706">-7</tspan></tspan></text>
+             id="tspan130">-7</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text372-8"
@@ -8272,11 +8278,11 @@
          transform="translate(-505.92956,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan710"><tspan
+           id="tspan134"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan708">10</tspan><tspan
+             id="tspan132">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan709">-8</tspan></tspan></text>
+             id="tspan133">-8</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text375-9"
@@ -8284,11 +8290,11 @@
          transform="translate(-588.45856,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan713"><tspan
+           id="tspan137"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan711">10</tspan><tspan
+             id="tspan135">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan712">-9</tspan></tspan></text>
+             id="tspan136">-9</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text378-3"
@@ -8296,11 +8302,11 @@
          transform="translate(-670.98756,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan716"><tspan
+           id="tspan140"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan714">10</tspan><tspan
+             id="tspan138">10</tspan><tspan
              style="font-stretch:condensed;font-size:24px;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan715">-10</tspan></tspan></text>
+             id="tspan139">-10</tspan></tspan></text>
     </g>
     <g
        inkscape:label="Layer 1 -3"
@@ -8356,11 +8362,11 @@
          transform="translate(-93.284562,7.0343749)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan719"><tspan
+           id="tspan143"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan717">10</tspan><tspan
+             id="tspan141">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan718">-3</tspan></tspan></text>
+             id="tspan142">-3</tspan></tspan></text>
       <rect
          style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:4.75441;stroke-dasharray:none;stroke-opacity:1"
          id="rect345-6-5-3-7"
@@ -8414,7 +8420,7 @@
          transform="translate(-1.7491897,24.533193)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan720">A</tspan></text>
+           id="tspan144">A</tspan></text>
       <text
          xml:space="preserve"
          id="text354-6"
@@ -8422,7 +8428,7 @@
          transform="translate(20.08073,11.533193)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan721">U</tspan></text>
+           id="tspan145">U</tspan></text>
       <text
          xml:space="preserve"
          id="text360-1"
@@ -8430,11 +8436,11 @@
          transform="translate(-175.81356,7.034363)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan724"><tspan
+           id="tspan148"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan722">10</tspan><tspan
+             id="tspan146">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan723">-4</tspan></tspan></text>
+             id="tspan147">-4</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text379-3"
@@ -8442,7 +8448,7 @@
          transform="translate(42.57812,-0.49805701)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan725">T</tspan></text>
+           id="tspan149">T</tspan></text>
       <text
          xml:space="preserve"
          id="text380-2"
@@ -8450,7 +8456,7 @@
          transform="translate(63.15625,-16.115237)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan726">O</tspan></text>
+           id="tspan150">O</tspan></text>
       <rect
          style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.81883;stroke-dasharray:none;stroke-opacity:1"
          id="rect345-6-5-8-0"
@@ -8598,11 +8604,11 @@
          transform="translate(-258.34256,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan729"><tspan
+           id="tspan153"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan727">10</tspan><tspan
+             id="tspan151">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan728">-5</tspan></tspan></text>
+             id="tspan152">-5</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text366-4"
@@ -8610,11 +8616,11 @@
          transform="translate(-340.87156,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan732"><tspan
+           id="tspan156"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan730">10</tspan><tspan
+             id="tspan154">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan731">-6</tspan></tspan></text>
+             id="tspan155">-6</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text369-8"
@@ -8622,11 +8628,11 @@
          transform="translate(-423.40056,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan736"><tspan
+           id="tspan159"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan734">10</tspan><tspan
+             id="tspan157">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan735">-7</tspan></tspan></text>
+             id="tspan158">-7</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text372-1"
@@ -8634,11 +8640,11 @@
          transform="translate(-505.92956,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan739"><tspan
+           id="tspan162"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan737">10</tspan><tspan
+             id="tspan160">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan738">-8</tspan></tspan></text>
+             id="tspan161">-8</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text375-8"
@@ -8646,11 +8652,11 @@
          transform="translate(-588.45856,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan742"><tspan
+           id="tspan165"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan740">10</tspan><tspan
+             id="tspan163">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan741">-9</tspan></tspan></text>
+             id="tspan164">-9</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text378-7"
@@ -8658,11 +8664,11 @@
          transform="translate(-670.98756,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan745"><tspan
+           id="tspan168"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan743">10</tspan><tspan
+             id="tspan166">10</tspan><tspan
              style="font-stretch:condensed;font-size:24px;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan744">-10</tspan></tspan></text>
+             id="tspan167">-10</tspan></tspan></text>
     </g>
     <g
        inkscape:label="Layer 1 -4"
@@ -8690,11 +8696,11 @@
          transform="translate(-175.81353,7.03438)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan748"><tspan
+           id="tspan171"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan746">10</tspan><tspan
+             id="tspan169">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan747">-4</tspan></tspan></text>
+             id="tspan170">-4</tspan></tspan></text>
       <rect
          style="display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-dasharray:none;stroke-opacity:1"
          id="rect2077"
@@ -8730,11 +8736,11 @@
          transform="translate(-175.81356,7.0343749)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan751"><tspan
+           id="tspan174"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan749">10</tspan><tspan
+             id="tspan172">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan750">-4</tspan></tspan></text>
+             id="tspan173">-4</tspan></tspan></text>
       <rect
          style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.81883;stroke-dasharray:none;stroke-opacity:1"
          id="rect345-6-5-0-3"
@@ -8788,11 +8794,11 @@
          transform="translate(-93.284562,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan754"><tspan
+           id="tspan177"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan752">10</tspan><tspan
+             id="tspan175">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan753">-3</tspan></tspan></text>
+             id="tspan176">-3</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text363-6"
@@ -8800,11 +8806,11 @@
          transform="translate(-258.34256,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan757"><tspan
+           id="tspan180"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan755">10</tspan><tspan
+             id="tspan178">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan756">-5</tspan></tspan></text>
+             id="tspan179">-5</tspan></tspan></text>
       <rect
          style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:4.75441;stroke-dasharray:none;stroke-opacity:1"
          id="rect345-6-5-3-3"
@@ -8952,7 +8958,7 @@
          transform="translate(-1.74919,24.5332)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan758">A</tspan></text>
+           id="tspan181">A</tspan></text>
       <text
          xml:space="preserve"
          id="text354-1"
@@ -8960,7 +8966,7 @@
          transform="translate(20.08073,11.5332)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan759">U</tspan></text>
+           id="tspan182">U</tspan></text>
       <text
          xml:space="preserve"
          id="text366-0"
@@ -8968,11 +8974,11 @@
          transform="translate(-340.87156,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan762"><tspan
+           id="tspan185"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan760">10</tspan><tspan
+             id="tspan183">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan761">-6</tspan></tspan></text>
+             id="tspan184">-6</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text369-19"
@@ -8980,11 +8986,11 @@
          transform="translate(-423.40056,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan765"><tspan
+           id="tspan188"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan763">10</tspan><tspan
+             id="tspan186">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan764">-7</tspan></tspan></text>
+             id="tspan187">-7</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text372-52"
@@ -8992,11 +8998,11 @@
          transform="translate(-505.92956,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan768"><tspan
+           id="tspan191"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan766">10</tspan><tspan
+             id="tspan189">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan767">-8</tspan></tspan></text>
+             id="tspan190">-8</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text375-7"
@@ -9004,11 +9010,11 @@
          transform="translate(-588.45856,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan771"><tspan
+           id="tspan194"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan769">10</tspan><tspan
+             id="tspan192">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan770">-9</tspan></tspan></text>
+             id="tspan193">-9</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text378-9"
@@ -9016,11 +9022,11 @@
          transform="translate(-670.98756,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan774"><tspan
+           id="tspan197"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan772">10</tspan><tspan
+             id="tspan195">10</tspan><tspan
              style="font-stretch:condensed;font-size:24px;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan773">-10</tspan></tspan></text>
+             id="tspan196">-10</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text379-6"
@@ -9028,7 +9034,7 @@
          transform="translate(42.57812,-0.49805)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan775">T</tspan></text>
+           id="tspan198">T</tspan></text>
       <text
          xml:space="preserve"
          id="text380-9"
@@ -9036,7 +9042,7 @@
          transform="translate(63.15625,-16.11523)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan776">O</tspan></text>
+           id="tspan199">O</tspan></text>
     </g>
     <g
        inkscape:label="Layer 1 -5"
@@ -9064,11 +9070,11 @@
          transform="translate(-258.34255,7.03438)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan779"><tspan
+           id="tspan202"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan777">10</tspan><tspan
+             id="tspan200">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan778">-5</tspan></tspan></text>
+             id="tspan201">-5</tspan></tspan></text>
       <rect
          style="display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-dasharray:none;stroke-opacity:1"
          id="rect2006"
@@ -9104,11 +9110,11 @@
          transform="translate(-258.34256,7.0343749)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan782"><tspan
+           id="tspan205"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan780">10</tspan><tspan
+             id="tspan203">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan781">-5</tspan></tspan></text>
+             id="tspan204">-5</tspan></tspan></text>
       <rect
          style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.81883;stroke-dasharray:none;stroke-opacity:1"
          id="rect345-6-5-4-46"
@@ -9163,11 +9169,11 @@
          transform="translate(-175.81356,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan785"><tspan
+           id="tspan208"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan783">10</tspan><tspan
+             id="tspan206">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan784">-4</tspan></tspan></text>
+             id="tspan207">-4</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text366-8"
@@ -9175,11 +9181,11 @@
          transform="translate(-340.87156,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan788"><tspan
+           id="tspan211"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan786">10</tspan><tspan
+             id="tspan209">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan787">-6</tspan></tspan></text>
+             id="tspan210">-6</tspan></tspan></text>
       <rect
          style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:4.75441;stroke-dasharray:none;stroke-opacity:1"
          id="rect345-6-5-3-8"
@@ -9326,7 +9332,7 @@
          transform="translate(-1.74919,24.5332)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan789">A</tspan></text>
+           id="tspan212">A</tspan></text>
       <text
          xml:space="preserve"
          id="text354-2"
@@ -9334,7 +9340,7 @@
          transform="translate(20.08073,11.5332)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan790">U</tspan></text>
+           id="tspan213">U</tspan></text>
       <text
          xml:space="preserve"
          id="text357-8"
@@ -9342,11 +9348,11 @@
          transform="translate(-93.28456,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan793"><tspan
+           id="tspan216"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan791">10</tspan><tspan
+             id="tspan214">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan792">-3</tspan></tspan></text>
+             id="tspan215">-3</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text369-3"
@@ -9354,11 +9360,11 @@
          transform="translate(-423.40056,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan796"><tspan
+           id="tspan219"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan794">10</tspan><tspan
+             id="tspan217">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan795">-7</tspan></tspan></text>
+             id="tspan218">-7</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text372-87"
@@ -9366,11 +9372,11 @@
          transform="translate(-505.92956,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan799"><tspan
+           id="tspan222"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan797">10</tspan><tspan
+             id="tspan220">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan798">-8</tspan></tspan></text>
+             id="tspan221">-8</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text375-82"
@@ -9378,11 +9384,11 @@
          transform="translate(-588.45856,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan802"><tspan
+           id="tspan225"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan800">10</tspan><tspan
+             id="tspan223">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan801">-9</tspan></tspan></text>
+             id="tspan224">-9</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text378-72"
@@ -9390,11 +9396,11 @@
          transform="translate(-670.98756,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan805"><tspan
+           id="tspan228"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan803">10</tspan><tspan
+             id="tspan226">10</tspan><tspan
              style="font-stretch:condensed;font-size:24px;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan804">-10</tspan></tspan></text>
+             id="tspan227">-10</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text379-34"
@@ -9402,7 +9408,7 @@
          transform="translate(42.57812,-0.49805)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan806">T</tspan></text>
+           id="tspan229">T</tspan></text>
       <text
          xml:space="preserve"
          id="text380-21"
@@ -9410,7 +9416,7 @@
          transform="translate(63.15625,-16.11523)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan807">O</tspan></text>
+           id="tspan230">O</tspan></text>
     </g>
     <g
        inkscape:label="Layer 1 -6"
@@ -9439,11 +9445,11 @@
          transform="translate(-340.87153,7.03438)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan810"><tspan
+           id="tspan233"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan808">10</tspan><tspan
+             id="tspan231">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan809">-6</tspan></tspan></text>
+             id="tspan232">-6</tspan></tspan></text>
       <rect
          style="display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-dasharray:none;stroke-opacity:1"
          id="rect1935"
@@ -9485,11 +9491,11 @@
          transform="translate(-340.87156,7.0343749)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan813"><tspan
+           id="tspan236"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan811">10</tspan><tspan
+             id="tspan234">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan812">-6</tspan></tspan></text>
+             id="tspan235">-6</tspan></tspan></text>
       <rect
          style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.81883;stroke-dasharray:none;stroke-opacity:1"
          id="rect345-6-5-8-3"
@@ -9543,11 +9549,11 @@
          transform="translate(-258.34256,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan816"><tspan
+           id="tspan239"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan814">10</tspan><tspan
+             id="tspan237">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan815">-5</tspan></tspan></text>
+             id="tspan238">-5</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text369-9"
@@ -9555,11 +9561,11 @@
          transform="translate(-423.40056,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan819"><tspan
+           id="tspan242"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan817">10</tspan><tspan
+             id="tspan240">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan818">-7</tspan></tspan></text>
+             id="tspan241">-7</tspan></tspan></text>
       <rect
          style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:4.75441;stroke-dasharray:none;stroke-opacity:1"
          id="rect345-6-5-3-5"
@@ -9706,7 +9712,7 @@
          transform="translate(-1.74919,24.5332)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan820">A</tspan></text>
+           id="tspan243">A</tspan></text>
       <text
          xml:space="preserve"
          id="text354-4"
@@ -9714,7 +9720,7 @@
          transform="translate(20.08073,11.5332)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan821">U</tspan></text>
+           id="tspan244">U</tspan></text>
       <text
          xml:space="preserve"
          id="text357-2"
@@ -9722,11 +9728,11 @@
          transform="translate(-93.28456,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan824"><tspan
+           id="tspan247"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan822">10</tspan><tspan
+             id="tspan245">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan823">-3</tspan></tspan></text>
+             id="tspan246">-3</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text360-11"
@@ -9734,11 +9740,11 @@
          transform="translate(-175.81356,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan827"><tspan
+           id="tspan250"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan825">10</tspan><tspan
+             id="tspan248">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan826">-4</tspan></tspan></text>
+             id="tspan249">-4</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text372-93"
@@ -9746,11 +9752,11 @@
          transform="translate(-505.92956,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan830"><tspan
+           id="tspan253"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan828">10</tspan><tspan
+             id="tspan251">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan829">-8</tspan></tspan></text>
+             id="tspan252">-8</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text375-78"
@@ -9758,11 +9764,11 @@
          transform="translate(-588.45856,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan833"><tspan
+           id="tspan256"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan831">10</tspan><tspan
+             id="tspan254">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan832">-9</tspan></tspan></text>
+             id="tspan255">-9</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text378-0"
@@ -9770,11 +9776,11 @@
          transform="translate(-670.98756,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan836"><tspan
+           id="tspan259"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan834">10</tspan><tspan
+             id="tspan257">10</tspan><tspan
              style="font-stretch:condensed;font-size:24px;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan835">-10</tspan></tspan></text>
+             id="tspan258">-10</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text379-5"
@@ -9782,7 +9788,7 @@
          transform="translate(42.57812,-0.49805)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan837">T</tspan></text>
+           id="tspan260">T</tspan></text>
       <text
          xml:space="preserve"
          id="text380-1"
@@ -9790,7 +9796,7 @@
          transform="translate(63.15625,-16.11523)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan838">O</tspan></text>
+           id="tspan261">O</tspan></text>
     </g>
     <g
        inkscape:label="Layer 1 -7"
@@ -9818,11 +9824,11 @@
          transform="translate(-423.40053,7.03438)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan841"><tspan
+           id="tspan264"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan839">10</tspan><tspan
+             id="tspan262">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan840">-7</tspan></tspan></text>
+             id="tspan263">-7</tspan></tspan></text>
       <rect
          style="display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-dasharray:none;stroke-opacity:1"
          id="rect1864"
@@ -9862,11 +9868,11 @@
          transform="translate(-423.40056,7.0343749)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan844"><tspan
+           id="tspan267"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan842">10</tspan><tspan
+             id="tspan265">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan843">-7</tspan></tspan></text>
+             id="tspan266">-7</tspan></tspan></text>
       <rect
          style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.81883;stroke-dasharray:none;stroke-opacity:1"
          id="rect345-6-5-6-26"
@@ -9921,11 +9927,11 @@
          transform="translate(-340.87156,7.0343721)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan847"><tspan
+           id="tspan270"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan845">10</tspan><tspan
+             id="tspan268">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan846">-6</tspan></tspan></text>
+             id="tspan269">-6</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text372-9"
@@ -9933,11 +9939,11 @@
          transform="translate(-505.92956,7.0343721)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan850"><tspan
+           id="tspan273"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan848">10</tspan><tspan
+             id="tspan271">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan849">-8</tspan></tspan></text>
+             id="tspan272">-8</tspan></tspan></text>
       <rect
          style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:4.75441;stroke-dasharray:none;stroke-opacity:1"
          id="rect345-6-5-3-9"
@@ -10084,7 +10090,7 @@
          transform="translate(-1.74919,24.5332)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan851">A</tspan></text>
+           id="tspan274">A</tspan></text>
       <text
          xml:space="preserve"
          id="text354-22"
@@ -10092,7 +10098,7 @@
          transform="translate(20.08073,11.5332)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan852">U</tspan></text>
+           id="tspan275">U</tspan></text>
       <text
          xml:space="preserve"
          id="text357-7"
@@ -10100,11 +10106,11 @@
          transform="translate(-93.28456,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan855"><tspan
+           id="tspan278"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan853">10</tspan><tspan
+             id="tspan276">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan854">-3</tspan></tspan></text>
+             id="tspan277">-3</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text360-3"
@@ -10112,11 +10118,11 @@
          transform="translate(-175.81356,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan858"><tspan
+           id="tspan281"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan856">10</tspan><tspan
+             id="tspan279">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan857">-4</tspan></tspan></text>
+             id="tspan280">-4</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text363-3"
@@ -10124,11 +10130,11 @@
          transform="translate(-258.34256,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan861"><tspan
+           id="tspan284"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan859">10</tspan><tspan
+             id="tspan282">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan860">-5</tspan></tspan></text>
+             id="tspan283">-5</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text375-10"
@@ -10136,11 +10142,11 @@
          transform="translate(-588.45856,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan864"><tspan
+           id="tspan287"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan862">10</tspan><tspan
+             id="tspan285">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan863">-9</tspan></tspan></text>
+             id="tspan286">-9</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text378-92"
@@ -10148,11 +10154,11 @@
          transform="translate(-670.98756,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan867"><tspan
+           id="tspan290"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan865">10</tspan><tspan
+             id="tspan288">10</tspan><tspan
              style="font-stretch:condensed;font-size:24px;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan866">-10</tspan></tspan></text>
+             id="tspan289">-10</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text379-39"
@@ -10160,7 +10166,7 @@
          transform="translate(42.57812,-0.49805)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan868">T</tspan></text>
+           id="tspan291">T</tspan></text>
       <text
          xml:space="preserve"
          id="text380-8"
@@ -10168,7 +10174,7 @@
          transform="translate(63.15625,-16.11523)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan869">O</tspan></text>
+           id="tspan292">O</tspan></text>
     </g>
     <g
        inkscape:label="Layer 1 -8"
@@ -10196,11 +10202,11 @@
          transform="translate(-505.92953,7.03438)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan872"><tspan
+           id="tspan295"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan870">10</tspan><tspan
+             id="tspan293">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan871">-8</tspan></tspan></text>
+             id="tspan294">-8</tspan></tspan></text>
       <rect
          style="display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-dasharray:none;stroke-opacity:1"
          id="rect1793"
@@ -10240,11 +10246,11 @@
          transform="translate(-505.92956,7.0343749)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan875"><tspan
+           id="tspan298"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan873">10</tspan><tspan
+             id="tspan296">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan874">-8</tspan></tspan></text>
+             id="tspan297">-8</tspan></tspan></text>
       <rect
          style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.81883;stroke-dasharray:none;stroke-opacity:1"
          id="rect345-6-5-7"
@@ -10298,11 +10304,11 @@
          transform="translate(-423.40056,7.0343766)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan878"><tspan
+           id="tspan301"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan876">10</tspan><tspan
+             id="tspan299">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan877">-7</tspan></tspan></text>
+             id="tspan300">-7</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text375-1"
@@ -10310,11 +10316,11 @@
          transform="translate(-588.45856,7.0343766)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan881"><tspan
+           id="tspan304"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan879">10</tspan><tspan
+             id="tspan302">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan880">-9</tspan></tspan></text>
+             id="tspan303">-9</tspan></tspan></text>
       <rect
          style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:4.75441;stroke-dasharray:none;stroke-opacity:1"
          id="rect345-6-5-3-0"
@@ -10462,7 +10468,7 @@
          transform="translate(-1.74919,24.5332)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan882">A</tspan></text>
+           id="tspan305">A</tspan></text>
       <text
          xml:space="preserve"
          id="text354-222"
@@ -10470,7 +10476,7 @@
          transform="translate(20.08073,11.5332)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan883">U</tspan></text>
+           id="tspan306">U</tspan></text>
       <text
          xml:space="preserve"
          id="text357-0"
@@ -10478,11 +10484,11 @@
          transform="translate(-93.28456,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan886"><tspan
+           id="tspan309"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan884">10</tspan><tspan
+             id="tspan307">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan885">-3</tspan></tspan></text>
+             id="tspan308">-3</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text360-37"
@@ -10490,11 +10496,11 @@
          transform="translate(-175.81356,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan890"><tspan
+           id="tspan312"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan887">10</tspan><tspan
+             id="tspan310">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan888">-4</tspan></tspan></text>
+             id="tspan311">-4</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text363-58"
@@ -10502,11 +10508,11 @@
          transform="translate(-258.34256,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan893"><tspan
+           id="tspan315"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan891">10</tspan><tspan
+             id="tspan313">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan892">-5</tspan></tspan></text>
+             id="tspan314">-5</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text366-7"
@@ -10514,11 +10520,11 @@
          transform="translate(-340.87156,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan896"><tspan
+           id="tspan318"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan894">10</tspan><tspan
+             id="tspan316">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan895">-6</tspan></tspan></text>
+             id="tspan317">-6</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text378-6"
@@ -10526,11 +10532,11 @@
          transform="translate(-670.98756,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan899"><tspan
+           id="tspan321"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan897">10</tspan><tspan
+             id="tspan319">10</tspan><tspan
              style="font-stretch:condensed;font-size:24px;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan898">-10</tspan></tspan></text>
+             id="tspan320">-10</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text379-58"
@@ -10538,7 +10544,7 @@
          transform="translate(42.57812,-0.49805)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan900">T</tspan></text>
+           id="tspan322">T</tspan></text>
       <text
          xml:space="preserve"
          id="text380-4"
@@ -10546,7 +10552,7 @@
          transform="translate(63.15625,-16.11523)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan901">O</tspan></text>
+           id="tspan323">O</tspan></text>
     </g>
     <g
        inkscape:label="Layer 1 -9"
@@ -10574,11 +10580,11 @@
          transform="translate(-588.45853,7.03438)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan904"><tspan
+           id="tspan326"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan902">10</tspan><tspan
+             id="tspan324">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan903">-9</tspan></tspan></text>
+             id="tspan325">-9</tspan></tspan></text>
       <rect
          style="display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-dasharray:none;stroke-opacity:1"
          id="rect1722"
@@ -10618,11 +10624,11 @@
          transform="translate(-588.45856,7.0343749)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan907"><tspan
+           id="tspan329"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan905">10</tspan><tspan
+             id="tspan327">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan906">-9</tspan></tspan></text>
+             id="tspan328">-9</tspan></tspan></text>
       <rect
          style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.81883;stroke-dasharray:none;stroke-opacity:1"
          id="rect345-6-8"
@@ -10677,11 +10683,11 @@
          transform="translate(-505.92956,7.0343697)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan910"><tspan
+           id="tspan332"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan908">10</tspan><tspan
+             id="tspan330">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan909">-8</tspan></tspan></text>
+             id="tspan331">-8</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text378-8"
@@ -10689,11 +10695,11 @@
          transform="translate(-670.98756,7.0343697)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan913"><tspan
+           id="tspan335"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan911">10</tspan><tspan
+             id="tspan333">10</tspan><tspan
              style="font-stretch:condensed;font-size:24px;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan912">-10</tspan></tspan></text>
+             id="tspan334">-10</tspan></tspan></text>
       <rect
          style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:4.75441;stroke-dasharray:none;stroke-opacity:1"
          id="rect345-6-5-3-6"
@@ -10840,7 +10846,7 @@
          transform="translate(-1.74919,24.533206)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan914">A</tspan></text>
+           id="tspan336">A</tspan></text>
       <text
          xml:space="preserve"
          id="text354-21"
@@ -10848,7 +10854,7 @@
          transform="translate(20.08073,11.533206)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan915">U</tspan></text>
+           id="tspan337">U</tspan></text>
       <text
          xml:space="preserve"
          id="text357-82"
@@ -10856,11 +10862,11 @@
          transform="translate(-93.284562,7.0343761)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan918"><tspan
+           id="tspan340"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan916">10</tspan><tspan
+             id="tspan338">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan917">-3</tspan></tspan></text>
+             id="tspan339">-3</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text360-9"
@@ -10868,11 +10874,11 @@
          transform="translate(-175.81356,7.0343761)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan921"><tspan
+           id="tspan344"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan919">10</tspan><tspan
+             id="tspan342">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan920">-4</tspan></tspan></text>
+             id="tspan343">-4</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text363-1"
@@ -10880,11 +10886,11 @@
          transform="translate(-258.34256,7.0343761)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan924"><tspan
+           id="tspan347"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan922">10</tspan><tspan
+             id="tspan345">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan923">-5</tspan></tspan></text>
+             id="tspan346">-5</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text366-5"
@@ -10892,11 +10898,11 @@
          transform="translate(-340.87156,7.0343761)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan927"><tspan
+           id="tspan350"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan925">10</tspan><tspan
+             id="tspan348">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan926">-6</tspan></tspan></text>
+             id="tspan349">-6</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text369-7"
@@ -10904,11 +10910,11 @@
          transform="translate(-423.40056,7.0343761)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan930"><tspan
+           id="tspan353"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan928">10</tspan><tspan
+             id="tspan351">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan929">-7</tspan></tspan></text>
+             id="tspan352">-7</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text379-8"
@@ -10916,7 +10922,7 @@
          transform="translate(42.57812,-0.4980439)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan931">T</tspan></text>
+           id="tspan354">T</tspan></text>
       <text
          xml:space="preserve"
          id="text380-45"
@@ -10924,7 +10930,7 @@
          transform="translate(63.15625,-16.115224)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan932">O</tspan></text>
+           id="tspan355">O</tspan></text>
     </g>
     <g
        inkscape:label="Layer 1 -10"
@@ -10953,11 +10959,11 @@
          transform="translate(-670.98753,7.03438)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan935"><tspan
+           id="tspan358"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan933">10</tspan><tspan
+             id="tspan356">10</tspan><tspan
              style="font-stretch:condensed;font-size:24px;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan934">-10</tspan></tspan></text>
+             id="tspan357">-10</tspan></tspan></text>
       <rect
          style="display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-dasharray:none;stroke-opacity:1"
          id="rect1651"
@@ -10999,11 +11005,11 @@
          transform="translate(-670.98756,7.0343749)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan938"><tspan
+           id="tspan361"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan936">10</tspan><tspan
+             id="tspan359">10</tspan><tspan
              style="font-stretch:condensed;font-size:24px;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan937">-10</tspan></tspan></text>
+             id="tspan360">-10</tspan></tspan></text>
       <rect
          style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.81883;stroke-dasharray:none;stroke-opacity:1"
          id="rect345-6-0-5"
@@ -11034,11 +11040,11 @@
          transform="translate(-588.45856,7.0343731)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan941"><tspan
+           id="tspan364"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan939">10</tspan><tspan
+             id="tspan362">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan940">-9</tspan></tspan></text>
+             id="tspan363">-9</tspan></tspan></text>
       <rect
          style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:4.75441;stroke-dasharray:none;stroke-opacity:1"
          id="rect345-6-5-3-54"
@@ -11208,7 +11214,7 @@
          transform="translate(-1.74919,24.5332)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan942">A</tspan></text>
+           id="tspan365">A</tspan></text>
       <text
          xml:space="preserve"
          id="text354-12"
@@ -11216,7 +11222,7 @@
          transform="translate(20.08073,11.5332)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan943">U</tspan></text>
+           id="tspan366">U</tspan></text>
       <text
          xml:space="preserve"
          id="text357-04"
@@ -11224,11 +11230,11 @@
          transform="translate(-93.284562,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan946"><tspan
+           id="tspan369"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan944">10</tspan><tspan
+             id="tspan367">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan945">-3</tspan></tspan></text>
+             id="tspan368">-3</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text360-36"
@@ -11236,11 +11242,11 @@
          transform="translate(-175.81356,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan949"><tspan
+           id="tspan372"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan947">10</tspan><tspan
+             id="tspan370">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan948">-4</tspan></tspan></text>
+             id="tspan371">-4</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text363-8"
@@ -11248,11 +11254,11 @@
          transform="translate(-258.34256,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan952"><tspan
+           id="tspan375"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan950">10</tspan><tspan
+             id="tspan373">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan951">-5</tspan></tspan></text>
+             id="tspan374">-5</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text366-9"
@@ -11260,11 +11266,11 @@
          transform="translate(-340.87156,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan955"><tspan
+           id="tspan378"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan953">10</tspan><tspan
+             id="tspan376">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan954">-6</tspan></tspan></text>
+             id="tspan377">-6</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text369-5"
@@ -11272,11 +11278,11 @@
          transform="translate(-423.40056,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan958"><tspan
+           id="tspan381"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan956">10</tspan><tspan
+             id="tspan379">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan957">-7</tspan></tspan></text>
+             id="tspan380">-7</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text372-83"
@@ -11284,11 +11290,11 @@
          transform="translate(-505.92956,7.03437)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan961"><tspan
+           id="tspan384"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan959">10</tspan><tspan
+             id="tspan382">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan960">-8</tspan></tspan></text>
+             id="tspan383">-8</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text379-7"
@@ -11296,7 +11302,7 @@
          transform="translate(42.57812,-0.49805)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan962">T</tspan></text>
+           id="tspan385">T</tspan></text>
       <text
          xml:space="preserve"
          id="text380-0"
@@ -11304,7 +11310,7 @@
          transform="translate(63.15625,-16.11523)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan963">O</tspan></text>
+           id="tspan386">O</tspan></text>
     </g>
     <g
        inkscape:label="Layer 1 meter 0"
@@ -12914,13 +12920,13 @@
          y="0"><tspan
            x="220.61719"
            y="203.94847"
-           id="tspan967"><tspan
+           id="tspan390"><tspan
              style="font-weight:bold;font-stretch:semi-condensed;font-size:133.333px;-inkscape-font-specification:'Bahnschrift Bold Semi-Condensed';fill:#00e599"
-             id="tspan964">8</tspan><tspan
+             id="tspan387">8</tspan><tspan
              style="font-weight:bold;font-stretch:semi-condensed;font-size:133.333px;-inkscape-font-specification:'Bahnschrift Bold Semi-Condensed';fill:#00cc88"
-             id="tspan965">8</tspan><tspan
+             id="tspan388">8</tspan><tspan
              style="font-weight:bold;font-stretch:semi-condensed;font-size:133.333px;-inkscape-font-specification:'Bahnschrift Bold Semi-Condensed';fill:#00b277"
-             id="tspan966">8</tspan></tspan></text>
+             id="tspan389">8</tspan></tspan></text>
       <rect
          style="display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:4.03006;stroke-dasharray:none;stroke-opacity:1"
          id="rect1489"
@@ -13129,9 +13135,9 @@
          transform="matrix(2.3464442,0,0,1.779465,6.2248494,-323.76488)"><tspan
            x="6.7382812"
            y="436.45898"
-           id="tspan969"><tspan
+           id="tspan392"><tspan
              style="font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift"
-             id="tspan968">0</tspan></tspan></text>
+             id="tspan391">0</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text1520"
@@ -13139,9 +13145,9 @@
          transform="matrix(2.3464442,0,0,1.779465,7.2248488,-570.76488)"><tspan
            x="6.7382812"
            y="436.45898"
-           id="tspan971"><tspan
+           id="tspan394"><tspan
              style="font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift"
-             id="tspan970">0</tspan></tspan></text>
+             id="tspan393">0</tspan></tspan></text>
       <text
          xml:space="preserve"
          style="text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;fill-opacity:1;stroke:#00cc9d;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"
@@ -13159,9 +13165,9 @@
          transform="matrix(2.3464442,0,0,1.779465,-0.77515119,-578.76488)"><tspan
            x="6.7382812"
            y="436.45898"
-           id="tspan973"><tspan
+           id="tspan396"><tspan
              style="font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift"
-             id="tspan972">0</tspan></tspan></text>
+             id="tspan395">0</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text1525"
@@ -13169,9 +13175,9 @@
          transform="matrix(2.3464442,0,0,1.779465,-7.6340094,-586.7336)"><tspan
            x="6.7382812"
            y="436.45898"
-           id="tspan975"><tspan
+           id="tspan398"><tspan
              style="font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift"
-             id="tspan974">1</tspan></tspan></text>
+             id="tspan397">1</tspan></tspan></text>
       <rect
          style="fill:#00cc88;fill-opacity:1;stroke:#00cc88;stroke-width:3.13772;stroke-dasharray:none;stroke-opacity:1"
          id="rect1525"
@@ -13237,11 +13243,11 @@
          transform="translate(-93.284562,7.0343749)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan978"><tspan
+           id="tspan401"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan976">10</tspan><tspan
+             id="tspan399">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan977">-3</tspan></tspan></text>
+             id="tspan400">-3</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text1537"
@@ -13249,11 +13255,11 @@
          transform="translate(-175.81356,7.0343749)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan981"><tspan
+           id="tspan404"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan979">10</tspan><tspan
+             id="tspan402">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan980">-4</tspan></tspan></text>
+             id="tspan403">-4</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text1540"
@@ -13261,11 +13267,11 @@
          transform="translate(-258.34256,7.0343749)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan984"><tspan
+           id="tspan407"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan982">10</tspan><tspan
+             id="tspan405">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan983">-5</tspan></tspan></text>
+             id="tspan406">-5</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text1543"
@@ -13273,11 +13279,11 @@
          transform="translate(-340.87156,7.0343749)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan987"><tspan
+           id="tspan410"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan985">10</tspan><tspan
+             id="tspan408">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan986">-6</tspan></tspan></text>
+             id="tspan409">-6</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text1546"
@@ -13285,11 +13291,11 @@
          transform="translate(-423.40056,7.0343749)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan990"><tspan
+           id="tspan413"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan988">10</tspan><tspan
+             id="tspan411">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan989">-7</tspan></tspan></text>
+             id="tspan412">-7</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text1549"
@@ -13297,11 +13303,11 @@
          transform="translate(-505.92956,7.0343749)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan993"><tspan
+           id="tspan416"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan991">10</tspan><tspan
+             id="tspan414">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan992">-8</tspan></tspan></text>
+             id="tspan415">-8</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text1552"
@@ -13309,11 +13315,11 @@
          transform="translate(-588.45856,7.0343749)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan996"><tspan
+           id="tspan419"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan994">10</tspan><tspan
+             id="tspan417">10</tspan><tspan
              style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan995">-9</tspan></tspan></text>
+             id="tspan418">-9</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text1555"
@@ -13321,11 +13327,11 @@
          transform="translate(-670.98756,7.0343749)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan999"><tspan
+           id="tspan422"><tspan
              style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-             id="tspan997">10</tspan><tspan
+             id="tspan420">10</tspan><tspan
              style="font-stretch:condensed;font-size:24px;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-             id="tspan998">-10</tspan></tspan></text>
+             id="tspan421">-10</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text1567"
@@ -13335,13 +13341,13 @@
          y="0"><tspan
            x="220.61719"
            y="203.94847"
-           id="tspan1003"><tspan
+           id="tspan426"><tspan
              style="font-weight:bold;font-stretch:semi-condensed;font-size:133.333px;-inkscape-font-specification:'Bahnschrift Bold Semi-Condensed';fill:#4cffc3"
-             id="tspan1000">8</tspan><tspan
+             id="tspan423">8</tspan><tspan
              style="font-weight:bold;font-stretch:semi-condensed;font-size:133.333px;-inkscape-font-specification:'Bahnschrift Bold Semi-Condensed';fill:#33ffbb"
-             id="tspan1001">8</tspan><tspan
+             id="tspan424">8</tspan><tspan
              style="font-weight:bold;font-stretch:semi-condensed;font-size:133.333px;-inkscape-font-specification:'Bahnschrift Bold Semi-Condensed';fill:#1affb3"
-             id="tspan1002">8</tspan></tspan></text>
+             id="tspan425">8</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text1567-9"
@@ -13351,9 +13357,9 @@
          y="0"><tspan
            x="220.61719"
            y="203.94847"
-           id="tspan1005"><tspan
+           id="tspan428"><tspan
              style="font-weight:bold;font-stretch:semi-condensed;font-size:133.333px;-inkscape-font-specification:'Bahnschrift Bold Semi-Condensed';fill:#00ffaa"
-             id="tspan1004">.</tspan></tspan></text>
+             id="tspan427">.</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text1567-0"
@@ -13363,9 +13369,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan1007"><tspan
+           id="tspan430"><tspan
    style="font-weight:bold;font-stretch:condensed;font-size:106.667px;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-   id="tspan1006">A</tspan> </tspan></text>
+   id="tspan429">A</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text1569"
@@ -13375,9 +13381,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan1009"><tspan
+           id="tspan432"><tspan
    style="font-size:42.6667px"
-   id="tspan1008">LE</tspan> </tspan></text>
+   id="tspan431">LE</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text1571"
@@ -13387,9 +13393,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan1011"><tspan
+           id="tspan434"><tspan
    style="font-size:42.6667px"
-   id="tspan1010">OBJ</tspan> </tspan></text>
+   id="tspan433">OBJ</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text1573"
@@ -13399,9 +13405,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan1013"><tspan
+           id="tspan436"><tspan
    style="font-size:42.6667px"
-   id="tspan1012">OD</tspan> </tspan></text>
+   id="tspan435">OD</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text1575"
@@ -13411,9 +13417,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan1015"><tspan
+           id="tspan438"><tspan
    style="font-size:42.6667px"
-   id="tspan1014">HE</tspan> </tspan></text>
+   id="tspan437">HE</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text1577"
@@ -13423,9 +13429,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan1017"><tspan
+           id="tspan440"><tspan
    style="font-size:42.6667px"
-   id="tspan1016">IMG</tspan> </tspan></text>
+   id="tspan439">IMG</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text1579"
@@ -13435,9 +13441,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan1019"><tspan
+           id="tspan442"><tspan
    style="font-size:42.6667px"
-   id="tspan1018">LE</tspan> </tspan></text>
+   id="tspan441">LE</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text1581"
@@ -13447,9 +13453,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan1021"><tspan
+           id="tspan444"><tspan
    style="font-size:42.6667px"
-   id="tspan1020">OBJ</tspan> </tspan></text>
+   id="tspan443">OBJ</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text1583"
@@ -13459,9 +13465,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan1023"><tspan
+           id="tspan446"><tspan
    style="font-size:42.6667px"
-   id="tspan1022">OD</tspan> </tspan></text>
+   id="tspan445">OD</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text1585"
@@ -13471,9 +13477,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan1025"><tspan
+           id="tspan448"><tspan
    style="font-size:42.6667px"
-   id="tspan1024">HE</tspan> </tspan></text>
+   id="tspan447">HE</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text1587"
@@ -13483,9 +13489,9 @@
          y="0"><tspan
            x="220.61719"
            y="197.67773"
-           id="tspan1027"><tspan
+           id="tspan450"><tspan
    style="font-size:42.6667px"
-   id="tspan1026">IMG</tspan> </tspan></text>
+   id="tspan449">IMG</tspan> </tspan></text>
       <text
          xml:space="preserve"
          id="text1589"
@@ -13495,9 +13501,9 @@
          y="0"><tspan
            x="220.61719"
            y="202.38086"
-           id="tspan1029"><tspan
+           id="tspan452"><tspan
    style="font-weight:bold;font-stretch:condensed;font-size:128px;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-   id="tspan1028">CUP</tspan> </tspan></text>
+   id="tspan451">CUP</tspan> </tspan></text>
       <path
          style="fill:none;fill-opacity:1;stroke:#00cc88;stroke-width:5;stroke-dasharray:none;stroke-opacity:1"
          d="m 386.83444,313.79552 c 107.33673,0 107.33673,0 107.33673,0 h 0.60288"
@@ -13707,7 +13713,7 @@
          transform="translate(-1.7491875,24.533203)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan1030">A</tspan></text>
+           id="tspan453">A</tspan></text>
       <text
          xml:space="preserve"
          id="text1620"
@@ -13715,7 +13721,7 @@
          transform="translate(20.080731,11.533203)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan1031">U</tspan></text>
+           id="tspan454">U</tspan></text>
       <text
          xml:space="preserve"
          id="text1621"
@@ -13723,7 +13729,7 @@
          transform="translate(42.578125,-0.49804617)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan1032">T</tspan></text>
+           id="tspan455">T</tspan></text>
       <text
          xml:space="preserve"
          id="text1622"
@@ -13731,7 +13737,7 @@
          transform="translate(63.156251,-16.115234)"><tspan
            x="691.42188"
            y="74.544922"
-           id="tspan1033">O</tspan></text>
+           id="tspan456">O</tspan></text>
       <text
          xml:space="preserve"
          style="font-weight:bold;font-stretch:semi-condensed;font-size:106.667px;line-height:0;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift Bold Semi-Condensed';text-align:start;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#33ffbb;fill-opacity:1;stroke:none;stroke-width:3.4"
@@ -14003,9 +14009,9 @@
        transform="matrix(2.3464442,0,0,1.779465,6.224898,-323.76488)"><tspan
          x="6.7382812"
          y="436.45898"
-         id="tspan1035"><tspan
+         id="tspan458"><tspan
            style="font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift"
-           id="tspan1034">0</tspan></tspan></text>
+           id="tspan457">0</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text19-6-3-7"
@@ -14013,9 +14019,9 @@
        transform="matrix(2.3464442,0,0,1.779465,7.224898,-570.76488)"><tspan
          x="6.7382812"
          y="436.45898"
-         id="tspan1037"><tspan
+         id="tspan460"><tspan
            style="font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift"
-           id="tspan1036">0</tspan></tspan></text>
+           id="tspan459">0</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text19-6-7"
@@ -14023,9 +14029,9 @@
        transform="matrix(2.3464442,0,0,1.779465,-0.77510242,-578.76488)"><tspan
          x="6.7382812"
          y="436.45898"
-         id="tspan1039"><tspan
+         id="tspan462"><tspan
            style="font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift"
-           id="tspan1038">0</tspan></tspan></text>
+           id="tspan461">0</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text19-6-1-0"
@@ -14033,9 +14039,9 @@
        transform="matrix(2.3464442,0,0,1.779465,-7.6339622,-586.7336)"><tspan
          x="6.7382812"
          y="436.45898"
-         id="tspan1041"><tspan
+         id="tspan464"><tspan
            style="font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift"
-           id="tspan1040">1</tspan></tspan></text>
+           id="tspan463">1</tspan></tspan></text>
     <rect
        style="fill:none;fill-opacity:1;stroke:#ff8000;stroke-width:3.13772;stroke-dasharray:none;stroke-opacity:1"
        id="rect6-8"
@@ -14115,7 +14121,7 @@
        transform="translate(-1.7491424,32.413634)"><tspan
          x="691.42188"
          y="74.544922"
-         id="tspan1042">A</tspan></text>
+         id="tspan465">A</tspan></text>
     <text
        xml:space="preserve"
        id="text21-7-0"
@@ -14123,7 +14129,7 @@
        transform="translate(20.080778,16.413634)"><tspan
          x="691.42188"
          y="74.544922"
-         id="tspan1043">U</tspan></text>
+         id="tspan466">U</tspan></text>
     <text
        xml:space="preserve"
        id="text21-7-5-0"
@@ -14131,11 +14137,11 @@
        transform="translate(-93.28451,7.03438)"><tspan
          x="691.42188"
          y="74.544922"
-         id="tspan1047"><tspan
+         id="tspan469"><tspan
            style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-           id="tspan1044">10</tspan><tspan
+           id="tspan467">10</tspan><tspan
            style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-           id="tspan1046">-3</tspan></tspan></text>
+           id="tspan468">-3</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text21-7-5-9-4"
@@ -14143,11 +14149,11 @@
        transform="translate(-175.81351,7.03438)"><tspan
          x="691.42188"
          y="74.544922"
-         id="tspan1050"><tspan
+         id="tspan473"><tspan
            style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-           id="tspan1048">10</tspan><tspan
+           id="tspan470">10</tspan><tspan
            style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-           id="tspan1049">-4</tspan></tspan></text>
+           id="tspan472">-4</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text21-7-5-9-9-0"
@@ -14155,11 +14161,11 @@
        transform="translate(-258.34251,7.03438)"><tspan
          x="691.42188"
          y="74.544922"
-         id="tspan1053"><tspan
+         id="tspan476"><tspan
            style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-           id="tspan1051">10</tspan><tspan
+           id="tspan474">10</tspan><tspan
            style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-           id="tspan1052">-5</tspan></tspan></text>
+           id="tspan475">-5</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text21-7-5-9-9-5-1"
@@ -14167,11 +14173,11 @@
        transform="translate(-340.87151,7.03438)"><tspan
          x="691.42188"
          y="74.544922"
-         id="tspan1056"><tspan
+         id="tspan479"><tspan
            style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-           id="tspan1054">10</tspan><tspan
+           id="tspan477">10</tspan><tspan
            style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-           id="tspan1055">-6</tspan></tspan></text>
+           id="tspan478">-6</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text21-7-5-9-9-5-4-4"
@@ -14179,11 +14185,11 @@
        transform="translate(-423.40051,7.03438)"><tspan
          x="691.42188"
          y="74.544922"
-         id="tspan1059"><tspan
+         id="tspan482"><tspan
            style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-           id="tspan1057">10</tspan><tspan
+           id="tspan480">10</tspan><tspan
            style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-           id="tspan1058">-7</tspan></tspan></text>
+           id="tspan481">-7</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text21-7-5-9-9-5-4-9-5"
@@ -14191,11 +14197,11 @@
        transform="translate(-505.92951,7.03438)"><tspan
          x="691.42188"
          y="74.544922"
-         id="tspan1062"><tspan
+         id="tspan485"><tspan
            style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-           id="tspan1060">10</tspan><tspan
+           id="tspan483">10</tspan><tspan
            style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-           id="tspan1061">-8</tspan></tspan></text>
+           id="tspan484">-8</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text21-7-5-9-9-5-4-9-9-6"
@@ -14203,11 +14209,11 @@
        transform="translate(-588.45851,7.03438)"><tspan
          x="691.42188"
          y="74.544922"
-         id="tspan1065"><tspan
+         id="tspan488"><tspan
            style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-           id="tspan1063">10</tspan><tspan
+           id="tspan486">10</tspan><tspan
            style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-           id="tspan1064">-9</tspan></tspan></text>
+           id="tspan487">-9</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text21-7-5-9-9-5-4-9-9-8-2"
@@ -14215,11 +14221,11 @@
        transform="translate(-670.98751,7.03438)"><tspan
          x="691.42188"
          y="74.544922"
-         id="tspan1068"><tspan
+         id="tspan491"><tspan
            style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-           id="tspan1066">10</tspan><tspan
+           id="tspan489">10</tspan><tspan
            style="font-stretch:condensed;font-size:24px;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-           id="tspan1067">-10</tspan></tspan></text>
+           id="tspan490">-10</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text21-7-9-0"
@@ -14227,7 +14233,7 @@
        transform="translate(42.578168,2.413635)"><tspan
          x="691.42188"
          y="74.544922"
-         id="tspan1069">T</tspan></text>
+         id="tspan492">T</tspan></text>
     <text
        xml:space="preserve"
        id="text21-7-9-6-3"
@@ -14235,7 +14241,7 @@
        transform="translate(63.156298,-15.203554)"><tspan
          x="691.42188"
          y="74.544922"
-         id="tspan1070">O</tspan></text>
+         id="tspan493">O</tspan></text>
     <text
        xml:space="preserve"
        id="text23-56"
@@ -14245,31 +14251,31 @@
        y="0"><tspan
          x="220.61719"
          y="203.94847"
-         id="tspan1083"><tspan
+         id="tspan506"><tspan
            style="font-weight:bold;font-stretch:semi-condensed;font-size:133.333px;-inkscape-font-specification:'Bahnschrift Bold Semi-Condensed';fill:#ff9000"
-           id="tspan1071">+</tspan><tspan
+           id="tspan494">+</tspan><tspan
            style="font-weight:bold;font-stretch:semi-condensed;font-size:133.333px;-inkscape-font-specification:'Bahnschrift Bold Semi-Condensed';fill:#ff8000"
-           id="tspan1072">8</tspan><tspan
+           id="tspan495">8</tspan><tspan
            style="font-weight:bold;font-stretch:semi-condensed;font-size:133.333px;-inkscape-font-specification:'Bahnschrift Bold Semi-Condensed';fill:#ff6f00"
-           id="tspan1073">8</tspan><tspan
+           id="tspan496">8</tspan><tspan
            style="font-weight:bold;font-stretch:semi-condensed;font-size:133.333px;-inkscape-font-specification:'Bahnschrift Bold Semi-Condensed';fill:#ff5f00"
-           id="tspan1074">8</tspan><tspan
+           id="tspan497">8</tspan><tspan
            style="font-weight:bold;font-stretch:semi-condensed;font-size:133.333px;-inkscape-font-specification:'Bahnschrift Bold Semi-Condensed';fill:#ff4d00"
-           id="tspan1075">.</tspan><tspan
+           id="tspan498">.</tspan><tspan
            style="font-weight:bold;font-stretch:semi-condensed;font-size:133.333px;-inkscape-font-specification:'Bahnschrift Bold Semi-Condensed';fill:#ff3c00"
-           id="tspan1076">8</tspan><tspan
+           id="tspan499">8</tspan><tspan
            style="font-weight:bold;font-stretch:semi-condensed;font-size:133.333px;-inkscape-font-specification:'Bahnschrift Bold Semi-Condensed';fill:#ff2b00"
-           id="tspan1077">8</tspan><tspan
+           id="tspan500">8</tspan><tspan
            style="font-weight:bold;font-stretch:semi-condensed;font-size:133.333px;-inkscape-font-specification:'Bahnschrift Bold Semi-Condensed';fill:#ff1a00"
-           id="tspan1078">8</tspan><tspan
+           id="tspan501">8</tspan><tspan
            style="font-weight:bold;font-stretch:semi-condensed;font-size:133.333px;-inkscape-font-specification:'Bahnschrift Bold Semi-Condensed';fill:#e27f1d"
-           id="tspan1079"> </tspan><tspan
+           id="tspan502"> </tspan><tspan
            style="font-weight:bold;font-stretch:condensed;font-size:106.667px;-inkscape-font-specification:'Bahnschrift Bold Condensed';fill:#ff8000"
-           id="tspan1080">μ</tspan><tspan
+           id="tspan503">μ</tspan><tspan
            style="font-weight:bold;font-stretch:condensed;font-size:106.667px;-inkscape-font-specification:'Bahnschrift Bold Condensed';fill:#ff8000"
-           id="tspan1081">A</tspan><tspan
+           id="tspan504">A</tspan><tspan
            style="fill:#00b279"
-           id="tspan1082"> </tspan></tspan></text>
+           id="tspan505"> </tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text23-2-6"
@@ -14279,9 +14285,9 @@
        y="0"><tspan
          x="220.61719"
          y="197.67773"
-         id="tspan1085"><tspan
+         id="tspan508"><tspan
    style="font-size:42.6667px"
-   id="tspan1084">LE</tspan> </tspan></text>
+   id="tspan507">LE</tspan> </tspan></text>
     <text
        xml:space="preserve"
        id="text23-2-25-6"
@@ -14291,9 +14297,9 @@
        y="0"><tspan
          x="220.61719"
          y="197.67773"
-         id="tspan1087"><tspan
+         id="tspan510"><tspan
    style="font-size:42.6667px;fill:#662200"
-   id="tspan1086">OBJ</tspan> </tspan></text>
+   id="tspan509">OBJ</tspan> </tspan></text>
     <text
        xml:space="preserve"
        id="text23-2-0-4-7"
@@ -14303,9 +14309,9 @@
        y="0"><tspan
          x="220.61719"
          y="197.67773"
-         id="tspan1089"><tspan
+         id="tspan512"><tspan
    style="font-size:42.6667px;fill:#662200"
-   id="tspan1088">HE</tspan> </tspan></text>
+   id="tspan511">HE</tspan> </tspan></text>
     <text
        xml:space="preserve"
        id="text23-2-25-0-2-6"
@@ -14315,9 +14321,9 @@
        y="0"><tspan
          x="220.61719"
          y="197.67773"
-         id="tspan1091"><tspan
+         id="tspan514"><tspan
    style="font-size:42.6667px;fill:#662200"
-   id="tspan1090">IMG</tspan> </tspan></text>
+   id="tspan513">IMG</tspan> </tspan></text>
     <text
        xml:space="preserve"
        id="text23-5-7"
@@ -14327,9 +14333,9 @@
        y="0"><tspan
          x="220.61719"
          y="202.38086"
-         id="tspan1093"><tspan
+         id="tspan516"><tspan
    style="font-weight:bold;font-stretch:condensed;font-size:128px;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-   id="tspan1092">CUP</tspan> </tspan></text>
+   id="tspan515">CUP</tspan> </tspan></text>
     <rect
        style="display:inline;fill:#cc6700;fill-opacity:1;stroke:none;stroke-width:4.8158;stroke-dasharray:none;stroke-opacity:1"
        id="rect104-1"
@@ -14652,9 +14658,9 @@
        transform="matrix(2.3464442,0,0,1.779465,6.225388,-323.76531)"><tspan
          x="6.7382812"
          y="436.45898"
-         id="tspan1095"><tspan
+         id="tspan518"><tspan
            style="font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift"
-           id="tspan1094">0</tspan></tspan></text>
+           id="tspan517">0</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text19-6-3-7-5"
@@ -14662,9 +14668,9 @@
        transform="matrix(2.3464442,0,0,1.779465,7.225388,-570.76531)"><tspan
          x="6.7382812"
          y="436.45898"
-         id="tspan1097"><tspan
+         id="tspan520"><tspan
            style="font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift"
-           id="tspan1096">0</tspan></tspan></text>
+           id="tspan519">0</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text19-6-7-2"
@@ -14672,9 +14678,9 @@
        transform="matrix(2.3464442,0,0,1.779465,-0.77461209,-578.76531)"><tspan
          x="6.7382812"
          y="436.45898"
-         id="tspan1099"><tspan
+         id="tspan522"><tspan
            style="font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift"
-           id="tspan1098">0</tspan></tspan></text>
+           id="tspan521">0</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text19-6-1-0-0"
@@ -14682,9 +14688,9 @@
        transform="matrix(2.3464442,0,0,1.779465,-7.6334722,-586.73403)"><tspan
          x="6.7382812"
          y="436.45898"
-         id="tspan1101"><tspan
+         id="tspan524"><tspan
            style="font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift"
-           id="tspan1100">1</tspan></tspan></text>
+           id="tspan523">1</tspan></tspan></text>
     <rect
        style="display:inline;fill:none;fill-opacity:1;stroke:#b366ff;stroke-width:3.13772;stroke-dasharray:none;stroke-opacity:1"
        id="rect6-8-8"
@@ -14764,7 +14770,7 @@
        transform="translate(-1.7486521,32.413204)"><tspan
          x="691.42188"
          y="74.544922"
-         id="tspan1102">A</tspan></text>
+         id="tspan525">A</tspan></text>
     <text
        xml:space="preserve"
        id="text21-7-0-8"
@@ -14772,7 +14778,7 @@
        transform="translate(20.081268,16.413204)"><tspan
          x="691.42188"
          y="74.544922"
-         id="tspan1103">U</tspan></text>
+         id="tspan526">U</tspan></text>
     <text
        xml:space="preserve"
        id="text21-7-5-0-8"
@@ -14780,11 +14786,11 @@
        transform="translate(-93.28402,7.0339536)"><tspan
          x="691.42188"
          y="74.544922"
-         id="tspan1106"><tspan
+         id="tspan529"><tspan
            style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-           id="tspan1104">10</tspan><tspan
+           id="tspan527">10</tspan><tspan
            style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-           id="tspan1105">-3</tspan></tspan></text>
+           id="tspan528">-3</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text21-7-5-9-4-9"
@@ -14792,11 +14798,11 @@
        transform="translate(-175.81302,7.0339536)"><tspan
          x="691.42188"
          y="74.544922"
-         id="tspan1109"><tspan
+         id="tspan532"><tspan
            style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-           id="tspan1107">10</tspan><tspan
+           id="tspan530">10</tspan><tspan
            style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-           id="tspan1108">-4</tspan></tspan></text>
+           id="tspan531">-4</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text21-7-5-9-9-0-0"
@@ -14804,11 +14810,11 @@
        transform="translate(-258.34202,7.0339536)"><tspan
          x="691.42188"
          y="74.544922"
-         id="tspan1112"><tspan
+         id="tspan535"><tspan
            style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-           id="tspan1110">10</tspan><tspan
+           id="tspan533">10</tspan><tspan
            style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-           id="tspan1111">-5</tspan></tspan></text>
+           id="tspan534">-5</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text21-7-5-9-9-5-1-2"
@@ -14816,11 +14822,11 @@
        transform="translate(-340.87102,7.0339536)"><tspan
          x="691.42188"
          y="74.544922"
-         id="tspan1115"><tspan
+         id="tspan538"><tspan
            style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-           id="tspan1113">10</tspan><tspan
+           id="tspan536">10</tspan><tspan
            style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-           id="tspan1114">-6</tspan></tspan></text>
+           id="tspan537">-6</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text21-7-5-9-9-5-4-4-1"
@@ -14828,11 +14834,11 @@
        transform="translate(-423.40002,7.0339536)"><tspan
          x="691.42188"
          y="74.544922"
-         id="tspan1118"><tspan
+         id="tspan541"><tspan
            style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-           id="tspan1116">10</tspan><tspan
+           id="tspan539">10</tspan><tspan
            style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-           id="tspan1117">-7</tspan></tspan></text>
+           id="tspan540">-7</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text21-7-5-9-9-5-4-9-5-4"
@@ -14840,11 +14846,11 @@
        transform="translate(-505.92902,7.0339536)"><tspan
          x="691.42188"
          y="74.544922"
-         id="tspan1121"><tspan
+         id="tspan544"><tspan
            style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-           id="tspan1119">10</tspan><tspan
+           id="tspan542">10</tspan><tspan
            style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-           id="tspan1120">-8</tspan></tspan></text>
+           id="tspan543">-8</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text21-7-5-9-9-5-4-9-9-6-8"
@@ -14852,11 +14858,11 @@
        transform="translate(-588.45802,7.0339536)"><tspan
          x="691.42188"
          y="74.544922"
-         id="tspan1124"><tspan
+         id="tspan547"><tspan
            style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-           id="tspan1122">10</tspan><tspan
+           id="tspan545">10</tspan><tspan
            style="font-stretch:condensed;font-size:65%;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-           id="tspan1123">-9</tspan></tspan></text>
+           id="tspan546">-9</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text21-7-5-9-9-5-4-9-9-8-2-1"
@@ -14864,11 +14870,11 @@
        transform="translate(-670.987,7.0339536)"><tspan
          x="691.42188"
          y="74.544922"
-         id="tspan1127"><tspan
+         id="tspan550"><tspan
            style="font-stretch:condensed;-inkscape-font-specification:'Bahnschrift Bold Condensed'"
-           id="tspan1125">10</tspan><tspan
+           id="tspan548">10</tspan><tspan
            style="font-stretch:condensed;font-size:24px;-inkscape-font-specification:'Bahnschrift Bold Condensed';baseline-shift:super"
-           id="tspan1126">-10</tspan></tspan></text>
+           id="tspan549">-10</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text21-7-9-0-4"
@@ -14876,7 +14882,7 @@
        transform="translate(42.578658,2.4132136)"><tspan
          x="691.42188"
          y="74.544922"
-         id="tspan1128">T</tspan></text>
+         id="tspan551">T</tspan></text>
     <text
        xml:space="preserve"
        id="text21-7-9-6-3-5"
@@ -14884,7 +14890,7 @@
        transform="translate(63.156788,-15.203976)"><tspan
          x="691.42188"
          y="74.544922"
-         id="tspan1129">O</tspan></text>
+         id="tspan552">O</tspan></text>
     <text
        xml:space="preserve"
        id="text23-56-7"
@@ -14894,31 +14900,31 @@
        y="0"><tspan
          x="220.61719"
          y="203.94847"
-         id="tspan1142"><tspan
+         id="tspan565"><tspan
            style="font-weight:bold;font-stretch:semi-condensed;font-size:133.333px;-inkscape-font-specification:'Bahnschrift Bold Semi-Condensed';fill:#cc99ff"
-           id="tspan1130">+</tspan><tspan
+           id="tspan553">+</tspan><tspan
            style="font-weight:bold;font-stretch:semi-condensed;font-size:133.333px;-inkscape-font-specification:'Bahnschrift Bold Semi-Condensed';fill:#bf80ff"
-           id="tspan1131">8</tspan><tspan
+           id="tspan554">8</tspan><tspan
            style="font-weight:bold;font-stretch:semi-condensed;font-size:133.333px;-inkscape-font-specification:'Bahnschrift Bold Semi-Condensed';fill:#a64cff"
-           id="tspan1132">8</tspan><tspan
+           id="tspan555">8</tspan><tspan
            style="font-weight:bold;font-stretch:semi-condensed;font-size:133.333px;-inkscape-font-specification:'Bahnschrift Bold Semi-Condensed';fill:#9933ff"
-           id="tspan1133">8</tspan><tspan
+           id="tspan556">8</tspan><tspan
            style="font-weight:bold;font-stretch:semi-condensed;font-size:133.333px;-inkscape-font-specification:'Bahnschrift Bold Semi-Condensed';fill:#8c1aff"
-           id="tspan1134">.</tspan><tspan
+           id="tspan557">.</tspan><tspan
            style="font-weight:bold;font-stretch:semi-condensed;font-size:133.333px;-inkscape-font-specification:'Bahnschrift Bold Semi-Condensed';fill:#8000ff"
-           id="tspan1135">8</tspan><tspan
+           id="tspan558">8</tspan><tspan
            style="font-weight:bold;font-stretch:semi-condensed;font-size:133.333px;-inkscape-font-specification:'Bahnschrift Bold Semi-Condensed';fill:#7300e5"
-           id="tspan1136">8</tspan><tspan
+           id="tspan559">8</tspan><tspan
            style="font-weight:bold;font-stretch:semi-condensed;font-size:133.333px;-inkscape-font-specification:'Bahnschrift Bold Semi-Condensed';fill:#6600cc"
-           id="tspan1137">8</tspan><tspan
+           id="tspan560">8</tspan><tspan
            style="font-weight:bold;font-stretch:semi-condensed;font-size:133.333px;-inkscape-font-specification:'Bahnschrift Bold Semi-Condensed';fill:#e27f1d"
-           id="tspan1138"> </tspan><tspan
+           id="tspan561"> </tspan><tspan
            style="font-weight:bold;font-stretch:condensed;font-size:106.667px;-inkscape-font-specification:'Bahnschrift Bold Condensed';fill:#cc99ff"
-           id="tspan1139">μ</tspan><tspan
+           id="tspan562">μ</tspan><tspan
            style="font-weight:bold;font-stretch:condensed;font-size:106.667px;-inkscape-font-specification:'Bahnschrift Bold Condensed';fill:#cc99ff"
-           id="tspan1140">A</tspan><tspan
+           id="tspan563">A</tspan><tspan
            style="fill:#00b279"
-           id="tspan1141"> </tspan></tspan></text>
+           id="tspan564"> </tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text23-2-6-7"
@@ -14928,9 +14934,9 @@
        y="0"><tspan
          x="220.61719"
          y="197.67773"
-         id="tspan1144"><tspan
+         id="tspan567"><tspan
    style="font-size:42.6667px;fill:#cc99ff"
-   id="tspan1143">LE</tspan> </tspan></text>
+   id="tspan566">LE</tspan> </tspan></text>
     <text
        xml:space="preserve"
        id="text23-2-25-6-6"
@@ -14940,9 +14946,9 @@
        y="0"><tspan
          x="220.61719"
          y="197.67773"
-         id="tspan1146"><tspan
+         id="tspan569"><tspan
    style="font-size:42.6667px;fill:#331a4d"
-   id="tspan1145">OBJ</tspan> </tspan></text>
+   id="tspan568">OBJ</tspan> </tspan></text>
     <text
        xml:space="preserve"
        id="text23-2-0-4-7-1"
@@ -14952,9 +14958,9 @@
        y="0"><tspan
          x="220.61719"
          y="197.67773"
-         id="tspan1148"><tspan
+         id="tspan571"><tspan
    style="font-size:42.6667px;fill:#331a4d"
-   id="tspan1147">HE</tspan> </tspan></text>
+   id="tspan570">HE</tspan> </tspan></text>
     <text
        xml:space="preserve"
        id="text23-2-25-0-2-6-5"
@@ -14964,9 +14970,9 @@
        y="0"><tspan
          x="220.61719"
          y="197.67773"
-         id="tspan1150"><tspan
+         id="tspan573"><tspan
    style="font-size:42.6667px;fill:#331a4d"
-   id="tspan1149">IMG</tspan> </tspan></text>
+   id="tspan572">IMG</tspan> </tspan></text>
     <text
        xml:space="preserve"
        id="text23-5-7-7"
@@ -14976,9 +14982,9 @@
        y="0"><tspan
          x="220.61719"
          y="202.38086"
-         id="tspan1152"><tspan
+         id="tspan575"><tspan
    style="font-weight:bold;font-stretch:condensed;font-size:128px;-inkscape-font-specification:'Bahnschrift Bold Condensed';fill:#cc99ff"
-   id="tspan1151">CUP</tspan> </tspan></text>
+   id="tspan574">CUP</tspan> </tspan></text>
     <rect
        style="display:inline;fill:#6700cc;fill-opacity:1;stroke:none;stroke-width:4.8158;stroke-dasharray:none;stroke-opacity:1"
        id="rect104-2"

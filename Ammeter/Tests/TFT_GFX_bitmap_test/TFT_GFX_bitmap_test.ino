@@ -189,6 +189,7 @@ const uint16_t base[] PROGMEM{
 // Current text:
 // Size: 180.7x96.6
 // Location: 236, 150
+
 // OD cup:
 // Size: 14x14
 // Location: 451, 307
@@ -224,6 +225,9 @@ const int rangeYLocation = 3;
 
 const int currTxtXLocation = 40;
 const int currTxtYLocation = 44;
+
+const int cupSymbolWidth = 2;
+const int cupSymbolHeight = 4;
 
 const uint16_t odTxt[] PROGMEM{
   0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0943, 0x240c, 0x240c, 0x240c, 0x242c, 0x240c, 0x240c, 0x240c, 0x242c, 0x23eb, 0x0903, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
@@ -363,6 +367,49 @@ const uint16_t* const cupTxtBitmaps[] = {
   imgTxt
 };
 
+///////////////////////////////////////////////////
+const uint16_t Cup_On[] PROGMEM  = {
+  0x2f75, 0x37b6, 
+  0x37f7, 0x37f7, 
+  0x37f7, 0x37f7, 
+  0x2f75, 0x37b6
+};
+
+const uint16_t Cup_Off[] PROGMEM  = {
+  0x02e7, 0x0308, 
+  0x0102, 0x00c2, 
+  0x00c2, 0x00a1, 
+  0x02e7, 0x0308
+};
+
+const int odSymbolX = 72;
+const int leSymbolX = 64;
+const int heSymbolX = 43;
+const int objSymbolX = 39;
+const int imgSymbolX = 32;
+
+const int cupSymbolXLocations[] = {
+  odSymbolX,
+  leSymbolX,
+  heSymbolX,
+  objSymbolX,
+  imgSymbolX
+};
+
+const int odSymbolY = 82;
+const int leSymbolY = 82;
+const int heSymbolY = 82;
+const int objSymbolY = 82;
+const int imgSymbolY = 96;
+
+const int cupSymbolYLocations[] = {
+  odSymbolY,
+  leSymbolY,
+  heSymbolY,
+  objSymbolY,
+  imgSymbolY
+};
+///////////////////////////////////////////////////////////
 
 const uint16_t meter0[] PROGMEM{
   0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
@@ -1790,6 +1837,7 @@ void handleInputSelection() {
   unsigned long now = millis();
   if (lastCupButtonState == HIGH && buttonState == LOW && (now - lastCupPressTime) >= debounceDelay) {
     drawCupText(cupEnum);
+    drawCupSymbol(cupEnum);
     cupEnum = (cupEnum + 1) % NUM_CUPS;  // wrap
     lastCupPressTime = now;              // record time of valid press
   }
@@ -1825,7 +1873,16 @@ void handleRangeSelection() {
 
 void drawCupText(int cupNum) {
   tft.drawRGBBitmap(inpTxtXLocation, inpTxtYLocation, cupTxtBitmaps[cupNum], inpTxtWidth, inpTxtHeight);
-  // Add in cup symbol sprite draw logic 
+  // Add in cup symbol sprite draw logic
+}
+
+void drawCupSymbol(int cupNum) {
+  int i = 0;
+  while (i <= NUM_CUPS) {
+    tft.drawRGBBitmap(cupSymbolXLocations[i], cupSymbolYLocations[i], Cup_Off, cupSymbolWidth, cupSymbolHeight);
+    i++;
+  }
+  tft.drawRGBBitmap(cupSymbolXLocations[cupNum], cupSymbolYLocations[cupNum], Cup_On, cupSymbolWidth, cupSymbolHeight);
 }
 
 void drawMeterValue(int meterNum) {
@@ -1839,9 +1896,9 @@ void drawRangeSelection(int rangeNum) {
 
 void drawCurrentText(float current) {
   unsigned long now = millis();
-  if (now - lastTextUpdate >= textDelay) {  // Needs work, seems to lock up display sometimes
-    tft.setCursor(currTxtXLocation, currTxtYLocation);    // x, y position
-    tft.setTextColor(0x67f9, 0x0000);                     // text, background
+  if (now - lastTextUpdate >= textDelay) {              // Needs work, seems to lock up display sometimes
+    tft.setCursor(currTxtXLocation, currTxtYLocation);  // x, y position
+    tft.setTextColor(0x67f9, 0x0000);                   // text, background
     tft.setTextSize(2);
     tft.print(current, 2);
     lastTextUpdate = now;
@@ -1858,7 +1915,7 @@ void readInputSelection() {
   }
   */
 }
-void setInput(inputSelection) {
+void setInput() {   // int setInput(inputSelection) {
   delay(2);
   /*
   // setting the input involves displaying the associated cup text and cup symbol sprite
@@ -1866,7 +1923,7 @@ void setInput(inputSelection) {
 }
 
 
-void readRangeSelection(){
+void readRangeSelection() {
   delay(2);
   // function to read momentary button presses to cycle the range up and down
   // then sends range to setRange()
