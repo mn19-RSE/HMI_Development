@@ -14,4 +14,16 @@ The goal of this project is to create a small wearble device with a display.
 - IMU for gestures
 - ESP32 microcontroller
     - ESP32-S3-WROOM-1-N16R8
-    - Exposed I2C port for scanner functioanlity
+        - SPI pins for OLED
+        - | Pin Name | SPI Function | 
+          |----------|--------------|
+          | IO10     | Default CS   |
+          | IO11     | MOSI         |
+          | IO12     | SCK          |
+          | IO13     | MISO         |
+    - Exposed I2C port for scanner functionality
+        - | Pin Name | I2C Function | 
+          |----------|--------------|
+          | IO8      | SCL          |
+          | IO9      | SDA          |
+    
