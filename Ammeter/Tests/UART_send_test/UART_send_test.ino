@@ -11,13 +11,15 @@ This code serves as the seed for the implemented version of the ammeter P1AM-200
 
 
 const int maxRaw = 4095;
+const int displayMCUReady = 2;
 void setup() {
   Serial.begin(115200);      // USB debug
   Serial1.begin(500000);     // UART0
   analogReadResolution(12);  // 0–4095
-  pinMode(26, OUTPUT);
-  digitalWrite(26, HIGH);
-  pinMode(27, INPUT);
+  pinMode(26, OUTPUT);  // for pot
+  digitalWrite(26, HIGH); // for pot
+  pinMode(displayMCUReady, INPUT);  // from diaplay MCU 
+  pinMode(27, INPUT);  // analog read pin
 }
 
 
