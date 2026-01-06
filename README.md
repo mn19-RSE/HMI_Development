@@ -9,7 +9,7 @@ This repo is a collection of files used to learn and develop graphical HMIs, das
 3. ~~Convert .PNG to .BMP with specific pixel width and height~~
 4. Convert ~~.BMP~~ .PNG to C array 
     - Specify pixel width and height
-    - Select 16-bit RRRRRGGGGGBBBBB (2byte/pixel)
+    - Select 16-bit RRRRRGGGGGGBBBBB (2byte/pixel)
 5. Copy C array to HMI controller software
 
 ## Prototypes:
