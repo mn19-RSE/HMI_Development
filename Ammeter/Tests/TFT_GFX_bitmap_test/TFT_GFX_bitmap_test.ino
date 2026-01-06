@@ -2255,7 +2255,7 @@ void setup() {
   delay(1000);
   tft.drawRGBBitmap(0, 0, base, 128, 128);
   pinMode(analogMCUEnable, OUTPUT);
-  digitalWrite(analogMCUEnable, HIGH)
+  digitalWrite(analogMCUEnable, HIGH);
 }
 
 
