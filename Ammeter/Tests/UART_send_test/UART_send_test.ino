@@ -22,10 +22,12 @@ void setup() {
 
 
 void loop() {
-  uint16_t adcValue = analogRead(27);
-  Serial1.write(0xA5);             // sync
-  Serial1.write(adcValue & 0xFF);  // LSB
-  Serial1.write(adcValue >> 8);    // MSB
-  Serial.println(adcValue);
-  delay(20);
+  while (digitalRead(displayMCUReady) == HIGH) {
+    uint16_t adcValue = analogRead(27);
+    Serial1.write(0xA5);             // sync
+    Serial1.write(adcValue & 0xFF);  // LSB
+    Serial1.write(adcValue >> 8);    // MSB
+    Serial.println(adcValue);
+    delay(20);
+  }
 }

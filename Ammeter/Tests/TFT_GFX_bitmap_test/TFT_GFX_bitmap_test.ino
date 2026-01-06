@@ -2242,6 +2242,8 @@ const uint16_t* const rangeBitmaps[] = {
 };
 
 
+const int analogMCUEnable = 99;
+
 void setup() {
   Serial.begin(115200);   // USB debug
   Serial1.begin(500000);  // UART0
@@ -2252,6 +2254,7 @@ void setup() {
   tft.fillScreen(0xf81f);  // 0xf81f = 255, 0, 255 (magenta)
   delay(1000);
   tft.drawRGBBitmap(0, 0, base, 128, 128);
+  digitalWrite(analogMCUEnable, HIGH)
 }
 
 
