@@ -792,6 +792,9 @@ const uint16_t base[] PROGMEM{
 
 /*
 // Sprite locations and sizes
+// Logo Flash:
+// Size: 500x400
+// Location: 150, 40
 // Cup selection text:
 // Size: 240x90
 // Location: 370, 360
