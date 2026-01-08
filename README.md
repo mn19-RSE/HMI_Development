@@ -35,6 +35,7 @@ This repo is a collection of files used to learn and develop graphical HMIs, das
 
 ### Hardware:
 - [Adafruit RA8875 40-Pin TFT Driver](https://www.adafruit.com/product/1590)
+    - Features hardware-accelerated shapes such as lines, rectangles, triangles, ellipses, built in and round-rects. There is also a built in English/European font set (see the [datasheet section 7-4-1](Ammeter/RA8875_Datasheet.pdf) for the font table) This makes it possible to draw fast even over SPI.
 - [Adafruit 1.44" TFT LCD](https://www.adafruit.com/product/2088)
 - [Waveshare ESP32-P4-Nano Board WIKI](https://www.waveshare.com/wiki/ESP32-P4-Nano-StartPage#Run_the_First_Arduino_Demo)
     - ESP32-P4 board with MIPI DSI and CSI, also has onboard RJ45 ethernet
