@@ -14,6 +14,7 @@ This repo is a collection of files used to learn and develop graphical HMIs, das
 
 ## Prototypes:
 ### <img src="Ammeter/mini-tft_demo.jpeg" alt="Mini-TFT Ammeter HMI Steup" width= 50%>
+### <img src="Ammeter/large-tft_demo.png" alt="Large TFT Ammeter HMI Setup" width= 50%>
 
 ## Links:
 ### Software:
