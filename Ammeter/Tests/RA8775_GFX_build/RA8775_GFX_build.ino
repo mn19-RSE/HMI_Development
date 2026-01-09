@@ -6414,6 +6414,7 @@ void setup() {
   tft.GPIOX(true);                               // Enable TFT - display enable tied to GPIOX
   tft.PWM1config(true, RA8875_PWM_CLK_DIV1024);  // PWM output for backlight
   tft.PWM1out(255);
+  tft.setRotation(2); // void setRotation(int8_t rotation); // The rotation parameter can be 0, 1, 2 or 
   tft.drawRGBBitmap(150, 40, logoFlash, 500, 400);
   delay(3000);
   tft.fillScreen(0x0000);  // Black fill to create gap between logo and base
