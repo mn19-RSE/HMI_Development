@@ -12,7 +12,7 @@ To summarize the current options for HMI development hardware are:
     - Up to 640x480  
     - Only Python support
 - Any powerful MCU using a SPI display controller (RA8775)
-    - Current development logged in [Ammeter](/Ammeter/)
+    - Current development logged in [Ammeter](/Ammeter/README.md)
     - Up to 800x480 7.0" TFT LCD
 - RP2040 PicoVison
     - Twin RP2040 
