@@ -3,6 +3,24 @@
 ## Purpose:
 This repo is a collection of files used to learn and develop graphical HMIs, dashboards and other GUIs. This project started with the development of the faraday cup picoammeter for the CENPA VDG controls upgrade project. The general scope is to learn how to design and display interesting and informative graphics on displays using microcontrollers. The first iteration of an HMI uses a 40-pin TFT LCD display that can be driven by a RA8775 board (supplied by [Adafruit](https://www.adafruit.com/product/1590)) and controlled by a RP2350 based MCU. The graphics were designed with Inkscape, an open source vector graphics editor. In the future exploration to other microcontrollers is desirable. The ESP32-P4 has onboard MIPI DSI for driving larger displays. The Waveshare module has the potential to be a well-suited HMI controller.
 
+### Hardware for Evaluation
+To summarize the current options for HMI development hardware are:
+- ESP32-P4 using DSI output
+    - New -> less documented
+    - Larger 10-12" displays available
+- RP2350 using HSTX to HDMI adapter
+    - Up to 640x480  
+    - Only Python support
+- Any powerful MCU using a SPI display controller (RA8775)
+    - Current development logged in [Ammeter](/Ammeter/)
+    - Up to 800x480 7.0" TFT LCD
+- RP2040 PicoVison
+    - Twin RP2040 
+    - Runs Python 
+- Raspberry Pi
+    - Kiosk mode
+    - Python based 
+
 ## Development Steps:
 1. Design graphics in Inkscape with predetermined screen resolution
 2. Output background and sprites as individual .PNG
