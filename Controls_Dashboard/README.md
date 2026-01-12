@@ -1,4 +1,4 @@
-# Controls_Dahsboard
+# Controls Dashboard
 
 ## NOTE:
 This will heavily use and reference the [Database_Development](https://github.com/mn19-RSE/Database_Development) repo.
