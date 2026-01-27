@@ -2,16 +2,12 @@
 Created by: Mason Newman
 Date: January 2026
 
-Originally written for Raspberry Pi PICO 2W (RP2350)
+Originally written for Seeed Studio Xiao ESP32S3 Sense
 
-This sketch was written to test drawing graphics to the Adafruit 0.96" color OLED.
+This sketch was written to test displaying a camera feed on the Adafruit 0.96" color OLED.
 The OLED uses a SSD1331 driver board that receives data over SPI.
 The sketch will outline:
-    - How to draw a bitmap
-    - How to display text
-        - Maybe pulling live time data
-        - Display I2C scanner results
-    - Bar graph animation
+    - How to dipplay basic bitmap on ESP32
 ******************************************/
 
 
@@ -23,12 +19,17 @@ The sketch will outline:
 #define clear() fillScreen(0)  // not sure what this is yet
 
 // User customizable OLED pin mapping
+// Pi Pico 2W:
 // OC: GP15
 // RST: GP14
 // DC: GP13
-#define cs 15   // 6 on xiao esp32s3 sense
-#define rst 14  // 7 on xiao esp32s3 sense
-#define dc 13   // 5 on xiao esp32s3 sense
+// Xiao ESP32S3 (use GPIO numbers)
+// OC: D6, GPIO43
+// RST: D7, GPIO44
+// DC: D5, GPIO6
+#define cs 43   
+#define rst 44  
+#define dc 6   
 Adafruit_SSD1331 display = Adafruit_SSD1331(&SPI, cs, dc, rst);
 
 const uint16_t base[] PROGMEM{
