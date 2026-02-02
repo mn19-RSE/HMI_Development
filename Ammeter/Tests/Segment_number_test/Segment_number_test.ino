@@ -10,7 +10,6 @@ This is done since not all display driver libraries supoport text the same way.
 This will allow for uniform dynamic numeric text aplication accross many HMIs.
 The sketch will outline:
     - How to create and display numbers using hardware accelerated shapes
-    - How to manually rotate numbers on display
 ******************************************/
 
 
@@ -35,25 +34,35 @@ The sketch will outline:
 #define dc 6
 Adafruit_SSD1331 display = Adafruit_SSD1331(&SPI, cs, dc, rst);
 
+const int screenWidth = 96;
+const int screenHeight = 64;
+
 void setup() {
   Serial.begin(115200);
   display.begin();  // Default is 40Mhz
   display.setTextWrap(false);
-  display.setAddrWindow(0, 0, 96, 64);  // Setting screen size
+  display.setAddrWindow(0, 0, screenWidth, screenHeight);  // Setting screen size
   display.fillScreen(0xfafa);
   display.show();
   delay(1000);
   display.clear();
+  display.setRotation(2);
   Serial.println("display init done");
   delay(1000);
   display.clear();
 }
+
 int i = 0;
-const int maxNum = 999;
-const int countDelay = 10;
+const int maxNum = 199;
+const int countDelay = 50;
 int direction = 1;
+const int longEdge = 14;
+const int shortEdge = 6;
+const int digitSpacing = longEdge + shortEdge;
+const int radius = shortEdge / 2;
+
 void loop() {
-  drawInt3Digits(i, 60, 6, 0x300d);
+  drawInt3Digits(i, screenWidth - shortEdge - longEdge, shortEdge, 0x320d);
   i += direction;
 
   if (i >= maxNum) {
@@ -61,20 +70,35 @@ void loop() {
     direction = -1;
   }
 
-  if (i <= 0) {
-    i = 0;
+  if (i <= -maxNum) {
+    i = -maxNum;
     direction = 1;
   }
   delay(countDelay);
 }
 
-const int radius = 6;
-const int longEdge = 20;
-const int shortEdge = 5;
-const int digitSpacing = longEdge + shortEdge;
 
 void drawInt3Digits(int value, int baseX, int baseY, uint16_t color) {
-  display.fillRect(baseX - (2 * digitSpacing), baseY, (longEdge * 3) + (shortEdge * 2), longEdge * 2, 0x0000);  //clear digit area
+  display.fillRect(baseX - (2 * digitSpacing) - (shortEdge * 2), baseY, (longEdge * 3) + (shortEdge * 3), (longEdge * 2) - shortEdge, 0x0000);  //clear digit area
+  display.fillRoundRect(baseX - longEdge - (shortEdge * 3), baseY + (longEdge * 2) - (shortEdge * 2), shortEdge, shortEdge, radius, color);                  // draw decimal point
+  int minusX = baseX - (digitSpacing * 3) - (shortEdge * 2);
+  int minusW = longEdge;
+
+  int minusY = baseY + longEdge - shortEdge;
+  int minusH = shortEdge;
+
+  int plusBarX = minusX + (minusW / 2) - (shortEdge / 2);
+  int plusBarY = baseY + (longEdge / 2) - (shortEdge / 2);
+  int plusBarH = longEdge;
+
+  if (value >= 0) {
+    display.fillRoundRect(plusBarX, plusBarY, shortEdge, plusBarH, radius, color);  // vertical bar (+)
+  } else {
+    display.fillRoundRect(plusBarX, plusBarY, shortEdge, plusBarH, radius, 0x0000);
+  }
+
+  display.fillRoundRect(minusX, minusY, minusW, minusH, radius, color);  // minus sign
+
   value = abs(value);
   value = constrain(value, 0, 999);
 
@@ -83,22 +107,21 @@ void drawInt3Digits(int value, int baseX, int baseY, uint16_t color) {
   int tens = (value / 10) % 10;
   int hundreds = (value / 100) % 10;
 
-  drawNumber(ones, baseX, baseY, color);
 
-  if (value >= 10) {
-    drawNumber(
-      tens,
-      baseX - digitSpacing,
-      baseY,
-      color);
+  drawNumber(ones, baseX, baseY, color);
+  if (value < 10) {
+    drawNumber(0, baseX - digitSpacing, baseY, color);
+    drawNumber(0, baseX - (digitSpacing * 2) - (shortEdge * 2), baseY, color);
+  }
+
+  if (value >= 10 && value < 100) {
+    drawNumber(tens, baseX - digitSpacing, baseY, color);
+    drawNumber(0, baseX - (digitSpacing * 2) - (shortEdge * 2), baseY, color);
   }
 
   if (value >= 100) {
-    drawNumber(
-      hundreds,
-      baseX - (2 * digitSpacing),
-      baseY,
-      color);
+    drawNumber(tens, baseX - digitSpacing, baseY, color);
+    drawNumber(hundreds, baseX - (digitSpacing * 2) - (shortEdge * 2), baseY, color);
   }
 }
 
