@@ -23,4 +23,3 @@ Use one ESP32 board as a bridge between the custom database to MCU API and the M
 - Radiation levels
 - Main cooling water loop temps
 - Simplified vacuum status
-- 
