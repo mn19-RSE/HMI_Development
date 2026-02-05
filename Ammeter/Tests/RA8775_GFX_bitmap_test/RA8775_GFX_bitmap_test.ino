@@ -2,9 +2,9 @@
 #include "Adafruit_GFX.h"
 #include "Adafruit_RA8875.h"
 
-#define RA8875_INT 6
-#define RA8875_CS 10
-#define RA8875_RESET 11
+#define RA8875_INT 7
+#define RA8875_CS 9
+#define RA8875_RESET 8
 
 Adafruit_RA8875 tft = Adafruit_RA8875(RA8875_CS, RA8875_RESET);
 
@@ -899,12 +899,19 @@ const uint16_t background[] PROGMEM{
 
 void setup() {
   Serial.begin(115200);
+  delay(500);
+  Serial.println("starting up");
   tft.begin(RA8875_800x480);  // Initialize the display using 'RA8875_480x80' or 'RA8875_800x480'
+  Serial.println("started");
   tft.displayOn(true);
+  Serial.println("display on");
   tft.GPIOX(true);                               // Enable TFT - display enable tied to GPIOX
+  Serial.println("enabled");
   tft.PWM1config(true, RA8875_PWM_CLK_DIV1024);  // PWM output for backlight
   tft.PWM1out(255);
+  Serial.println("pwm on");
   tft.fillScreen(RA8875_BLACK);
+  Serial.println("screen clear");
   tft.drawRGBBitmap(150, 40, logoFlash, 500, 400);
   delay(3000);
   tft.drawRGBBitmap(0, 0, background, 800, 480);

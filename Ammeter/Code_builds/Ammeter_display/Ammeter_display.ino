@@ -11,17 +11,15 @@ Dynamic elements like the bar graophs and numeric display were created using har
 All f the elements were designed for speed and clarity. 
 This MCU only recieves data from the Ammeter_analog MCU and displays it. 
 This reduces overhead and keeps things fast.
-
 ******************************************/
 
 #include <Adafruit_GFX.h>  // Core graphics library
 #include <Adafruit_RA8875.h>
 #include <SPI.h>
 
-// For RA8875 TFT driver use:
-#define RA8875_INT 6
-#define RA8875_CS 10
-#define RA8875_RESET 11
+#define RA8875_INT 7
+#define RA8875_CS 9
+#define RA8875_RESET 8
 
 Adafruit_RA8875 tft = Adafruit_RA8875(RA8875_CS, RA8875_RESET);
 
@@ -1250,35 +1248,16 @@ const int indicatorHeight = 10;
 const int xSpacing = 3; // originally 2
 /////////////////////////////////////
 const int analogMCUEnable = 5;
-const int rangeUpButton = 24;
-const int rangeDownButton = 6;
-const int cupButton = 25;
-void setup() {
-  Serial.begin(115200);   // USB debug
-  Serial1.begin(500000);  // UART0
-  pinMode(rangeUpButton, INPUT_PULLUP);
-  pinMode(rangeDownButton, INPUT_PULLUP);
-  pinMode(cupButton, INPUT_PULLUP);
-  pinMode(analogMCUEnable, OUTPUT);
-  digitalWrite(analogMCUEnable, LOW);
-  tft.begin(RA8875_800x480);  // Initialize the display using 'RA8875_480x80' or 'RA8875_800x480'
-  tft.displayOn(true);
-  tft.GPIOX(true);                               // Enable TFT - display enable tied to GPIOX
-  tft.PWM1config(true, RA8875_PWM_CLK_DIV1024);  // PWM output for backlight
-  tft.PWM1out(255);
-  tft.setRotation(2); // void setRotation(int8_t rotation); // The rotation parameter can be 0, 1, 2 or 
-  tft.drawRGBBitmap(338, 190, logoFlash, 125, 100);  // Location: 338, 190 // Size: 125x100 
-  tft.drawRGBBitmap(460, 440, logoSignature, 330, 18);  // Size: 330x18 // Location: 460, 440
-  ////////////////////////////////////////
-  delay(5000);
-  tft.graphicsMode();
-  tft.fillScreen(0x0000);  // Black fill to create gap between logo and base
-  delay(500);
-  tft.drawRGBBitmap(0, 0, background, screenWidth, screenHeight);
-  digitalWrite(analogMCUEnable, HIGH);
-}
-
-
+const int rangeUpButton = 26;
+const int rangeDownButton = 27;
+const int leastBit = 2;
+const int middleBit = 3;
+const int mostBit  = 4; 
+//////////////////////////
+const int8_t inputSelection[] = {10, 11, 12, 13, 14, 15, 20, 21, 22, 28};
+const int NUM_INPUTS = sizeof(inputSelection) / sizeof(inputSelection[0]);
+int activeCup = -1;
+//////////////////////////
 int cupEnum = 0;
 int rangeEnum = 0;
 int meterEnum = 0;
@@ -1297,20 +1276,13 @@ const unsigned long debounceDelay = 250;
 const unsigned long meterDelay = 20;
 const unsigned long digitDelay = 0;
 const int METER_STEPS = 100; // works @ 100
-const int METER_MAX = 100;
 const int NUM_CUPS = sizeof(cupTxtBitmaps) / sizeof(cupTxtBitmaps[0]);
-// const int NUM_RANGES = sizeof(rangeBitmaps) / sizeof(rangeBitmaps[0]);
-uint8_t rangeIdx = 0;          // 0..8 (current selection)
-const int NUM_RANGES = 9;
-const int AUTO_INDEX = 8;
-
+uint8_t rangeIdx = 8;          // start with 8 set in index = auto mode
 uint16_t RANGE_BG_COLOR = 0x0000;
 uint16_t RANGE_SEL_COLOR = 0xc819;
-
-const int8_t rangeValues[NUM_RANGES] = {-10, -9, -8, -7, -6, -5, -4, -3, 0};
+const int8_t rangeValues[] = {-10, -9, -8, -7, -6, -5, -4, -3, 0};
+const int NUM_RANGES = sizeof(rangeValues) / sizeof(rangeValues[0]);
 ////////////////////////////////////////////////
-// const int maxNum = 999;
-// const int countDelay = 50;
 int direction = 1;
 const int longEdge = 48;
 const int shortEdge = 14;
@@ -1320,29 +1292,56 @@ int lastOnes = -1;
 int lastTens = -1;
 int lastHundreds = -1;
 int lastSign = 0;   // +1 or -1
-
 /////////////////////////////////////////////////
 uint16_t meterFillColor = 0x37f7;
 const uint16_t meterBGColor = 0x0000;
 int lastMeterValue = -1;  // force first draw
 ////////////////////////////////////////////
-enum RxState { WAIT_SYNC,
-               READ_LSB,
-               READ_MSB };
+enum RxState {WAIT_SYNC, READ_LSB, READ_MSB};
 RxState rxState = WAIT_SYNC;
 uint8_t lsb;
 uint16_t latestADCValue = 0;
 float analogVoltage;
 
+void setup() {
+  Serial.begin(115200);   // USB debug
+  Serial1.begin(500000);  // UART0
+  for (int cupPins = 0; cupPins < NUM_CUPS; cupPins++) {
+    pinMode(inputSelection[cupPins], INPUT_PULLUP);
+  }
+  pinMode(rangeUpButton, INPUT_PULLUP);
+  pinMode(rangeDownButton, INPUT_PULLUP);
+  pinMode(analogMCUEnable, OUTPUT);
+  digitalWrite(analogMCUEnable, LOW);
+  tft.begin(RA8875_800x480);  // Initialize the display using 'RA8875_480x80' or 'RA8875_800x480'
+  tft.displayOn(true);
+  tft.GPIOX(true);                               // Enable TFT - display enable tied to GPIOX
+  tft.PWM1config(true, RA8875_PWM_CLK_DIV1024);  // PWM output for backlight
+  tft.PWM1out(255);
+  tft.setRotation(2); // void setRotation(int8_t rotation); // The rotation parameter can be 0, 1, 2 or 
+  tft.drawRGBBitmap(338, 190, logoFlash, 125, 100);  // Location: 338, 190 // Size: 125x100 
+  tft.drawRGBBitmap(460, 440, logoSignature, 330, 18);  // Size: 330x18 // Location: 460, 440
+  ////////////////////////////////////////
+  delay(5000);
+  tft.graphicsMode();
+  tft.fillScreen(0x0000);  // Black fill to create gap between logo and base
+  delay(500);
+  tft.drawRGBBitmap(0, 0, background, screenWidth, screenHeight);
+  digitalWrite(analogMCUEnable, HIGH);
+  drawRangeSelection(rangeIdx);
+}
+
+
 void loop() {
-  analogVoltage = handleUARTReceive() * 1000.0f / 8192.0f; // May be 16-bit or 65536 in the future
+  analogVoltage = (handleUARTReceive() * 2000.0f / 8192.0f); // May be 16-bit or 65536 in the future
   int roundedVoltage = round(analogVoltage);
-  handleInputSelection();
+  readInputSelection();
   handleRangeSelectionUp();
   handleRangeSelectionDown();
   drawMeterValue(roundedVoltage / 10);
   drawInt3Digits(analogVoltage, screenWidth - shortEdge - (longEdge * 5), (screenHeight / 2) - (longEdge * 2), 0x67f9);
-  Serial.println(rangeValues[rangeIdx]);
+  Serial.println("Range is set to: " + String({rangeValues[rangeIdx]}));
+  Serial.println("Input is set to: " + String(activeCup));
 }
 
 float handleUARTReceive() {
@@ -1368,18 +1367,24 @@ float handleUARTReceive() {
   return latestADCValue;
 }
 
-void handleInputSelection() {
-  bool buttonState = digitalRead(cupButton);
+void readInputSelection() {
   unsigned long now = millis();
-  if (lastCupButtonState == HIGH && buttonState == LOW && (now - lastCupPressTime) >= debounceDelay) {
-    drawCupText(cupEnum);
-    drawCupSymbol(cupEnum);
-    cupEnum = (cupEnum + 1) % NUM_CUPS;  // wrap
-    lastCupPressTime = now;              // record time of valid press
+  if ((now - lastCupPressTime) >= debounceDelay) {
+    for (int cupPins = 0; cupPins < NUM_INPUTS; cupPins++) {
+      if (digitalRead(inputSelection[cupPins]) == LOW) {
+        activeCup = cupPins;
+        break;
+      }
+    }
+    if (activeCup <= NUM_CUPS) {
+      drawCupText(activeCup);
+      drawCupSymbol(activeCup);
+    } else {
+      Serial.println("cup out of range");
+    }
+    lastCupPressTime = now;
   }
-  lastCupButtonState = buttonState;
 }
-
 
 void handleRangeSelectionDown() {
   bool buttonState = digitalRead(rangeUpButton);
@@ -1439,39 +1444,6 @@ void drawRangeSelection(uint8_t idx) {
   tft.fillRect(leftXPos, leftYPos, NUM_RANGES * (indicatorWidth + xSpacing), indicatorHeight, RANGE_BG_COLOR);
   tft.fillRect(leftXPos + idx * (indicatorWidth + xSpacing), leftYPos, indicatorWidth, indicatorHeight, RANGE_SEL_COLOR);
 }
-
-
-
-
-
-void readInputSelection() {
-  delay(2);
-  /*
-  // function to read which pin is being pulled low by the rotary switch
-  for (input pin in array;input in array <= size of array;array value++) {
-    digitalRead(pin);
-  }
-  */
-}
-void setInput() {  // int setInput(inputSelection) {
-  delay(2);
-  /*
-  // setting the input involves displaying the associated cup text and cup symbol sprite
-  */
-}
-
-
-void readRangeSelection() {
-  delay(2);
-  // function to read momentary button presses to cycle the range up and down
-  // then sends range to setRange()
-}
-void setRange() {
-  delay(2);
-  // setting the range involves displaying the associated range bitmap
-  //  and setting the three current amp range selection inputs correctly
-}
-
 
 void drawInt3Digits(int value, int baseX, int baseY, uint16_t color) {
   unsigned long now = millis();

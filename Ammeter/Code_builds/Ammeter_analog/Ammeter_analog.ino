@@ -17,7 +17,7 @@ This will be the lightest code to keep it as fast as possible since the PLC has 
 // 13 = RX
 const int displayMCUReady = 13; // Using the unused RX pin seems to work
 void setup() {
-  Serial.begin(115200);   // USB debug
+  Serial.begin(115200);
   pinMode(displayMCUReady, INPUT);  // from diaplay MCU
   Serial1.begin(500000);  // UART0
   P1.init();
@@ -32,8 +32,8 @@ void loop() {
     Serial1.write(adcValue & 0xFF);  // LSB
     Serial1.write(adcValue >> 8);    // MSB
     Serial.println(adcValue);
-    delay(10);
-    // P1.writeAnalog(adcValue, 2, 1); // // Need to correct scaling to 0-10V
+    delay(100);
+    P1.writeAnalog(adcValue / 2, 1, 1); // Need to correct scaling to 0-10V
     // P1.writeAnalog(adcValue / 2, 2, 2); // Need to correct scaling to 0-5V
   }
   Serial.println("Waiting for Ready");
