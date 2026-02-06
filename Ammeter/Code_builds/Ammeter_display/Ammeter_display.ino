@@ -1261,17 +1261,17 @@ int activeCup = -1;
 int cupEnum = 0;
 int rangeEnum = 0;
 int meterEnum = 0;
-int meterDirection = 1;
-int autoMod = 0;
-int prevRangeNum = 0;
 int lastValue = 0;
+int lastActiveCup = 0;
 //////////////////////////////////////
-bool lastCupButtonState = HIGH;
-bool lastRangeButtonState = HIGH;
+bool lastRangeUpState = HIGH;
+bool lastRangeDownState = HIGH;
+unsigned long lastRangeUpTime = 0;
+unsigned long lastRangeDownTime = 0;
+
 unsigned long lastCupPressTime = 0;
-unsigned long lastRangePressTime = 0;
 unsigned long lastMoveTime = 0;
-unsigned long lastTextUpdate = 0;
+
 const unsigned long debounceDelay = 250;
 const unsigned long meterDelay = 20;
 const unsigned long digitDelay = 0;
@@ -1283,7 +1283,7 @@ uint16_t RANGE_SEL_COLOR = 0xc819;
 const int8_t rangeValues[] = {-10, -9, -8, -7, -6, -5, -4, -3, 0};
 const int NUM_RANGES = sizeof(rangeValues) / sizeof(rangeValues[0]);
 ////////////////////////////////////////////////
-int direction = 1;
+
 const int longEdge = 48;
 const int shortEdge = 14;
 const int digitSpacing = longEdge + shortEdge;
@@ -1291,7 +1291,7 @@ const int radius = shortEdge / 2;
 int lastOnes = -1;
 int lastTens = -1;
 int lastHundreds = -1;
-int lastSign = 0;   // +1 or -1
+
 /////////////////////////////////////////////////
 uint16_t meterFillColor = 0x37f7;
 const uint16_t meterBGColor = 0x0000;
@@ -1306,7 +1306,7 @@ float analogVoltage;
 void setup() {
   Serial.begin(115200);   // USB debug
   Serial1.begin(500000);  // UART0
-  for (int cupPins = 0; cupPins < NUM_CUPS; cupPins++) {
+  for (int cupPins = 0; cupPins < NUM_INPUTS; cupPins++) {
     pinMode(inputSelection[cupPins], INPUT_PULLUP);
   }
   pinMode(rangeUpButton, INPUT_PULLUP);
@@ -1370,15 +1370,16 @@ float handleUARTReceive() {
 void readInputSelection() {
   unsigned long now = millis();
   if ((now - lastCupPressTime) >= debounceDelay) {
-    for (int cupPins = 0; cupPins < NUM_INPUTS; cupPins++) {
+    for (int cupPins = 0; cupPins < NUM_INPUTS; cupPins++) { 
       if (digitalRead(inputSelection[cupPins]) == LOW) {
         activeCup = cupPins;
         break;
       }
     }
-    if (activeCup <= NUM_CUPS) {
+    if (activeCup >= 0 && activeCup < NUM_CUPS && activeCup != lastActiveCup) {
       drawCupText(activeCup);
       drawCupSymbol(activeCup);
+      lastActiveCup = activeCup;
     } else {
       Serial.println("cup out of range");
     }
@@ -1387,25 +1388,25 @@ void readInputSelection() {
 }
 
 void handleRangeSelectionDown() {
-  bool buttonState = digitalRead(rangeUpButton);
+  bool buttonState = digitalRead(rangeDownButton);
   unsigned long now = millis();
-  if (lastRangeButtonState == HIGH && buttonState == LOW && (now - lastRangePressTime) >= debounceDelay) {
-    lastRangePressTime = now;                  // record time of valid press
+  if (lastRangeDownState == HIGH && buttonState == LOW && (now - lastRangeDownTime) >= debounceDelay) {
+    lastRangeDownTime = now;                  // record time of valid press
     rangeIdx = (rangeIdx + NUM_RANGES - 1) % NUM_RANGES;
     drawRangeSelection(rangeIdx);
   }
-  lastRangeButtonState = buttonState;
+  lastRangeDownState = buttonState;
 }
 
 void handleRangeSelectionUp() {
-  bool buttonState = digitalRead(rangeDownButton);
+  bool buttonState = digitalRead(rangeUpButton);
   unsigned long now = millis();
-  if (lastRangeButtonState == HIGH && buttonState == LOW && (now - lastRangePressTime) >= debounceDelay) {
-    lastRangePressTime = now;                  // record time of valid press
+  if (lastRangeUpState == HIGH && buttonState == LOW && (now - lastRangeUpTime) >= debounceDelay) {
+    lastRangeUpTime = now;                  // record time of valid press
     rangeIdx = (rangeIdx + 1) % NUM_RANGES;
     drawRangeSelection(rangeIdx);
   }
-  lastRangeButtonState = buttonState;
+  lastRangeUpState = buttonState;
 }
 
 void drawCupText(int cupNum) {
@@ -1415,7 +1416,7 @@ void drawCupText(int cupNum) {
 
 void drawCupSymbol(int cupNum) {
   int i = 0;
-  while (i <= NUM_CUPS) {
+  while (i < NUM_CUPS) {
     tft.drawRGBBitmap(cupSymbolXLocations[i], cupSymbolYLocations[i], Cup_Off, cupSymbolWidth, cupSymbolHeight);
     i++;
   }
@@ -1503,8 +1504,6 @@ void drawInt3Digits(int value, int baseX, int baseY, uint16_t color) {
       drawNumber(hundreds, hundX, baseY, color);
       lastHundreds = hundreds;
     }
-
-    lastTextUpdate = now;
     lastValue = value;
   }
 }
