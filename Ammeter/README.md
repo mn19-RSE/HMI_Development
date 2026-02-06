@@ -13,9 +13,10 @@ This is part of an ongoing project ot modernize the VDG cup current meter. The n
 - Send analog read data from one MCU to display controller via UART
 - Create dynamic bar graph
 - Draw range selection identifier
-### To-Do:
 - Write dynamic text 
-- Display and change unit prefix
 - Associate bar graph height and color with actual data
 - Set range with identifier change
+### To-Do:
+- Display and change unit prefix
+
 
