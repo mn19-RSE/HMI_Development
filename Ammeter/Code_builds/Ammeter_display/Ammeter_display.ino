@@ -1324,7 +1324,7 @@ void setup() {
   delay(500);
   tft.drawRGBBitmap(0, 0, background, screenWidth, screenHeight);
   digitalWrite(analogMCUEnable, HIGH);
-  drawRangeSelection(rangeIdx);
+  drawRangeSelection(rangeIdx); // drawing default range selection
 }
 
 void loop() {
@@ -1429,10 +1429,10 @@ void drawMeterValue(int meterNum) {
   int oldFill = (lastMeterValue * meterHeight) / METER_STEPS;
 
   if (newFill > oldFill) {
-    tft.fillRect(meterXLocation, meterYLocation + meterHeight - newFill, meterWidth, newFill - oldFill, meterFillColor);  // Meter increasing → draw fill color at the bottom
+    tft.fillRect(meterXLocation, meterYLocation + meterHeight - newFill, meterWidth, newFill - oldFill, meterFillColor);  // Meter increasing, draw fill color at the bottom
   }
   else if (newFill < oldFill) {
-    tft.fillRect(meterXLocation, meterYLocation + meterHeight - oldFill, meterWidth, oldFill - newFill, 0x0000);  // Meter decreasing → draw black from the top of the removed section
+    tft.fillRect(meterXLocation, meterYLocation + meterHeight - oldFill, meterWidth, oldFill - newFill, 0x0000);  // Meter decreasing, draw black from the top of the removed section
   }
   lastMeterValue = meterNum;
 }
@@ -1445,7 +1445,7 @@ void drawRangeSelection(uint8_t idx) {
     tft.fillRect(leftXPos + 8 * (indicatorWidth + xSpacing), leftYPos, indicatorWidth + 35, indicatorHeight, RANGE_BG_COLOR);
   }
   if (idx == 8 && lastRange != 8) {
-    // draw extra bit to thr right of the rectangle under auto
+    // draw extra bit to the right of the rectangle under auto
     tft.fillRect(leftXPos + 8 * (indicatorWidth + xSpacing), leftYPos, indicatorWidth + 35, indicatorHeight, RANGE_SEL_COLOR);
   }
   lastRange = idx;
