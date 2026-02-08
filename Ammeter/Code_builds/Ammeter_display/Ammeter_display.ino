@@ -1471,18 +1471,20 @@ void readInputSelection() {
       }
       else {
         activeCup = -1;
-        // tft.drawRGBBitmap(inpTxtXLocation, inpTxtYLocation, noTxt, inpTxtWidth, inpTxtHeight);
-        // drawCupSymbol(activeCup);
       }
     }
-    if (activeCup >= 0 && activeCup < NUM_CUPS && activeCup != lastActiveCup) {
-      drawCupText(activeCup);
-      drawCupSymbol(activeCup);
-      lastActiveCup = activeCup;
-    } else {
-      Serial.println("cup out of range");
+
+    if (activeCup != lastActiveCup) {
+      if (activeCup >= 0 && activeCup < NUM_CUPS - 1) {
+        drawCupText(activeCup);
+        drawCupSymbol(activeCup);
+      } else if (lastActiveCup >= 0 && lastActiveCup < NUM_CUPS - 1) {
+        drawCupText(5); // Last cup text bitmap = no text = 5
+        tft.drawRGBBitmap(cupSymbolXLocations[lastActiveCup], cupSymbolYLocations[lastActiveCup], Cup_Off, cupSymbolWidth, cupSymbolHeight);
+      }
     }
     lastCupPressTime = now;
+    lastActiveCup = activeCup;
   }
 }
 
@@ -1515,7 +1517,7 @@ void drawCupText(int cupNum) {
 
 void drawCupSymbol(int cupNum) {
   int i = 0;
-  while (i < NUM_CUPS) {
+  while (i < NUM_CUPS - 1) {
     tft.drawRGBBitmap(cupSymbolXLocations[i], cupSymbolYLocations[i], Cup_Off, cupSymbolWidth, cupSymbolHeight);
     i++;
   }
@@ -1525,36 +1527,31 @@ void drawCupSymbol(int cupNum) {
 }
 
 void drawMeterValue(int meterNum) {
-  meterNum = constrain(meterNum, 0, METER_STEPS);
-  int newFill = (meterNum * meterHeight) / METER_STEPS;
-  int oldFill = (lastMeterValue * meterHeight) / METER_STEPS;
+  if (lastMeterValue != meterNum) {
+    meterNum = constrain(meterNum, 0, METER_STEPS);
+    int newFill = (meterNum * meterHeight) / METER_STEPS;
+    int oldFill = (lastMeterValue * meterHeight) / METER_STEPS;
 
-  if (newFill > oldFill) {
-    tft.fillRect(meterXLocation, meterYLocation + meterHeight - newFill, meterWidth, newFill - oldFill, meterFillColor);  // Meter increasing, draw fill color at the bottom
+    if (newFill > oldFill) {
+      tft.fillRect(meterXLocation, meterYLocation + meterHeight - newFill, meterWidth, newFill - oldFill, meterFillColor);  // Meter increasing, draw fill color at the bottom
+    }
+    else if (newFill < oldFill) {
+      tft.fillRect(meterXLocation, meterYLocation + meterHeight - oldFill, meterWidth, oldFill - newFill, 0x0000);  // Meter decreasing, draw black from the top of the removed section
+    }
+    lastMeterValue = meterNum;
   }
-  else if (newFill < oldFill) {
-    tft.fillRect(meterXLocation, meterYLocation + meterHeight - oldFill, meterWidth, oldFill - newFill, 0x0000);  // Meter decreasing, draw black from the top of the removed section
-  }
-  lastMeterValue = meterNum;
 }
 
 void drawRangeSelection(uint8_t idx) {
-  // tft.fillRect(leftXPos, leftYPos, NUM_RANGES * (indicatorWidth + xSpacing), indicatorHeight, RANGE_BG_COLOR);
-  // tft.fillRect(leftXPos + idx * (indicatorWidth + xSpacing), leftYPos, indicatorWidth, indicatorHeight, RANGE_SEL_COLOR);
-
   tft.fillTriangle(leftTriX + lastRange * (indicatorWidth + xSpacing), leftTriY, leftTriX + triWidth + lastRange * (indicatorWidth + xSpacing), leftTriY, leftTriX + lastRange * (indicatorWidth + xSpacing), leftTriY + triHeight, RANGE_BG_COLOR);
   tft.fillTriangle(leftTriX + idx * (indicatorWidth + xSpacing), leftTriY, leftTriX + triWidth + idx * (indicatorWidth + xSpacing), leftTriY, leftTriX + idx * (indicatorWidth + xSpacing), leftTriY + triHeight, RANGE_SEL_COLOR);
   
   if (idx != 8 && lastRange == 8) {
-    // cover extra bit of rectangle next to auto 
-    // tft.fillRect(leftXPos + 8 * (indicatorWidth + xSpacing), leftYPos, indicatorWidth + 35, indicatorHeight, RANGE_BG_COLOR);
     tft.fillTriangle(leftTriX + 8 * (indicatorWidth + xSpacing) + 54, leftTriY + 80, leftTriX + triWidth + 8 * (indicatorWidth + xSpacing) + 54, leftTriY + 80, leftTriX + triWidth + 8 * (indicatorWidth + xSpacing) + 54, leftTriY + 80 - triHeight, RANGE_BG_COLOR);
   } else {
     tft.fillTriangle(leftTriX + lastRange * (indicatorWidth + xSpacing) + 15, leftTriY + 80, leftTriX + triWidth + lastRange * (indicatorWidth + xSpacing) + 15, leftTriY + 80, leftTriX + triWidth + lastRange * (indicatorWidth + xSpacing) + 15, leftTriY + 80 - triHeight, RANGE_BG_COLOR);
   }
   if (idx == 8 && lastRange != 8) {
-    // draw extra bit to the right of the rectangle under auto
-    // tft.fillRect(leftXPos + 8 * (indicatorWidth + xSpacing), leftYPos, indicatorWidth + 35, indicatorHeight, RANGE_SEL_COLOR);
     tft.fillTriangle(leftTriX + 8 * (indicatorWidth + xSpacing) + 54, leftTriY + 80, leftTriX + triWidth + 8 * (indicatorWidth + xSpacing) + 54, leftTriY + 80, leftTriX + triWidth + 8 * (indicatorWidth + xSpacing) + 54, leftTriY + 80 - triHeight, RANGE_SEL_COLOR);
   } else {
     tft.fillTriangle(leftTriX + idx * (indicatorWidth + xSpacing) + 15, leftTriY + 80, leftTriX + triWidth + idx * (indicatorWidth + xSpacing) + 15, leftTriY + 80, leftTriX + triWidth + idx * (indicatorWidth + xSpacing) + 15, leftTriY + 80 - triHeight, RANGE_SEL_COLOR);
