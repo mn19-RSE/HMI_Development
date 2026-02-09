@@ -2,7 +2,8 @@
 Created by: Mason Newman
 Date: February 2026
 
-Originally written for WIZNET W5100S-EVB-PICO2 (RP2350)
+Originally written for WIZNET W5100S-EVB-PICO2 (RP2350).
+Later ported to Raspberry Pi Pico 2W due to SPI bus conflicts.
 
 This sketch was created to display dynamic sprites and text on custom HMI graphics.
 The display is a 5.0: 800x480 40-pin TFT driven by the Adafruit RA8875 driver board.
@@ -1643,6 +1644,9 @@ void setup() {
   }
   pinMode(rangeUpButton, INPUT_PULLUP);
   pinMode(rangeDownButton, INPUT_PULLUP);
+  pinMode(leastBit, OUTPUT);
+  pinMode(middleBit, OUTPUT);
+  pinMode(mostBit, OUTPUT);
   pinMode(analogMCUEnable, OUTPUT);
   digitalWrite(analogMCUEnable, LOW);
   tft.begin(RA8875_800x480);  // Initialize the display using 'RA8875_480x80' or 'RA8875_800x480'
