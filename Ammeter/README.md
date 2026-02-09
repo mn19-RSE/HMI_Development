@@ -17,8 +17,9 @@ This is part of an ongoing project ot modernize the VDG cup current meter. The n
 - Associate bar graph height and color with actual data
 - Set range with identifier change
 - Display and change unit prefix
-### To-Do:
 - Set digital outputs for each range selection
+
+### To-Do:
 - Create auto-ranging logic
 
 
