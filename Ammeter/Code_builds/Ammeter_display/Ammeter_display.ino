@@ -1668,7 +1668,7 @@ void setup() {
 }
 
 void loop() {
-  analogVoltage = (handleUARTReceive() * 2000.0f / 8192.0f); // May be 16-bit or 65536 in the future
+  analogVoltage = (handleUARTReceive() * 1000.0f / 8192.0f); // May be 16-bit or 65536 in the future
   int roundedVoltage = round(analogVoltage);
   readInputSelection();
   handleRangeSelectionUp();
@@ -1676,7 +1676,9 @@ void loop() {
   int32_t displayValue = handleRangeOutput(analogVoltage);
   int meterValue = constrain(roundedVoltage / 10, 0, METER_STEPS);
   drawMeterValue(meterValue);
-  drawInt3Digits(roundedVoltage / 10 /*displayValue / 1000*/, screenWidth - shortEdge - (longEdge * 5), (screenHeight / 2) - (longEdge * 2), 0x67f9); // temporary until 6-digit version
+  //drawInt3Digits(roundedVoltage / 10 /*displayValue / 1000*/, screenWidth - shortEdge - (longEdge * 6) , (screenHeight / 2) - (longEdge * 1.6), 0x67f9); // temporary until 6-digit version
+  drawInt6Digits(displayValue * 10, screenWidth - shortEdge - (longEdge * 4), (screenHeight / 2) - (longEdge * 1.6), 0x67f9);
+
   Serial.print("Range value is: ");
   Serial.print(rangeValues[rangeIdx]);
   Serial.print(" Range index is: ");
@@ -1776,7 +1778,6 @@ int32_t handleRangeOutput(float analogVoltage) {
     }
   }
 
-  // --- GPIO + prefix update ---
   if (effectiveRangeIdx != lastEffectiveRangeIdx) {
     digitalWrite(leastBit,  effectiveRangeIdx & 0x01);
     digitalWrite(middleBit, effectiveRangeIdx & 0x02);
@@ -1786,10 +1787,7 @@ int32_t handleRangeOutput(float analogVoltage) {
     lastEffectiveRangeIdx = effectiveRangeIdx;
   }
 
-  // --- Fast scaling ---
-  static const float rangeScale[] = {
-    1e-10, 1e-9, 1e-8, 1e-7, 1e-6, 1e-5, 1e-4, 1e-3
-  };
+  static const float rangeScale[] = { 1e-10, 1e-9, 1e-8, 1e-7, 1e-6, 1e-5, 1e-4, 1e-3 };
 
   float current = analogVoltage * rangeScale[effectiveRangeIdx] / 10.0f;
   return (int32_t)round(current * 1e6f);
@@ -1920,6 +1918,53 @@ void drawInt3Digits(int value, int baseX, int baseY, uint16_t color) {
     lastValue = value;
   }
 }
+
+void drawInt6Digits(int32_t value, int baseX, int baseY, uint16_t color) {
+  unsigned long now = millis();
+  if (now - lastMoveTime < digitDelay || value == lastValue) return;
+
+   tft.fillRoundRect(baseX - longEdge - (shortEdge * 3), baseY + (longEdge * 2) - (shortEdge * 2), shortEdge, shortEdge, radius, color); // draw decimal point
+
+  int minusX = baseX - (digitSpacing * 6) - (shortEdge * 2);
+  int minusY = baseY + longEdge - shortEdge;
+  int minusW = longEdge;
+  int minusH = shortEdge;
+
+  int plusBarX = minusX + (minusW / 2) - (shortEdge / 2);
+  int plusBarY = baseY + (longEdge / 2) - (shortEdge / 2);
+  int plusBarH = longEdge;
+
+  if (value >= 0) {
+    tft.fillRoundRect(plusBarX, plusBarY, shortEdge, plusBarH, radius, color);
+  } else {
+    tft.fillRoundRect(plusBarX, plusBarY, shortEdge, plusBarH, radius, 0x0000);
+  }
+
+  tft.fillRoundRect(minusX, minusY, minusW, minusH, radius, color);
+
+  value = abs(value);
+  value = constrain(value, 0, 999999);
+
+  int d0 = value % 10; value /= 10; // extract digits
+  int d1 = value % 10; value /= 10;
+  int d2 = value % 10; value /= 10;
+  int d3 = value % 10; value /= 10;
+  int d4 = value % 10; value /= 10;
+  int d5 = value % 10;
+
+  drawNumber(d0, baseX, baseY, color);
+  drawNumber(d1, baseX - digitSpacing, baseY, color);
+  drawNumber(d2, baseX - digitSpacing * 2, baseY, color);
+
+  drawNumber(d3, baseX - digitSpacing * 3 - shortEdge * 2, baseY, color);
+  drawNumber(d4, baseX - digitSpacing * 4 - shortEdge * 2, baseY, color);
+  drawNumber(d5, baseX - digitSpacing * 5 - shortEdge * 2, baseY, color);
+
+  lastValue = value;
+  lastMoveTime = now;
+}
+
+
 
 void drawNumber(int numberDraw, int numXLoc, int numYLoc, uint16_t numColor) {
   // 1 = b, c
