@@ -24,9 +24,9 @@ const int localPort = 8888;   // Local port to listen on
 const int remotePort = 1194;  // Remote port to send to
 const int csPin = 17;         // SPI cs pin on W5100s-EVB-PICO
 
-byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED }; // need to update based on IP directory
+byte mac[] = { 0x02, 0xDE, 0xAD, 0xBE, 0xEF, 0x02 }; 
 
-IPAddress ip(192, 168, 42, 35);        //controller IP // need to update based on IP directory
+IPAddress ip(192, 168, 42, 32);        // controller IP 
 IPAddress remoteIP(192, 168, 42, 15);  // PC's static IP
 
 EthernetUDP Udp;
