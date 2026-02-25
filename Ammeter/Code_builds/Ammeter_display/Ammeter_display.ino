@@ -2367,13 +2367,7 @@ void setup() {
   tft.graphicsMode();
   tft.fillScreen(0x0000);  // Black fill to create gap between logo and base
   delay(500);
-  // tft.drawRGBBitmap(0, 0, background, screenWidth, screenHeight);
-
-  tft.drawRGBBitmap(12, 12, backgroundRanges, 784, 105);
-  tft.drawRGBBitmap(5, 150, backgroundBar, 100, 320);
-  tft.drawRGBBitmap(716, 168, backgroundAmps, 52, 79);
-  tft.drawRGBBitmap(158, 278, backgroundCups, 615, 172);
-
+  tft.drawRGBBitmap(0, 0, background, screenWidth, screenHeight);
   digitalWrite(analogMCUEnable, HIGH);
   drawRangeSelection(rangeIdx); // drawing default range selection
 }
