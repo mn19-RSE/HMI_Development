@@ -72,7 +72,6 @@ void setup() {
   Ethernet.begin(mac, ip);  //Initializing ethernet controller buy setting mac address and static ip
   delay(1000);
   Serial.println("Ethernet initialized");
-
   Serial.print("IP address: ");
   Serial.println(Ethernet.localIP());  // Print the MCU's IP address.
   Serial.print("Subnet mask: ");
