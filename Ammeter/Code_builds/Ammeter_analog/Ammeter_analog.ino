@@ -16,25 +16,27 @@ This will be the lightest code to keep it as fast as possible since the PLC has 
 // 14 = TX
 // 13 = RX
 const int displayMCUReady = 13; // Using the unused RX pin seems to work
+const char P1_04AD_CONFIG[] = { 0x40, 0x00, 0x00, 0x00, 0x20, 0x00, 0x00, 0x00, 0x21, 0x03, 0x00, 0x00, 0x22, 0x03, 0x00, 0x00, 0x23, 0x03 };
 void setup() {
   Serial.begin(115200);
   pinMode(displayMCUReady, INPUT);  // from diaplay MCU
   Serial1.begin(500000);  // UART0
   P1.init();
+  P1.configureModule(P1_04AD_CONFIG, 1); // (config, slot)
 }
 
 
 void loop() {
   while (digitalRead(displayMCUReady) == HIGH) {
-    uint16_t adcValue = P1.readAnalog(1, 1); //slot 1 channel 2;
+    uint16_t adcValue = P1.readAnalog(1, 1); //(slot, channel);
     Serial.println(adcValue);
     Serial1.write(0xA5);             // sync
     Serial1.write(adcValue & 0xFF);  // LSB
     Serial1.write(adcValue >> 8);    // MSB
     Serial.println(adcValue);
     delay(100);
-    P1.writeAnalog(adcValue / 2, 1, 1); // Need to correct scaling to 0-10V
-    // P1.writeAnalog(adcValue / 2, 2, 2); // Need to correct scaling to 0-5V
+    // P1.writeAnalog(adcValue / 2, 2, 1); //(slot, channel); // Need to correct scaling to 0-10V
+    P1.writeAnalog(adcValue / 10, 2, 1); //(slot, channel); // Need to correct scaling to 0-5V
   }
   Serial.println("Waiting for Ready");
   delay(500);
