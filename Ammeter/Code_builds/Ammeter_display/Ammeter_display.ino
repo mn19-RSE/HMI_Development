@@ -1860,48 +1860,71 @@ float analogVoltage;
 void setup() {
   Serial.begin(115200);   // USB debug
   Serial1.begin(500000);  // UART0
+
   for (int cupPins = 0; cupPins < NUM_INPUTS; cupPins++) {
     pinMode(inputSelection[cupPins], INPUT_PULLUP);
   }
+
   pinMode(rangeUpButton, INPUT_PULLUP);
   pinMode(rangeDownButton, INPUT_PULLUP);
   pinMode(leastBit, OUTPUT);
   pinMode(middleBit, OUTPUT);
   pinMode(mostBit, OUTPUT);
   pinMode(analogMCUEnable, OUTPUT);
+
   digitalWrite(analogMCUEnable, LOW);
-  tft.begin(RA8875_800x480);  // Initialize the display using 'RA8875_480x80' or 'RA8875_800x480'
+
+  tft.begin(RA8875_800x480);
   tft.displayOn(true);
-  tft.GPIOX(true);                               // Enable TFT - display enable tied to GPIOX
-  tft.PWM1config(true, RA8875_PWM_CLK_DIV1024);  // PWM output for backlight
+  tft.GPIOX(true);
+  tft.PWM1config(true, RA8875_PWM_CLK_DIV1024);
   tft.PWM1out(255);
-  tft.setRotation(2); // void setRotation(int8_t rotation); // The rotation parameter can be 0, 1, 2 or 
-  tft.drawRGBBitmap(338, 190, logoFlash, 125, 100);  // Location: 338, 190 // Size: 125x100 
-  tft.drawRGBBitmap(460, 440, logoSignature, 330, 18);  // Size: 330x18 // Location: 460, 440
-  ////////////////////////////////////////
+
+  tft.setRotation(2);
+
+  tft.drawRGBBitmap(338, 190, logoFlash, 125, 100);
+  tft.drawRGBBitmap(460, 440, logoSignature, 330, 18);
+
   delay(2000);
+
   tft.graphicsMode();
-  tft.fillScreen(0x0000);  // Black fill to create gap between logo and base
+  tft.fillScreen(0x0000);
+
   delay(500);
+
   tft.drawRGBBitmap(12, 12, backgroundRanges, 784, 105);
   tft.drawRGBBitmap(5, 150, backgroundBar, 100, 320);
   tft.drawRGBBitmap(716, 168, backgroundAmps, 52, 79);
   tft.drawRGBBitmap(158, 278, backgroundCups, 615, 172);
+
   digitalWrite(analogMCUEnable, HIGH);
-  drawRangeSelection(rangeIdx); // drawing default range selection
+
+  drawRangeSelection(rangeIdx);
+
+  // draw decimal once
+  drawDecimalPoint(screenWidth - shortEdge - (longEdge * 4), (screenHeight / 2) - (longEdge * 1.6), 0x67f9);
 }
 
+
 void loop() {
-  analogVoltage = (handleUARTReceive() * 1000.0f / 8192.0f); // May be 16-bit or 65536 in the future
-  int roundedVoltage = round(analogVoltage);
+
+  // New bipolar scaling (-10V to +10V)
+  analogVoltage = ((float)handleUARTReceive() / 8192.0f) * 20.0f - 10.0f;
+
   readInputSelection();
   handleRangeSelectionUp();
   handleRangeSelectionDown();
+
   int32_t displayValue = handleRangeOutput(analogVoltage);
-  int meterValue = constrain(roundedVoltage / 10, 0, METER_STEPS);
+
+  // New meter scaling
+  int meterValue = constrain((abs(analogVoltage) / 10.0f) * METER_STEPS, 0, METER_STEPS);
   drawMeterValue(meterValue);
-  //drawInt3Digits(roundedVoltage / 10 /*displayValue / 1000*/, screenWidth - shortEdge - (longEdge * 6) , (screenHeight / 2) - (longEdge * 1.6), 0x67f9); // temporary until 6-digit version
-  drawInt6Digits(displayValue * 10, screenWidth - shortEdge - (longEdge * 4), (screenHeight / 2) - (longEdge * 1.6), 0x67f9);
+
+  drawInt6Digits(displayValue,
+    screenWidth - shortEdge - (longEdge * 4),
+    (screenHeight / 2) - (longEdge * 1.6),
+    0x67f9);
 
   Serial.print("Range value is: ");
   Serial.print(rangeValues[rangeIdx]);
@@ -1912,7 +1935,6 @@ void loop() {
 }
 
 float handleUARTReceive() {
-  // Non-blocking and self-aligning UART receive
   while (Serial1.available()) {
     uint8_t b = Serial1.read();
     switch (rxState) {
@@ -1981,18 +2003,14 @@ void handleRangeSelectionUp() {
   lastRangeUpState = buttonState;
 }
 
-int32_t handleRangeOutput(float analogVoltage) {
-  float absVoltage = fabs(analogVoltage);
+int32_t handleRangeOutput(float voltage) {
+  float absVoltage = fabs(voltage);
 
-  // --- Select effective range ---
+  // --- Range selection (unchanged) ---
   if (rangeIdx != 8) {
     effectiveRangeIdx = rangeIdx;
   } else {
-    if (effectiveRangeIdx < 0 || effectiveRangeIdx > 7) {
-      effectiveRangeIdx = 7;
-    }
-
-    const float fsVoltage = 2.0f;
+    const float fsVoltage = 10.0f;
 
     if (absVoltage > 0.9f * fsVoltage && effectiveRangeIdx < 7) {
       effectiveRangeIdx++;
@@ -2002,6 +2020,7 @@ int32_t handleRangeOutput(float analogVoltage) {
     }
   }
 
+  // --- Update HW ---
   if (effectiveRangeIdx != lastEffectiveRangeIdx) {
     digitalWrite(leastBit,  effectiveRangeIdx & 0x01);
     digitalWrite(middleBit, effectiveRangeIdx & 0x02);
@@ -2011,10 +2030,23 @@ int32_t handleRangeOutput(float analogVoltage) {
     lastEffectiveRangeIdx = effectiveRangeIdx;
   }
 
-  static const float rangeScale[] = { 1e-10, 1e-9, 1e-8, 1e-7, 1e-6, 1e-5, 1e-4, 1e-3 };
+  // get REAL current (based on highest range)
+  float current = (voltage / 10.0f) * 1e-3;  // 1 mA full-scale
 
-  float current = analogVoltage * rangeScale[effectiveRangeIdx] / 10.0f;
-  return (int32_t)round(current * 1e6f);
+  // scale ONLY for display
+  float displayValue;
+
+  if (effectiveRangeIdx <= 3) {        // 10^-10 → 10^-7 → nA
+    displayValue = current * 1e9;
+  } 
+  else if (effectiveRangeIdx <= 6) {   // 10^-6 → 10^-4 → µA
+    displayValue = current * 1e6;
+  } 
+  else {                               // 10^-3 → mA
+    displayValue = current * 1e3;
+  }
+
+  return (int32_t)displayValue;
 }
 
 
@@ -2081,95 +2113,40 @@ void drawRangeSelection(uint8_t idx) {
   lastRange = idx;
 }
 
-void drawInt3Digits(int value, int baseX, int baseY, uint16_t color) {
-  unsigned long now = millis();
-  if (now - lastMoveTime >= digitDelay && value != lastValue) {
-    
-    tft.fillRoundRect(baseX - longEdge - (shortEdge * 3), baseY + (longEdge * 2) - (shortEdge * 2), shortEdge, shortEdge, radius, color); // draw decimal point
-    int minusX = baseX - (digitSpacing * 3) - (shortEdge * 2);
-    int minusW = longEdge;
 
-    int minusY = baseY + longEdge - shortEdge;  
-    int minusH = shortEdge;
-
-    int plusBarX = minusX + (minusW / 2) - (shortEdge / 2);
-    int plusBarY = baseY + (longEdge / 2) - (shortEdge / 2);
-    int plusBarH = longEdge;
-
-    if (value >= 0) {
-      tft.fillRoundRect(plusBarX, plusBarY, shortEdge, plusBarH, radius, color);  // vertical bar (+)
-    } else {
-      tft.fillRoundRect(plusBarX, plusBarY, shortEdge, plusBarH, radius, 0x0000);
-    }
-
-    tft.fillRoundRect(minusX, minusY, minusW, minusH, radius, color);  // minus sign
-
-    value = abs(value);
-    value = constrain(value, 0, 999);
-
-    // Extract digits
-    int ones = value % 10;
-    int tens = (value / 10) % 10;
-    int hundreds = (value / 100) % 10;
-
-
-    if (ones != lastOnes) {
-      drawNumber(ones, baseX, baseY, color); // hundredths place
-      lastOnes = ones;
-    }
-
-    int tensX = baseX - digitSpacing;
-    if (value < 10) {
-      if (lastTens != 0) {
-        drawNumber(0, tensX, baseY, color); // tenths place
-        lastTens = 0;
-      }
-    } else if (tens != lastTens) {
-      drawNumber(tens, tensX, baseY, color);
-      lastTens = tens;
-    }
-
-    int hundX = baseX - (digitSpacing * 2) - (shortEdge * 2);
-    if (value < 100) {
-      if (lastHundreds != 0) {
-        drawNumber(0, hundX, baseY, color); // ones place
-        lastHundreds = 0;
-      }
-    } else if (hundreds != lastHundreds) {
-      drawNumber(hundreds, hundX, baseY, color);
-      lastHundreds = hundreds;
-    }
-    lastValue = value;
-  }
+void drawDecimalPoint(int baseX, int baseY, uint16_t color) {
+  tft.fillRoundRect(
+    baseX - digitSpacing * 3 - shortEdge,
+    baseY + (longEdge * 2) - (shortEdge * 2),
+    shortEdge,
+    shortEdge,
+    radius,
+    color
+  );
 }
 
+
+// New redraw + sign + lastValue bug
 void drawInt6Digits(int32_t value, int baseX, int baseY, uint16_t color) {
   unsigned long now = millis();
-  if (now - lastMoveTime < digitDelay || value == lastValue) return;
 
-   tft.fillRoundRect(baseX - longEdge - (shortEdge * 3), baseY + (longEdge * 2) - (shortEdge * 2), shortEdge, shortEdge, radius, color); // draw decimal point
+  if ((now - lastMoveTime) < digitDelay || value == lastValue) return;
+
+  int32_t originalValue = value;
 
   int minusX = baseX - (digitSpacing * 6) - (shortEdge * 2);
   int minusY = baseY + longEdge - shortEdge;
-  int minusW = longEdge;
-  int minusH = shortEdge;
 
-  int plusBarX = minusX + (minusW / 2) - (shortEdge / 2);
-  int plusBarY = baseY + (longEdge / 2) - (shortEdge / 2);
-  int plusBarH = longEdge;
-
-  if (value >= 0) {
-    tft.fillRoundRect(plusBarX, plusBarY, shortEdge, plusBarH, radius, color);
+  if (value < 0) {
+    tft.fillRoundRect(minusX, minusY, longEdge, shortEdge, radius, color);
   } else {
-    tft.fillRoundRect(plusBarX, plusBarY, shortEdge, plusBarH, radius, 0x0000);
+    tft.fillRoundRect(minusX, minusY, longEdge, shortEdge, radius, 0x0000);
   }
-
-  tft.fillRoundRect(minusX, minusY, minusW, minusH, radius, color);
 
   value = abs(value);
   value = constrain(value, 0, 999999);
 
-  int d0 = value % 10; value /= 10; // extract digits
+  int d0 = value % 10; value /= 10;
   int d1 = value % 10; value /= 10;
   int d2 = value % 10; value /= 10;
   int d3 = value % 10; value /= 10;
@@ -2184,7 +2161,7 @@ void drawInt6Digits(int32_t value, int baseX, int baseY, uint16_t color) {
   drawNumber(d4, baseX - digitSpacing * 4 - shortEdge * 2, baseY, color);
   drawNumber(d5, baseX - digitSpacing * 5 - shortEdge * 2, baseY, color);
 
-  lastValue = value;
+  lastValue = originalValue;
   lastMoveTime = now;
 }
 
