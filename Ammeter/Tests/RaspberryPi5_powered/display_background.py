@@ -1,27 +1,27 @@
 import pygame
 import time
 
-# Init
+
 pygame.init()
 screen = pygame.display.set_mode((800, 480), pygame.FULLSCREEN)
 pygame.mouse.set_visible(False)
 
-# Fonts
+
 font_small = pygame.font.SysFont("Arial", 30)
 font_large = pygame.font.SysFont("Arial", 80)
 
-# Colors
+
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 GREEN = (0, 200, 0)
 GRAY = (100, 100, 100)
 
 # Example dynamic values (replace later)
-input_names = ["Cup A", "Cup B", "Cup C"]
+input_names = ["OD CUP", "LE CUP", "HE CUP", "OBJ CUP", "IMG CUP", "R45 TARGET", "R30 TARGET", "L30 TARGET"]
 activeCup = 0
 value = 3  # binary selector
 voltage = 0.0
-unit = "V"
+unit = " uA"
 
 def draw_bar(voltage):
     # Map absolute value of -10V-+10V to screen width
@@ -33,7 +33,7 @@ def draw_bar(voltage):
     pygame.draw.rect(screen, GRAY, (bar_x, bar_y, bar_width, bar_height))
 
     # Normalize voltage
-    norm = (abs(voltage) + 10) / 10  # 0 to 1
+    norm = (abs(voltage)) / 10  # 0 to 1
     fill_width = int(norm * bar_width)
 
     pygame.draw.rect(screen, GREEN, (bar_x, bar_y, fill_width, bar_height))
@@ -69,7 +69,7 @@ while running:
     # ---- SIMULATED DATA (replace later) ----
     voltage += 0.05
     if voltage > 10:
-        voltage = -10
+        voltage = -0
     # ---------------------------------------
 
     draw_screen()
