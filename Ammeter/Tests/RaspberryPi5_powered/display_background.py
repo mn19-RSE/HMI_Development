@@ -10,7 +10,7 @@ pygame.mouse.set_visible(False)
 font_small = pygame.font.SysFont("Arial", 30)
 font_large = pygame.font.SysFont("Arial", 80)
 
-
+increment_value = 0.05
 
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
@@ -68,9 +68,11 @@ while running:
             running = False
 
     # SIMULATED DATA (replace later)
-    voltage += 0.05
+    voltage += increment_value
     if voltage > 10:
-        voltage = -10
+        increment_value = -0.05
+    if voltage < -10:
+        increment_value = 0.05
 
 
     draw_screen()
