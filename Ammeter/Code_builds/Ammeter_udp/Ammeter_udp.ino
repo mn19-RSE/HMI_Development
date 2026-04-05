@@ -102,7 +102,7 @@ void sendAllData() {
   Udp.print("Current value: ");
   Udp.print(analogVoltage);
   Udp.println("  ");
-  Udp.print("Current value: ");
+  Udp.print("Current unit: ");
   Udp.print(currentPrefix);
   Udp.println("  ");
   Udp.endPacket();
