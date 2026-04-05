@@ -23,7 +23,7 @@ input_names = ["OD CUP", "LE CUP", "HE CUP", "OBJ CUP", "IMG CUP", "R45 TARGET",
 activeCup = 3
 
 scale_names = ["1 nA", "10 nA", "100 nA", "1 μA", "10 μA", "100 μA", "1 mA", "10 mA"]
-scale_value = 0  # binary selector
+scale_value = 4  # binary selector
 
 voltage = 0.0
 unit = "μA"
@@ -48,7 +48,7 @@ def draw_screen():
 
     # Top text
     input_text = font_small.render(f"Input: {input_names[activeCup]}", True, CYAN)
-    range_text = font_small.render(f"Range: Max Value = {scale_names[scale_value]})", True, CYAN)
+    range_text = font_small.render(f"Range: Max Value = {scale_names[scale_value]}", True, CYAN)
 
     screen.blit(input_text, (20, 20))
     screen.blit(range_text, (500, 20))
