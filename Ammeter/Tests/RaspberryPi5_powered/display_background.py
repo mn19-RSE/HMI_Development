@@ -69,7 +69,7 @@ while running:
     # ---- SIMULATED DATA (replace later) ----
     voltage += 0.05
     if voltage > 10:
-        voltage = -0
+        voltage = -10
     # ---------------------------------------
 
     draw_screen()
