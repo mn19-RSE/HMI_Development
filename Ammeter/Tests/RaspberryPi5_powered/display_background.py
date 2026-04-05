@@ -25,7 +25,7 @@ activeCup = 3
 scale_names = ["1 nA", "10 nA", "100 nA", "1 μA", "10 μA", "100 μA", "1 mA", "10 mA"]
 scale_value = 4  # binary selector
 
-voltage = 0.0
+voltage = 00.0000
 unit = "μA"
 
 def draw_bar(voltage):
@@ -41,21 +41,21 @@ def draw_bar(voltage):
     norm = abs(voltage / 10)  # 0 to 1
     fill_width = int(norm * bar_width)
 
-    pygame.draw.rect(screen, GREEN, (bar_x, bar_y, fill_width, bar_height))
+    pygame.draw.rect(screen, CYAN, (bar_x, bar_y, fill_width, bar_height))
 
 def draw_screen():
     screen.fill(BLACK)
 
     # Top text
     input_text = font_small.render(f"Input: {input_names[activeCup]}", True, CYAN)
-    range_text = font_small.render(f"Range: Max Value = {scale_names[scale_value]}", True, CYAN)
+    range_text = font_small.render(f"Range: Max Value = ±{scale_names[scale_value]}", True, CYAN)
 
     screen.blit(input_text, (20, 20))
     screen.blit(range_text, (500, 20))
 
     # Big voltage display
     volt_text = font_large.render(f"{voltage:+.5f} {unit}", True, CYAN)
-    screen.blit(volt_text, (200, 150))
+    screen.blit(volt_text, (250, 250))
 
     # Bar graph
     draw_bar(voltage)

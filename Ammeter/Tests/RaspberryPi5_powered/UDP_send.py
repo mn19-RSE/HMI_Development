@@ -1,8 +1,8 @@
 import socket
 import time
 
-UDP_IP = "192.168.1.100"
-UDP_PORT = 5005
+UDP_IP = "192.168.42.100" # Change to 42.15 for final implementation
+UDP_PORT = 1194
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
@@ -12,7 +12,6 @@ def send_all_data(activeCup, value, scaled, currentPrefix):
     msg = (
         f"Timestamp: {ts:.6f}\n"
         f"Input selection: {activeCup}\n"
-        f"Range: {value}\n"
         f"Current value: {scaled:.6f}\n"
         f"Current unit: {currentPrefix}\n"
     )
