@@ -11,6 +11,7 @@ font_small = pygame.font.SysFont("Arial", 30)
 font_large = pygame.font.SysFont("Arial", 80)
 
 
+
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 GREEN = (0, 200, 0)
@@ -33,7 +34,7 @@ def draw_bar(voltage):
     pygame.draw.rect(screen, GRAY, (bar_x, bar_y, bar_width, bar_height))
 
     # Normalize voltage
-    norm = (abs(voltage)) / 10  # 0 to 1
+    norm = abs(voltage / 10)  # 0 to 1
     fill_width = int(norm * bar_width)
 
     pygame.draw.rect(screen, GREEN, (bar_x, bar_y, fill_width, bar_height))
@@ -66,11 +67,11 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-    # ---- SIMULATED DATA (replace later) ----
+    # SIMULATED DATA (replace later)
     voltage += 0.05
     if voltage > 10:
         voltage = -10
-    # ---------------------------------------
+
 
     draw_screen()
     clock.tick(30)  # 30 FPS
