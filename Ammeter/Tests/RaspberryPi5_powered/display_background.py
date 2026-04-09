@@ -2,8 +2,11 @@ import pygame
 import time
 
 
+screen_width = 1280
+screen_height = 480
+
 pygame.init()
-screen = pygame.display.set_mode((800, 480), pygame.FULLSCREEN)
+screen = pygame.display.set_mode((screen_width, screen_height), pygame.FULLSCREEN)
 pygame.mouse.set_visible(False)
 
 
@@ -12,13 +15,18 @@ font_large = pygame.font.SysFont("Bahnschrift", 100)
 
 increment_value = 0.05
 
+
+
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 GREEN = (0, 200, 0)
 GRAY = (100, 100, 100)
 CYAN = (0, 255, 255)
+RED = (255, 0, 0)
 
-# Example dynamic values (replace later)
+DYNAMIC_COLOR = CYAN
+
+
 input_names = ["OD CUP", "LE CUP", "HE CUP", "OBJ CUP", "IMG CUP", "R45 TARGET", "R30 TARGET", "L30 TARGET"]
 activeCup = 3
 
@@ -29,9 +37,13 @@ voltage = 0.0
 unit = "μA"
 
 def draw_bar(voltage):
+    if voltage < 0:
+        DYNAMIC_COLOR = CYAN
+    if voltage >= 0:
+        DYNAMIC_COLOR = RED    
     # Map absolute value of -10V-+10V to screen width
-    bar_x = 100
-    bar_y = 400
+    bar_x = screen_width / 10
+    bar_y = screen_height - 50
     bar_width = 600
     bar_height = 50
 
@@ -41,7 +53,7 @@ def draw_bar(voltage):
     norm = abs(voltage / 10)  # 0 to 1
     fill_width = int(norm * bar_width)
 
-    pygame.draw.rect(screen, CYAN, (bar_x, bar_y, fill_width, bar_height))
+    pygame.draw.rect(screen, DYNAMIC_COLOR, (bar_x, bar_y, fill_width, bar_height))
 
 def draw_screen():
     screen.fill(BLACK)
