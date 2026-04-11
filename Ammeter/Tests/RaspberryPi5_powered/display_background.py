@@ -1,11 +1,11 @@
 import pygame
 import time
 
-screen_width = 1280
-screen_height = 400
+screen_width = 400
+screen_height = 1280
 
 pygame.init()
-screen = pygame.display.set_mode((1280, 400))
+screen = pygame.display.set_mode((400, 1280), pygame.FULLSCREEN)
 pygame.mouse.set_visible(False)
 
 screen.fill((0, 255, 0))
