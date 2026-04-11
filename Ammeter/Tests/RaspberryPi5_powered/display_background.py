@@ -6,13 +6,13 @@ screen_height = 400
 
 pygame.init()
 screen = pygame.display.set_mode((400, 1280), pygame.FULLSCREEN)
-canvas = pygame.Surface((1280, 400))  # your logical UI
+canvas = pygame.Surface((1280, 400))
 pygame.mouse.set_visible(False)
 
 canvas.fill((0, 255, 0))
 
-rotated = pygame.transform.rotate(canvas, -90)
-screen.blit(rotated, (0, 0))   # ✅ FIXED
+rotated = pygame.transform.rotate(canvas, 90)
+screen.blit(rotated, (0, 0))
 
 pygame.display.flip()
 time.sleep(2)
@@ -79,7 +79,7 @@ def draw_screen():
     # Bar graph
     draw_bar(voltage)
 
-    rotated = pygame.transform.rotate(canvas, -90)
+    rotated = pygame.transform.rotate(canvas, 90)
     screen.blit(rotated, (0, 0))
     pygame.display.flip()
 
