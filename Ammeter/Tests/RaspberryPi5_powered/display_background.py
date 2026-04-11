@@ -18,7 +18,7 @@ pygame.display.flip()
 time.sleep(2)
 
 font_small = pygame.font.SysFont(None, 50)
-font_large = pygame.font.SysFont(None, 250)
+font_large = pygame.font.SysFont(None, 200)
 
 increment_value = 0.05
 
@@ -74,7 +74,7 @@ def draw_screen():
 
     # Big voltage display
     volt_text = font_large.render(f"{voltage:+.5f} {unit}", True, DYNAMIC_COLOR)
-    canvas.blit(volt_text, (10, 50))
+    canvas.blit(volt_text, (100, 100))
 
     # Bar graph
     draw_bar(voltage)
