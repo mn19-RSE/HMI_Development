@@ -1,15 +1,16 @@
 import pygame
 import time
-import os
-print("TTY:", os.ttyname(0))
 
 screen_width = 1280
-screen_height = 480
+screen_height = 400
 
 pygame.init()
-screen = pygame.display.set_mode((screen_width, screen_height))
+screen = pygame.display.set_mode((1280, 400))
 pygame.mouse.set_visible(False)
 
+screen.fill((0, 255, 0))
+pygame.display.flip()
+time.sleep(2)
 
 font_small = pygame.font.SysFont(None, 50)
 font_large = pygame.font.SysFont(None, 100)
