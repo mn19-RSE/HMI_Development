@@ -1,8 +1,8 @@
 import pygame
 import time
 
-screen_width = 400
-screen_height = 1280
+screen_width = 1280
+screen_height = 400
 
 pygame.init()
 screen = pygame.display.set_mode((400, 1280), pygame.FULLSCREEN)
