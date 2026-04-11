@@ -1,17 +1,18 @@
 import pygame
 import time
-
+import os
+print("TTY:", os.ttyname(0))
 
 screen_width = 1280
 screen_height = 480
 
 pygame.init()
-screen = pygame.display.set_mode((screen_width, screen_height), pygame.FULLSCREEN)
+screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.mouse.set_visible(False)
 
 
-font_small = pygame.font.SysFont("Bahnschrift", 50)
-font_large = pygame.font.SysFont("Bahnschrift", 100)
+font_small = pygame.font.SysFont(None, 50)
+font_large = pygame.font.SysFont(None, 100)
 
 increment_value = 0.05
 
@@ -54,7 +55,7 @@ def draw_screen():
     global DYNAMIC_COLOR
     if voltage < 0:
         DYNAMIC_COLOR = CYAN
-    if voltage >= 0:
+    elif voltage >= 0:
         DYNAMIC_COLOR = RED 
     screen.fill(BLACK)
 
