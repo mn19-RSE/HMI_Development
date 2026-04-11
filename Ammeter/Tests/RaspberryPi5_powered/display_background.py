@@ -44,9 +44,9 @@ unit = "μA"
 def draw_bar(voltage):
 
     # Map absolute value of -10V-+10V to screen width
-    bar_x = screen_width / 10
+    bar_x = 0
     bar_y = screen_height - 50
-    bar_width = 600
+    bar_width = screen_width 
     bar_height = 50
 
     pygame.draw.rect(canvas, GRAY, (bar_x, bar_y, bar_width, bar_height))
