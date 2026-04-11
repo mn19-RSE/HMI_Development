@@ -18,7 +18,7 @@ pygame.display.flip()
 time.sleep(2)
 
 font_small = pygame.font.SysFont(None, 50)
-font_large = pygame.font.SysFont(None, 100)
+font_large = pygame.font.SysFont(None, 250)
 
 increment_value = 0.05
 
