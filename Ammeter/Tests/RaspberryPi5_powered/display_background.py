@@ -6,7 +6,7 @@ screen_height = 400
 
 pygame.init()
 screen = pygame.display.set_mode((400, 1280), pygame.FULLSCREEN)
-pygame.transform(screen, 90)
+pygame.transform(90)
 pygame.mouse.set_visible(False)
 
 screen.fill((0, 255, 0))
