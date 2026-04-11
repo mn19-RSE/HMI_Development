@@ -24,8 +24,6 @@ GRAY = (100, 100, 100)
 CYAN = (0, 255, 255)
 RED = (255, 0, 0)
 
-DYNAMIC_COLOR = CYAN
-
 
 input_names = ["OD CUP", "LE CUP", "HE CUP", "OBJ CUP", "IMG CUP", "R45 TARGET", "R30 TARGET", "L30 TARGET"]
 activeCup = 3
@@ -37,10 +35,7 @@ voltage = 0.0
 unit = "μA"
 
 def draw_bar(voltage):
-    if voltage < 0:
-        DYNAMIC_COLOR = CYAN
-    if voltage >= 0:
-        DYNAMIC_COLOR = RED    
+
     # Map absolute value of -10V-+10V to screen width
     bar_x = screen_width / 10
     bar_y = screen_height - 50
@@ -56,6 +51,11 @@ def draw_bar(voltage):
     pygame.draw.rect(screen, DYNAMIC_COLOR, (bar_x, bar_y, fill_width, bar_height))
 
 def draw_screen():
+    global DYNAMIC_COLOR
+    if voltage < 0:
+        DYNAMIC_COLOR = CYAN
+    if voltage >= 0:
+        DYNAMIC_COLOR = RED 
     screen.fill(BLACK)
 
     # Top text
@@ -66,7 +66,7 @@ def draw_screen():
     screen.blit(range_text, (500, 20))
 
     # Big voltage display
-    volt_text = font_large.render(f"{voltage:+.5f} {unit}", True, CYAN)
+    volt_text = font_large.render(f"{voltage:+.5f} {unit}", True, DYNAMIC_COLOR)
     screen.blit(volt_text, (250, 250))
 
     # Bar graph
@@ -89,7 +89,6 @@ while running:
         increment_value = -0.05
     if voltage < -10:
         increment_value = 0.05
-
 
     draw_screen()
     clock.tick(30)  # 30 FPS
