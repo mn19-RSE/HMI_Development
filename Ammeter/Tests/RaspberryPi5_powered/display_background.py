@@ -10,8 +10,10 @@ canvas = pygame.Surface((1280, 400))  # your logical UI
 pygame.mouse.set_visible(False)
 
 canvas.fill((0, 255, 0))
-rotated = pygame.transform.rotate(canvas, -90)  # try -90 or +90
-canvas.blit(rotated, (0, 0))
+
+rotated = pygame.transform.rotate(canvas, -90)
+screen.blit(rotated, (0, 0))   # ✅ FIXED
+
 pygame.display.flip()
 time.sleep(2)
 
@@ -77,6 +79,8 @@ def draw_screen():
     # Bar graph
     draw_bar(voltage)
 
+    rotated = pygame.transform.rotate(canvas, -90)
+    screen.blit(rotated, (0, 0))
     pygame.display.flip()
 
 # Main loop
