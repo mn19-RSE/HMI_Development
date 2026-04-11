@@ -6,10 +6,12 @@ screen_height = 400
 
 pygame.init()
 screen = pygame.display.set_mode((400, 1280), pygame.FULLSCREEN)
-screen = pygame.transform.rotate(screen, 90)
+canvas = pygame.Surface((1280, 400))  # your logical UI
 pygame.mouse.set_visible(False)
 
-screen.fill((0, 255, 0))
+canvas.fill((0, 255, 0))
+rotated = pygame.transform.rotate(canvas, -90)  # try -90 or +90
+canvas.blit(rotated, (0, 0))
 pygame.display.flip()
 time.sleep(2)
 
@@ -45,13 +47,13 @@ def draw_bar(voltage):
     bar_width = 600
     bar_height = 50
 
-    pygame.draw.rect(screen, GRAY, (bar_x, bar_y, bar_width, bar_height))
+    pygame.draw.rect(canvas, GRAY, (bar_x, bar_y, bar_width, bar_height))
 
     # Normalize voltage
     norm = abs(voltage / 10)  # 0 to 1
     fill_width = int(norm * bar_width)
 
-    pygame.draw.rect(screen, DYNAMIC_COLOR, (bar_x, bar_y, fill_width, bar_height))
+    pygame.draw.rect(canvas, DYNAMIC_COLOR, (bar_x, bar_y, fill_width, bar_height))
 
 def draw_screen():
     global DYNAMIC_COLOR
@@ -59,18 +61,18 @@ def draw_screen():
         DYNAMIC_COLOR = CYAN
     elif voltage >= 0:
         DYNAMIC_COLOR = RED 
-    screen.fill(BLACK)
+    canvas.fill(BLACK)
 
     # Top text
     input_text = font_small.render(f"Input: {input_names[activeCup]}", True, CYAN)
     range_text = font_small.render(f"Range: Max Value = ±{scale_names[scale_value]}", True, CYAN)
 
-    screen.blit(input_text, (20, 20))
-    screen.blit(range_text, (500, 20))
+    canvas.blit(input_text, (20, 20))
+    canvas.blit(range_text, (500, 20))
 
     # Big voltage display
     volt_text = font_large.render(f"{voltage:+.5f} {unit}", True, DYNAMIC_COLOR)
-    screen.blit(volt_text, (250, 250))
+    canvas.blit(volt_text, (250, 250))
 
     # Bar graph
     draw_bar(voltage)
