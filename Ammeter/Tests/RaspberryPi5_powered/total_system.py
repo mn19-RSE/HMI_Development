@@ -20,6 +20,7 @@ pins = [LED(17), LED(27), LED(22)]
 btn_up = Button(5, pull_up=True, bounce_time=0.1)
 btn_down = Button(6, pull_up=True, bounce_time=0.1)
 
+
 # pygame init
 screen_width = 1280
 screen_height = 400
@@ -139,6 +140,8 @@ def send_all_data():
 # Main loop
 running = True
 clock = pygame.time.Clock()
+btn_up.when_pressed = increment
+btn_down.when_pressed = decrement
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -153,15 +156,11 @@ while running:
         scaled_voltage = 0
         voltage = 0
     draw_screen(voltage, scaled_voltage)
-
-    # reading scale setpoint buttons
-    btn_up.when_pressed = increment
-    btn_down.when_pressed = decrement
     # set scale binary word
     update_outputs()
     send_all_data()
 
-    clock.tick(60)  # 60 FPS
+    clock.tick(10)  # 10 FPS
 
 pygame.quit()
 
