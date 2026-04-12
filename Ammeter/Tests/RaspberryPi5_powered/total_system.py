@@ -37,11 +37,11 @@ activeCup = 0
 # scale selections
 scale_names = ["1 nA", "10 nA", "100 nA", "1 μA", "10 μA", "100 μA", "1 mA", "10 mA"]
 scale_voltage_multipliers = [.1, 1, 10, .1, 1, 10, .1, 1]
+scale_units = ["nA", "nA", "nA", "μA", "μA", "μA", "mA", "mA"]
 scale_value = 0  
 
 voltage = 0.0
-unit_names = ["nA", "μA", "mA"]
-unit = 0
+
 
 def draw_bar(voltage):
 
@@ -75,7 +75,7 @@ def draw_screen(voltage):
     canvas.blit(range_text, (500, 20))
 
     # Big voltage display
-    volt_text = font_large.render(f"{voltage:+.5f} {unit_names[unit]}", True, DYNAMIC_COLOR)
+    volt_text = font_large.render(f"{voltage:+.5f} {scale_units[scale_value]}", True, DYNAMIC_COLOR)
     canvas.blit(volt_text, (450, 200))
 
     # Bar graph
@@ -101,6 +101,8 @@ while running:
 
 
     voltage = read_voltage() * scale_voltage_multipliers[scale_value]
+    if voltage < .00001:
+        voltage = 0
     draw_screen(voltage)
     clock.tick(60)  # 60 FPS
 
