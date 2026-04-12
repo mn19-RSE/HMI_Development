@@ -20,11 +20,11 @@ pygame.init()
 screen = pygame.display.set_mode((400, 1280), pygame.FULLSCREEN)
 canvas = pygame.Surface((1280, 400))
 pygame.mouse.set_visible(False)
-canvas.fill((0, 255, 0))
+# canvas.fill((0, 255, 0))
 rotated = pygame.transform.rotate(canvas, 90)
 screen.blit(rotated, (0, 0))
 pygame.display.flip()
-time.sleep(2)
+# time.sleep(2)
 # pygame font sizes
 font_small = pygame.font.SysFont(None, 50)
 font_large = pygame.font.SysFont(None, 180)
@@ -82,9 +82,12 @@ def draw_screen(voltage):
     canvas.blit(range_text, (500, 20))
 
     # Big voltage display
-    volt_text = font_large.render(f"{voltage:+.5f} {scale_units[scale_value]}", True, DYNAMIC_COLOR)
-    canvas.blit(volt_text, (450, 220))
-
+    if abs(voltage / scale_voltage_multipliers[scale_value]) < 10: 
+        volt_text = font_large.render(f"{voltage:+.5f} {scale_units[scale_value]}", True, DYNAMIC_COLOR)
+        canvas.blit(volt_text, (450, 220))
+    elif abs(voltage / scale_voltage_multipliers[scale_value]) <= 10:
+        over_limit = font_large.render(f"OL", True, DYNAMIC_COLOR)
+        canvas.blit(over_limit, (650, 220))
     # Bar graph
     draw_bar(voltage / scale_voltage_multipliers[scale_value])
 
