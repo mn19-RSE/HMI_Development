@@ -1,6 +1,7 @@
 from daqhats import mcc118
 import pygame
 import time
+from gpiozero import LED, Button
 
 # daqhats init
 hat = mcc118(0)
@@ -31,14 +32,16 @@ RED = (255, 0, 0)
 
 # input selections
 input_names = ["OD CUP", "LE CUP", "HE CUP", "OBJ CUP", "IMG CUP", "R45 TARGET", "R30 TARGET", "L30 TARGET"]
-activeCup = 3
+activeCup = 0
 
 # scale selections
 scale_names = ["1 nA", "10 nA", "100 nA", "1 μA", "10 μA", "100 μA", "1 mA", "10 mA"]
-scale_value = 4  
+scale_voltage_multipliers = [.1, 1, 10, .1, 1, 10, .1, 1]
+scale_value = 0  
 
 voltage = 0.0
-unit = "μA"
+unit_names = ["nA", "μA", "mA"]
+unit = 0
 
 def draw_bar(voltage):
 
@@ -72,7 +75,7 @@ def draw_screen(voltage):
     canvas.blit(range_text, (500, 20))
 
     # Big voltage display
-    volt_text = font_large.render(f"{voltage:+.5f} {unit}", True, DYNAMIC_COLOR)
+    volt_text = font_large.render(f"{voltage:+.5f} {unit_names[unit]}", True, DYNAMIC_COLOR)
     canvas.blit(volt_text, (450, 200))
 
     # Bar graph
@@ -95,6 +98,8 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+
+
     voltage = read_voltage()
     draw_screen(voltage)
     clock.tick(60)  # 60 FPS
