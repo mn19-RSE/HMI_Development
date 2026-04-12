@@ -126,7 +126,6 @@ def decrement():
 
 def send_all_data():
     ts = time.time()
-
     msg = (
         f"Timestamp: {ts:.6f}\n"
         f"Input selection: {input_names[activeCup]}\n"
