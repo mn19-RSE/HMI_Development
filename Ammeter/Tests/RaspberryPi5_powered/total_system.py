@@ -186,7 +186,7 @@ while running:
     except BlockingIOError:
         pass
 
-    clock.tick(60)  # 10 FPS
+    clock.tick(60)  # 60 FPS
 
 pygame.quit()
 
