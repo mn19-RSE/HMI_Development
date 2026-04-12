@@ -42,8 +42,8 @@ pygame.display.flip()
 font_small = pygame.font.SysFont(None, 50)
 font_large = pygame.font.SysFont(None, 180)
 # static image load
-logo = pygame.image.load("Ammeter/Tests/RaspberryPi5_powered/vdg.png").convert_alpha()
-logo = pygame.transform.scale(logo, (200, 200))  # adjust size
+vdg_logo = pygame.image.load("Ammeter/Tests/RaspberryPi5_powered/vdg.png").convert_alpha()
+# vdg_logo = pygame.transform.scale(vdg_logo, (200, 200))  # adjust size
 
 # color definitions
 WHITE = (255, 255, 255)
@@ -102,7 +102,7 @@ def draw_screen(voltage, scaled_voltage):
 
     canvas.blit(input_text, (20, 20))
     canvas.blit(range_text, (600, 20))
-    canvas.blit(logo, (10, 200))
+    canvas.blit(vdg_logo, (50, 200))
 
     # Big voltage display
     if abs(voltage) < 10: 
