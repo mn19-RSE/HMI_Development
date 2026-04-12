@@ -27,7 +27,7 @@ pygame.display.flip()
 time.sleep(2)
 # pygame font sizes
 font_small = pygame.font.SysFont(None, 50)
-font_large = pygame.font.SysFont(None, 150)
+font_large = pygame.font.SysFont(None, 180)
 
 # color definitions
 WHITE = (255, 255, 255)
