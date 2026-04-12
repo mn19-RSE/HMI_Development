@@ -42,7 +42,7 @@ pygame.display.flip()
 font_small = pygame.font.SysFont(None, 50)
 font_large = pygame.font.SysFont(None, 180)
 # static image load
-logo = pygame.image.load("vdg.png").convert_alpha()
+logo = pygame.image.load("Ammeter/Tests/RaspberryPi5_powered/vdg.png").convert_alpha()
 logo = pygame.transform.scale(logo, (200, 200))  # adjust size
 
 # color definitions
