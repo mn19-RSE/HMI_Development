@@ -6,7 +6,14 @@ from gpiozero import LED, Button
 # daqhats init
 hat = mcc118(0)
 
-#pygame init
+# gpio init
+# output pins (LSB - MSB)
+pins = [LED(17), LED(27), LED(22)]
+# input button pins
+btn_up = Button(5, pull_up=True, bounce_time=0.1)
+btn_down = Button(6, pull_up=True, bounce_time=0.1)
+
+# pygame init
 screen_width = 1280
 screen_height = 400
 pygame.init()
@@ -88,7 +95,23 @@ def draw_screen(voltage):
 def read_voltage():
     return hat.a_in_read(0)
 
+# set scale output decimal to binary 
+def update_outputs():
+    for i in range(3):
+        if (scale_value >> i) & 1:
+            pins[i].on()
+        else:
+            pins[i].off()
 
+def increment():
+    global scale_value
+    scale_value = (scale_value + 1) % 8
+    update_outputs()
+
+def decrement():
+    global scale_value
+    scale_value = (scale_value - 1) % 8
+    update_outputs()
 
 
 # Main loop
@@ -101,9 +124,17 @@ while running:
 
 
     voltage = read_voltage() * scale_voltage_multipliers[scale_value]
+    # reduces zero hunting 
     if abs(voltage) < .01:
         voltage = 0
     draw_screen(voltage)
+
+    # reading scale setpoint buttons
+    btn_up.when_pressed = increment
+    btn_down.when_pressed = decrement
+    # set scale binary word
+    update_outputs()
+
     clock.tick(60)  # 60 FPS
 
 pygame.quit()
