@@ -79,7 +79,7 @@ def draw_screen(voltage):
     canvas.blit(volt_text, (450, 200))
 
     # Bar graph
-    draw_bar(voltage)
+    draw_bar(voltage / scale_voltage_multipliers[scale_value])
 
     rotated = pygame.transform.rotate(canvas, 90)
     screen.blit(rotated, (0, 0))
@@ -101,7 +101,7 @@ while running:
 
 
     voltage = read_voltage() * scale_voltage_multipliers[scale_value]
-    if abs(voltage) <= .01:
+    if abs(voltage) < .01:
         voltage = 0
     draw_screen(voltage)
     clock.tick(60)  # 60 FPS
