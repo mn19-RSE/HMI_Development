@@ -1,8 +1,8 @@
 import socket
 import time
 
-UDP_IP = "192.168.42.100" # Change to 42.15 for final implementation
-UDP_PORT = 1194
+UDP_IP = "192.168.0.111" # Change to 42.15 for final implementation
+UDP_PORT = 1196
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 

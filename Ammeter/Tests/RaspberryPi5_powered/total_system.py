@@ -2,9 +2,16 @@ from daqhats import mcc118
 import pygame
 import time
 from gpiozero import LED, Button
+import socket
 
 # daqhats init
 hat = mcc118(0)
+
+# network variables
+UDP_IP = "192.168.0.111" # Change to 42.15 for final implementation
+UDP_PORT = 1196
+sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
 
 # gpio init
 # output pins (LSB - MSB)
@@ -117,6 +124,18 @@ def decrement():
     scale_value = (scale_value - 1) % 8
     update_outputs()
 
+def send_all_data():
+    ts = time.time()
+
+    msg = (
+        f"Timestamp: {ts:.6f}\n"
+        f"Input selection: {input_names[activeCup]}\n"
+        f"Current value: {scaled_voltage:.5f}\n"
+        f"Current unit: {scale_units[scale_value]}\n"
+    )
+
+    sock.sendto(msg.encode(), (UDP_IP, UDP_PORT))
+
 
 # Main loop
 running = True
@@ -130,7 +149,8 @@ while running:
     voltage = read_voltage() 
     scaled_voltage = voltage * scale_voltage_multipliers[scale_value]
     # reduces zero hunting 
-    if abs(voltage) < .001:
+    # remove if not needed with current amp
+    if abs(voltage) < .01:
         scaled_voltage = 0
         voltage = 0
     draw_screen(voltage, scaled_voltage)
@@ -140,6 +160,7 @@ while running:
     btn_down.when_pressed = decrement
     # set scale binary word
     update_outputs()
+    send_all_data()
 
     clock.tick(60)  # 60 FPS
 
