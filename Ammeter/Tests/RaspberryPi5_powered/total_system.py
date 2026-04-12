@@ -9,9 +9,11 @@ hat = mcc118(0)
 
 # network variables
 UDP_IP = "192.168.0.111" # Change to 42.15 for final implementation
-UDP_PORT = 1196
+UDP_PORT = 1196 # destination port
+LISTEN_PORT = 5005 # port to listen on 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-
+sock.bind(("0.0.0.0", LISTEN_PORT))
+sock.setblocking(False) # needed for listening to not pause script
 
 # gpio init
 # output pins (LSB - MSB)
@@ -159,8 +161,17 @@ while running:
     # set scale binary word
     update_outputs()
     send_all_data()
+    try:
+        data, addr = sock.recvfrom(1024)
+        cmd = data.decode().strip()
+        if cmd == "UP":
+            increment()
+        elif cmd == "DOWN":
+            decrement()
+    except BlockingIOError:
+        pass
 
-    clock.tick(10)  # 10 FPS
+    clock.tick(60)  # 10 FPS
 
 pygame.quit()
 
