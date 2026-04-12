@@ -100,7 +100,8 @@ while running:
             running = False
 
 
-    voltage = read_voltage() * f"{scale_voltage_multipliers[scale_value]}"
+    voltage = read_voltage()
+    voltage = f"{voltage}" * f"{scale_voltage_multipliers[scale_value]}"
     draw_screen(voltage)
     clock.tick(60)  # 60 FPS
 
