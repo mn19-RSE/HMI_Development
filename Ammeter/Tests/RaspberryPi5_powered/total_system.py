@@ -101,7 +101,7 @@ while running:
 
 
     voltage = read_voltage() * scale_voltage_multipliers[scale_value]
-    if voltage < .00001:
+    if voltage < .0001:
         voltage = 0
     draw_screen(voltage)
     clock.tick(60)  # 60 FPS
