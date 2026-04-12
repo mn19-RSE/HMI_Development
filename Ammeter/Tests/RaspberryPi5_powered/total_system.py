@@ -130,7 +130,7 @@ while running:
     voltage = read_voltage() 
     scaled_voltage = voltage * scale_voltage_multipliers[scale_value]
     # reduces zero hunting 
-    if abs(scaled_voltage) < .01:
+    if abs(voltage) < .001:
         scaled_voltage = 0
         voltage = 0
     draw_screen(voltage, scaled_voltage)
