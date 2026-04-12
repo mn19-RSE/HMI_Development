@@ -41,6 +41,9 @@ pygame.display.flip()
 # pygame font sizes
 font_small = pygame.font.SysFont(None, 50)
 font_large = pygame.font.SysFont(None, 180)
+# static image load
+logo = pygame.image.load("vdg.png").convert_alpha()
+logo = pygame.transform.scale(logo, (200, 200))  # adjust size
 
 # color definitions
 WHITE = (255, 255, 255)
@@ -58,8 +61,9 @@ activeCup = 0
 scale_names = ["1 nA", "10 nA", "100 nA", "1 μA", "10 μA", "100 μA", "1 mA", "10 mA"]
 scale_voltage_multipliers = [.1, 1, 10, .1, 1, 10, .1, 1]
 scale_units = ["nA", "nA", "nA", "μA", "μA", "μA", "mA", "mA"]
-scale_value = 0  
+scale_value = 0
 
+# daq read vairables
 voltage = 0.0
 scaled_voltage = 0.0
 
@@ -98,6 +102,7 @@ def draw_screen(voltage, scaled_voltage):
 
     canvas.blit(input_text, (20, 20))
     canvas.blit(range_text, (600, 20))
+    canvas.blit(logo, (10, 200))
 
     # Big voltage display
     if abs(voltage) < 10: 
