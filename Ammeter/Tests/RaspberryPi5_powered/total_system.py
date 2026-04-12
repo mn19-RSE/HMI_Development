@@ -21,19 +21,10 @@ pins = [LED(21), LED(19), LED(20)]
 # scale button pins
 btn_up = Button(4, pull_up=True, bounce_time=0.1)
 btn_down = Button(27, pull_up=True, bounce_time=0.1)
-# input rotary switch pins
-# btn_ = Button(1, pull_up=True, bounce_time=0.1)
-# btn_ = Button(0, pull_up=True, bounce_time=0.1)
-# btn_ = Button(22, pull_up=True, bounce_time=0.1)
-# btn_ = Button(23, pull_up=True, bounce_time=0.1)
-# btn_ = Button(16, pull_up=True, bounce_time=0.1)
-# btn_ = Button(6, pull_up=True, bounce_time=0.1)
-# btn_ = Button(5, pull_up=True, bounce_time=0.1)
-# btn_ = Button(25, pull_up=True, bounce_time=0.1)
-# btn_ = Button(24, pull_up=True, bounce_time=0.1)
-# btn_ = Button(18, pull_up=True, bounce_time=0.1)
-# btn_ = Button(17, pull_up=True, bounce_time=0.1)
-
+# cup input rotary switch pins
+input_button_pins = [1, 0, 22, 23, 16, 6, 5, 25, 24, 18, 17]
+input_buttons = [Button(pin, pull_up=True, bounce_time=0.05) for pin in input_button_pins]
+ERROR_INDEX = len(input_button_pins) 
 
 # pygame init
 screen_width = 1280
@@ -60,7 +51,7 @@ CYAN = (0, 255, 255)
 RED = (255, 0, 0)
 
 # input selections
-input_names = ["OD CUP", "LE CUP", "HE CUP", "OBJ CUP", "IMG CUP", "R45 TARGET", "R30 TARGET", "L30 TARGET"]
+input_names = ["OD CUP", "LE CUP", "HE CUP", "OBJ CUP", "IMG CUP", "R45 TARGET", "R30 TARGET", "L30 TARGET", "", "", "ERROR: INVALID INPUT"] 
 activeCup = 0
 
 # scale selections
@@ -98,7 +89,11 @@ def draw_screen(voltage, scaled_voltage):
     canvas.fill(BLACK)
 
     # Top text
-    input_text = font_small.render(f"Input: {input_names[activeCup]}", True, CYAN)
+    if activeCup == ERROR_INDEX:
+        INPUT_COLOR = RED
+    else:
+        INPUT_COLOR = CYAN
+    input_text = font_small.render(f"Input: {input_names[activeCup]}", True, INPUT_COLOR)
     range_text = font_small.render(f"Range: Max Value = ±{scale_names[scale_value]}", True, CYAN)
 
     canvas.blit(input_text, (20, 20))
@@ -141,6 +136,7 @@ def decrement():
 
 def send_all_data():
     ts = time.time()
+    # UDP message string
     msg = (
         f"Timestamp: {ts:.6f}\n"
         f"Input selection: {input_names[activeCup]}\n"
@@ -150,6 +146,13 @@ def send_all_data():
 
     sock.sendto(msg.encode(), (UDP_IP, UDP_PORT))
 
+# reads rotary switch
+ 
+def get_active_cup():
+    for i, btn in enumerate(input_buttons):
+        if btn.is_pressed:
+            return i
+    return ERROR_INDEX   # nothing selected → ERROR
 
 # Main loop
 running = True
@@ -161,6 +164,7 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
+    activeCup = get_active_cup()
     voltage = read_voltage() 
     scaled_voltage = voltage * scale_voltage_multipliers[scale_value]
     # reduces zero hunting 
