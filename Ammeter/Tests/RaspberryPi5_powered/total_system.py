@@ -51,7 +51,7 @@ CYAN = (0, 255, 255)
 RED = (255, 0, 0)
 
 # input selections
-input_names = ["OD CUP", "LE CUP", "HE CUP", "OBJ CUP", "IMG CUP", "R45 TARGET", "R30 TARGET", "L30 TARGET", "", "", "ERROR: INVALID INPUT"] 
+input_names = ["OD CUP", "LE CUP", "HE CUP", "OBJ CUP", "IMG CUP", "R45 TARGET", "R30 TARGET", "L30 TARGET", "", "", "", "ERROR: INVALID INPUT"] 
 activeCup = 0
 
 # scale selections
