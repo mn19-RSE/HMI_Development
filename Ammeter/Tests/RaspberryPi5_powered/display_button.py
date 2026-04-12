@@ -15,8 +15,8 @@ win = pygame.display.set_mode((600, 600))
 button = Button(
     # Mandatory Parameters
     win,  # Surface to place button on
-    100,  # X-coordinate of top left corner
-    100,  # Y-coordinate of top left corner
+    0,  # X-coordinate of top left corner
+    0,  # Y-coordinate of top left corner
     300,  # Width
     150,  # Height
 
