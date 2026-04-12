@@ -9,7 +9,7 @@ from pygame_widgets.button import Button
 
 # Set up Pygame
 pygame.init()
-win = pygame.display.set_mode((600, 600))
+win = pygame.display.set_mode((400, 1280))
 
 # Creates the button with optional parameters
 button = Button(

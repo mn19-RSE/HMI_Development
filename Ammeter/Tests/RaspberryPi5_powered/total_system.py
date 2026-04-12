@@ -16,11 +16,23 @@ sock.bind(("0.0.0.0", LISTEN_PORT))
 sock.setblocking(False) # needed for listening to not pause script
 
 # gpio init
-# output pins (LSB - MSB)
-pins = [LED(17), LED(27), LED(22)]
-# input button pins
-btn_up = Button(5, pull_up=True, bounce_time=0.1)
-btn_down = Button(6, pull_up=True, bounce_time=0.1)
+# scale output pins (LSB - MSB)
+pins = [LED(21), LED(19), LED(20)]
+# scale button pins
+btn_up = Button(4, pull_up=True, bounce_time=0.1)
+btn_down = Button(27, pull_up=True, bounce_time=0.1)
+# input rotary switch pins
+# btn_ = Button(1, pull_up=True, bounce_time=0.1)
+# btn_ = Button(0, pull_up=True, bounce_time=0.1)
+# btn_ = Button(22, pull_up=True, bounce_time=0.1)
+# btn_ = Button(23, pull_up=True, bounce_time=0.1)
+# btn_ = Button(16, pull_up=True, bounce_time=0.1)
+# btn_ = Button(6, pull_up=True, bounce_time=0.1)
+# btn_ = Button(5, pull_up=True, bounce_time=0.1)
+# btn_ = Button(25, pull_up=True, bounce_time=0.1)
+# btn_ = Button(24, pull_up=True, bounce_time=0.1)
+# btn_ = Button(18, pull_up=True, bounce_time=0.1)
+# btn_ = Button(17, pull_up=True, bounce_time=0.1)
 
 
 # pygame init
@@ -148,7 +160,6 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-
 
     voltage = read_voltage() 
     scaled_voltage = voltage * scale_voltage_multipliers[scale_value]
