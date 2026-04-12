@@ -48,6 +48,7 @@ scale_units = ["nA", "nA", "nA", "μA", "μA", "μA", "mA", "mA"]
 scale_value = 0  
 
 voltage = 0.0
+scaled_voltage = 0.0
 
 
 def draw_bar(voltage):
@@ -66,7 +67,7 @@ def draw_bar(voltage):
 
     pygame.draw.rect(canvas, DYNAMIC_COLOR, (bar_x, bar_y, fill_width, bar_height))
 
-def draw_screen(voltage):
+def draw_screen(voltage, scaled_voltage):
     global DYNAMIC_COLOR
     if voltage < 0:
         DYNAMIC_COLOR = CYAN
@@ -82,14 +83,14 @@ def draw_screen(voltage):
     canvas.blit(range_text, (500, 20))
 
     # Big voltage display
-    if abs(voltage / scale_voltage_multipliers[scale_value]) < 10: 
-        volt_text = font_large.render(f"{voltage:+.5f} {scale_units[scale_value]}", True, DYNAMIC_COLOR)
+    if abs(voltage) < 10: 
+        volt_text = font_large.render(f"{scaled_voltage:+.5f} {scale_units[scale_value]}", True, DYNAMIC_COLOR)
         canvas.blit(volt_text, (450, 220))
-    elif abs(voltage / scale_voltage_multipliers[scale_value]) <= 10:
+    elif abs(voltage) >= 10:
         over_limit = font_large.render("OL", True, DYNAMIC_COLOR)
         canvas.blit(over_limit, (450, 220))
     # Bar graph
-    draw_bar(voltage / scale_voltage_multipliers[scale_value])
+    draw_bar(voltage)
 
     rotated = pygame.transform.rotate(canvas, 90)
     screen.blit(rotated, (0, 0))
@@ -126,11 +127,13 @@ while running:
             running = False
 
 
-    voltage = read_voltage() * scale_voltage_multipliers[scale_value]
+    voltage = read_voltage() 
+    scaled_voltage = voltage * scale_voltage_multipliers[scale_value]
     # reduces zero hunting 
-    if abs(voltage) < .01:
+    if abs(scaled_voltage) < .01:
+        scaled_voltage = 0
         voltage = 0
-    draw_screen(voltage)
+    draw_screen(voltage, scaled_voltage)
 
     # reading scale setpoint buttons
     btn_up.when_pressed = increment
