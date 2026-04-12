@@ -83,7 +83,7 @@ def draw_screen(voltage):
 
     # Big voltage display
     volt_text = font_large.render(f"{voltage:+.5f} {scale_units[scale_value]}", True, DYNAMIC_COLOR)
-    canvas.blit(volt_text, (450, 200))
+    canvas.blit(volt_text, (450, 220))
 
     # Bar graph
     draw_bar(voltage / scale_voltage_multipliers[scale_value])
