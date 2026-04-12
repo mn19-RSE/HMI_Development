@@ -97,7 +97,7 @@ def draw_screen(voltage, scaled_voltage):
     range_text = font_small.render(f"Range: Max Value = ±{scale_names[scale_value]}", True, CYAN)
 
     canvas.blit(input_text, (20, 20))
-    canvas.blit(range_text, (500, 20))
+    canvas.blit(range_text, (600, 20))
 
     # Big voltage display
     if abs(voltage) < 10: 
