@@ -87,8 +87,8 @@ def draw_screen(voltage, scaled_voltage):
         volt_text = font_large.render(f"{scaled_voltage:+.5f} {scale_units[scale_value]}", True, DYNAMIC_COLOR)
         canvas.blit(volt_text, (450, 220))
     elif abs(voltage) >= 10:
-        over_limit = font_large.render("OL", True, DYNAMIC_COLOR)
-        canvas.blit(over_limit, (450, 220))
+        over_limit = font_large.render("OL", True, GREEN)
+        canvas.blit(over_limit, (650, 220))
     # Bar graph
     draw_bar(voltage)
 
