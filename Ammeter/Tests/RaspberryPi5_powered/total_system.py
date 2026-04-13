@@ -215,8 +215,8 @@ while running:
     # saving a frame at a set interval to mirror on web
     now = time.time()
     if now - last_save_time > SAVE_INTERVAL:
-        os.replace("frame_tmp.jpg", "frame.jpg")  # atomic swap
-        pygame.image.save(canvas, "/tmp/frame.jpg")
+        pygame.image.save(canvas, "/tmp/frame_tmp.jpg")
+        os.replace("/tmp/frame_tmp.jpg", "/tmp/frame.jpg") # flicker reducing swap
         last_save_time = now
 
     clock.tick(60)  # 60 FPS
