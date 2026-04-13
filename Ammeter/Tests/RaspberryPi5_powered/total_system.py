@@ -57,7 +57,7 @@ PURPLE = (100, 0, 255)
 # input selections
 input_names = ["OD CUP", "LE CUP", "HE CUP", "OBJ CUP", "IMG CUP", "R45 TARGET", "R30 TARGET", "L30 TARGET", "", "", "", "ERROR: INVALID INPUT"] 
 input_xlocations = [780, 500, 300, 250, 200, 800, 800, 800, 800, 800, 800, 10000]
-input_ylocations = [105, 100, 100, 100, 150, 800, 800, 800, 800, 800, 800, 10000]
+input_ylocations = [107, 100, 100, 100, 150, 800, 800, 800, 800, 800, 800, 10000]
 activeCup = 11
 
 # scale selections
@@ -69,6 +69,10 @@ scale_value = 2
 # daq read vairables
 voltage = 0.0
 scaled_voltage = 0.0
+
+# screen mirroring variables
+last_save_time = 0
+SAVE_INTERVAL = 0.1  # 10 FPS
 
 
 def draw_active_cup():
@@ -206,6 +210,12 @@ while running:
             decrement()
     except BlockingIOError:
         pass
+
+    # saving a frame at a set interval to mirror on web
+    now = time.time()
+    if now - last_save_time > SAVE_INTERVAL:
+        pygame.image.save(canvas, "/tmp/frame.jpg")
+        last_save_time = now
 
     clock.tick(60)  # 60 FPS
 
