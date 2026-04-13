@@ -3,6 +3,7 @@ import pygame
 import time
 from gpiozero import LED, Button
 import socket
+import os
 
 # daqhats init
 hat = mcc118(0)
@@ -214,6 +215,7 @@ while running:
     # saving a frame at a set interval to mirror on web
     now = time.time()
     if now - last_save_time > SAVE_INTERVAL:
+        os.replace("frame_tmp.jpg", "frame.jpg")  # atomic swap
         pygame.image.save(canvas, "/tmp/frame.jpg")
         last_save_time = now
 
