@@ -3,25 +3,10 @@ import socket
 
 app = Flask(__name__)
 
-UDP_IP = "127.0.0.1"   # sending locally to your main script
+UDP_IP = "127.0.0.1"
 UDP_PORT = 5005
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-
-@app.route('/')
-def index():
-    return open("index.html").read()
-
-@app.route('/frame.jpg')
-def frame():
-    return send_file("frame.jpg", mimetype='image/jpeg')
-
-@app.route('/cmd/<command>')
-def cmd(command):
-    sock.sendto(command.encode(), (UDP_IP, UDP_PORT))
-    return "OK"
-
-app.run(host="0.0.0.0", port=5000)
 
 @app.route("/")
 def index():
@@ -39,10 +24,10 @@ def index():
     <script>
     function updateImage() {
         const img = document.getElementById("stream");
-        img.src = "/frame.jpg?t=" + new Date().getTime(); // cache buster
+        img.src = "/frame.jpg?t=" + new Date().getTime();
     }
 
-    setInterval(updateImage, 100); // ~10 FPS
+    setInterval(updateImage, 100);
 
     function sendCmd(cmd) {
         fetch("/cmd/" + cmd);
@@ -52,3 +37,15 @@ def index():
     </body>
     </html>
     """
+
+@app.route('/frame.jpg')
+def frame():
+    return send_file("/tmp/frame.jpg", mimetype='image/jpeg')
+
+@app.route('/cmd/<command>')
+def cmd(command):
+    sock.sendto(command.encode(), (UDP_IP, UDP_PORT))
+    return "OK"
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
