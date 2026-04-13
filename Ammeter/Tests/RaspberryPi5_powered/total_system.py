@@ -102,7 +102,7 @@ def draw_screen(voltage, scaled_voltage):
 
     canvas.blit(input_text, (20, 20))
     canvas.blit(range_text, (600, 20))
-    canvas.blit(vdg_logo, (50, 80))
+    canvas.blit(vdg_logo, (50, 50))
 
     # Big voltage display
     if abs(voltage) < 10: 
