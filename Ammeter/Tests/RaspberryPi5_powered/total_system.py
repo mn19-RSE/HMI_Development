@@ -43,7 +43,8 @@ font_small = pygame.font.SysFont(None, 50)
 font_large = pygame.font.SysFont(None, 180)
 # static image load
 vdg_logo = pygame.image.load("Ammeter/Tests/RaspberryPi5_powered/vdg.png").convert_alpha()
-
+# vdg logo draw
+canvas.blit(vdg_logo, (150, 50))
 
 # color definitions
 WHITE = (255, 255, 255)
@@ -112,8 +113,7 @@ def draw_screen(voltage, scaled_voltage):
     rect.topright = (1260, 20)
     canvas.blit(range_text, rect)
     
-    # vdg logo draw
-    canvas.blit(vdg_logo, (150, 50))
+    
 
     # Big voltage display
     if abs(voltage) < 10: 
