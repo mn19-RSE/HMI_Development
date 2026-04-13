@@ -49,9 +49,9 @@ vdg_logo = pygame.image.load("Ammeter/Tests/RaspberryPi5_powered/vdg.png").conve
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 GRAY = (100, 100, 100)
-BLUE = (0, 130, 255)
+BLUE = (0, 0, 255)
 CYAN = (0, 255, 255)
-GREEN = (0, 255, 130)
+GREEN = (0, 255, 0)
 RED = (255, 0, 0)
 
 # input selections
