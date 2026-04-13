@@ -57,8 +57,8 @@ PURPLE = (100, 0, 255)
 
 # input selections
 input_names = ["OD CUP", "LE CUP", "HE CUP", "OBJ CUP", "IMG CUP", "R45 TARGET", "R30 TARGET", "L30 TARGET", "", "", "", "ERROR: INVALID INPUT"] 
-input_xlocations = [780, 500, 300, 250, 200, 800, 800, 800, 800, 800, 800, 10000]
-input_ylocations = [107, 100, 100, 100, 150, 800, 800, 800, 800, 800, 800, 10000]
+input_xlocations = [780, 650, 450, 350, 300, 800, 800, 800, 800, 800, 800, 10000]
+input_ylocations = [107, 107, 107, 107, 150, 800, 800, 800, 800, 800, 800, 10000]
 activeCup = 11
 
 # scale selections
