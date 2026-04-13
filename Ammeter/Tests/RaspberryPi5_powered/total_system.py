@@ -56,9 +56,9 @@ RED = (255, 0, 0)
 PURPLE = (100, 0, 255)
 
 # input selections
-input_names = ["OD CUP", "LE CUP", "HE CUP", "OBJ CUP", "IMG CUP", "R45 TARGET", "R30 TARGET", "L30 TARGET", "8", "9", "10", "ERROR: INVALID INPUT"] 
-input_xlocations = [750, 610, 360, 290, 245, 800, 800, 800, 800, 800, 800, 10000]
-input_ylocations = [107, 107, 107, 107, 150, 800, 800, 800, 800, 800, 800, 10000]
+input_names = ["OD CUP", "LE CUP", "HE CUP", "OBJ CUP", "IMG CUP", "TARGET 1", "TARGET 2", "TARGET 3", "TARGET 4", "TARGEt 5", "TARGET 6", "ERROR: INVALID INPUT"] 
+input_xlocations = [750, 610, 360, 290, 245, 10000, 10000, 10000, 10000, 10000, 10000, 10000]
+input_ylocations = [107, 107, 107, 107, 150, 10000, 10000, 10000, 10000, 10000, 10000, 10000]
 activeCup = 11
 
 # scale selections
@@ -107,7 +107,6 @@ def draw_screen(voltage, scaled_voltage):
         INPUT_COLOR = RED
     else:
         INPUT_COLOR = CYAN
-        draw_active_cup()
     input_text = font_small.render(f"Input: {input_names[activeCup]}", True, INPUT_COLOR)
     canvas.blit(input_text, (20, 20))
 
@@ -118,6 +117,9 @@ def draw_screen(voltage, scaled_voltage):
     
     # vdg logo draw
     canvas.blit(vdg_logo, (150, 50))
+
+    if activeCup < 5:
+        draw_active_cup()
 
     # Big voltage display
     if abs(voltage) < 10: 
