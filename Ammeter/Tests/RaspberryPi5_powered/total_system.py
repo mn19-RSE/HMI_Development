@@ -22,7 +22,7 @@ pins = [LED(21), LED(19), LED(20)]
 btn_up = Button(4, pull_up=True, bounce_time=0.1)
 btn_down = Button(27, pull_up=True, bounce_time=0.1)
 # cup input rotary switch pins
-input_button_pins = [1, 0, 22, 23, 16, 6, 5, 25, 24, 18, 17]
+input_button_pins = [3, 2, 22, 23, 16, 6, 5, 25, 24, 18, 17]
 input_buttons = [Button(pin, pull_up=True, bounce_time=0.05) for pin in input_button_pins]
 ERROR_INDEX = len(input_button_pins) 
 
@@ -72,7 +72,7 @@ scaled_voltage = 0.0
 
 
 def draw_active_cup():
-    pygame.draw.circle(canvas, PURPLE, ({input_xlocations[activeCup]}, {input_ylocations[activeCup]}), 5, 5)
+    pygame.draw.circle(canvas, PURPLE, (input_xlocations[activeCup], input_ylocations[activeCup]), 5, 5)
 
 def draw_bar(voltage):
 
