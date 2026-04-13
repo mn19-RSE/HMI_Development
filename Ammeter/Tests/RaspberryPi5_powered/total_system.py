@@ -49,9 +49,9 @@ vdg_logo = pygame.image.load("Ammeter/Tests/RaspberryPi5_powered/vdg.png").conve
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 GRAY = (100, 100, 100)
-BLUE = (0, 150, 255)
+BLUE = (0, 180, 255)
 CYAN = (0, 255, 255)
-GREEN = (0, 255, 150)
+GREEN = (0, 255, 180)
 RED = (255, 0, 0)
 
 # input selections
@@ -82,7 +82,6 @@ def draw_bar(voltage):
     # Normalize voltage
     norm = abs(voltage / 10)  # 0 to 1
     fill_width = int(norm * bar_width)
-
     pygame.draw.rect(canvas, DYNAMIC_COLOR, (bar_x, bar_y, fill_width, bar_height))
 
 def draw_screen(voltage, scaled_voltage):
@@ -120,6 +119,7 @@ def draw_screen(voltage, scaled_voltage):
         rect = over_limit.get_rect()
         rect.topright = (1260, 220)
         canvas.blit(over_limit, rect)
+        DYNAMIC_COLOR = RED
 
     # Bar graph
     draw_bar(voltage)
