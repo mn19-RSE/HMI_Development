@@ -72,10 +72,10 @@ def draw_bar(voltage):
 
     # Map absolute value of -10V-+10V to screen width
     bar_x = 0
-    bar_y = screen_height - 50
-    bar_width = screen_width 
     bar_height = 50
-
+    bar_y = screen_height - bar_height
+    bar_width = screen_width 
+    
     pygame.draw.rect(canvas, GRAY, (bar_x, bar_y, bar_width, bar_height))
 
     # Normalize voltage
@@ -102,15 +102,20 @@ def draw_screen(voltage, scaled_voltage):
 
     canvas.blit(input_text, (20, 20))
     canvas.blit(range_text, (600, 20))
-    canvas.blit(vdg_logo, (50, 200))
+    canvas.blit(vdg_logo, (50, 80))
 
     # Big voltage display
     if abs(voltage) < 10: 
         volt_text = font_large.render(f"{scaled_voltage:+.5f} {scale_units[scale_value]}", True, DYNAMIC_COLOR)
-        canvas.blit(volt_text, (450, 220))
+        rect = volt_text.get_rect()
+        rect.topright = (1260, 220)
+        canvas.blit(volt_text, rect)
     elif abs(voltage) >= 10:
         over_limit = font_large.render("OL", True, GREEN)
-        canvas.blit(over_limit, (1000, 220))
+        rect = over_limit.get_rect()
+        rect.topright = (1260, 220)
+        canvas.blit(over_limit, rect)
+
     # Bar graph
     draw_bar(voltage)
 
