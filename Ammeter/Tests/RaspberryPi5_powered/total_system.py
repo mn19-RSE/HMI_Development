@@ -49,9 +49,9 @@ vdg_logo = pygame.image.load("Ammeter/Tests/RaspberryPi5_powered/vdg.png").conve
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 GRAY = (100, 100, 100)
-BLUE = (0, 180, 255)
+BLUE = (0, 130, 255)
 CYAN = (0, 255, 255)
-GREEN = (0, 255, 180)
+GREEN = (0, 255, 130)
 RED = (255, 0, 0)
 
 # input selections
@@ -184,7 +184,7 @@ while running:
     scaled_voltage = voltage * scale_voltage_multipliers[scale_value]
     # reduces zero hunting 
     # remove if not needed with current amp
-    if abs(voltage) < .01:
+    if abs(voltage) < .05:
         scaled_voltage = 0
         voltage = 0
     draw_screen(voltage, scaled_voltage)
