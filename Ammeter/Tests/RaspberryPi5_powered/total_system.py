@@ -37,31 +37,32 @@ pygame.mouse.set_visible(False)
 rotated = pygame.transform.rotate(canvas, 90)
 screen.blit(rotated, (0, 0))
 pygame.display.flip()
-# time.sleep(2)
+
 # pygame font sizes
 font_small = pygame.font.SysFont(None, 50)
 font_large = pygame.font.SysFont(None, 180)
 # static image load
 vdg_logo = pygame.image.load("Ammeter/Tests/RaspberryPi5_powered/vdg.png").convert_alpha()
-# vdg_logo = pygame.transform.scale(vdg_logo, (200, 200))  # adjust size
+
 
 # color definitions
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
-GREEN = (0, 200, 0)
 GRAY = (100, 100, 100)
+BLUE = (0, 150, 255)
 CYAN = (0, 255, 255)
+GREEN = (0, 255, 150)
 RED = (255, 0, 0)
 
 # input selections
 input_names = ["OD CUP", "LE CUP", "HE CUP", "OBJ CUP", "IMG CUP", "R45 TARGET", "R30 TARGET", "L30 TARGET", "", "", "", "ERROR: INVALID INPUT"] 
-activeCup = 0
+activeCup = 11
 
 # scale selections
 scale_names = ["1 nA", "10 nA", "100 nA", "1 μA", "10 μA", "100 μA", "1 mA", "10 mA"]
 scale_voltage_multipliers = [.1, 1, 10, .1, 1, 10, .1, 1]
 scale_units = ["nA", "nA", "nA", "μA", "μA", "μA", "mA", "mA"]
-scale_value = 0
+scale_value = 2
 
 # daq read vairables
 voltage = 0.0
@@ -70,7 +71,7 @@ scaled_voltage = 0.0
 
 def draw_bar(voltage):
 
-    # Map absolute value of -10V-+10V to screen width
+    # Map absolute value of -10V to +10V to screen width
     bar_x = 0
     bar_height = 50
     bar_y = screen_height - bar_height
@@ -87,9 +88,9 @@ def draw_bar(voltage):
 def draw_screen(voltage, scaled_voltage):
     global DYNAMIC_COLOR
     if voltage < 0:
-        DYNAMIC_COLOR = CYAN
+        DYNAMIC_COLOR = BLUE
     elif voltage >= 0:
-        DYNAMIC_COLOR = RED 
+        DYNAMIC_COLOR = GREEN
     canvas.fill(BLACK)
 
     # Top text
@@ -98,11 +99,15 @@ def draw_screen(voltage, scaled_voltage):
     else:
         INPUT_COLOR = CYAN
     input_text = font_small.render(f"Input: {input_names[activeCup]}", True, INPUT_COLOR)
-    range_text = font_small.render(f"Range: Max Value = ±{scale_names[scale_value]}", True, CYAN)
-
     canvas.blit(input_text, (20, 20))
-    canvas.blit(range_text, (600, 20))
-    canvas.blit(vdg_logo, (50, 50))
+
+    range_text = font_small.render(f"Range: Max Value = ±{scale_names[scale_value]}", True, CYAN)
+    rect = range_text.get_rect()
+    rect.topright = (1260, 20)
+    canvas.blit(range_text, rect)
+    
+    # vdg logo draw
+    canvas.blit(vdg_logo, (150, 50))
 
     # Big voltage display
     if abs(voltage) < 10: 
@@ -111,7 +116,7 @@ def draw_screen(voltage, scaled_voltage):
         rect.topright = (1260, 220)
         canvas.blit(volt_text, rect)
     elif abs(voltage) >= 10:
-        over_limit = font_large.render("OL", True, GREEN)
+        over_limit = font_large.render("OL", True, RED)
         rect = over_limit.get_rect()
         rect.topright = (1260, 220)
         canvas.blit(over_limit, rect)
