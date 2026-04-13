@@ -116,7 +116,7 @@ def draw_screen(voltage, scaled_voltage):
     canvas.blit(range_text, rect)
     
     # vdg logo draw
-    canvas.blit(vdg_logo, (150, 50))
+    canvas.blit(vdg_logo, (150, 90))
 
     if activeCup < 5:
         draw_active_cup()
