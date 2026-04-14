@@ -58,7 +58,7 @@ PURPLE = (100, 0, 255)
 # input selections
 input_names = ["OD CUP", "LE CUP", "HE CUP", "OBJ CUP", "IMG CUP", "TARGET 1", "TARGET 2", "TARGET 3", "TARGET 4", "TARGEt 5", "TARGET 6", "ERROR: INVALID INPUT"] 
 input_xlocations = [750, 610, 360, 290, 245, 10000, 10000, 10000, 10000, 10000, 10000, 10000]
-input_ylocations = [107, 107, 107, 107, 150, 10000, 10000, 10000, 10000, 10000, 10000, 10000]
+input_ylocations = [127, 127, 127, 127, 170, 10000, 10000, 10000, 10000, 10000, 10000, 10000]
 activeCup = 11
 
 # scale selections
@@ -116,7 +116,7 @@ def draw_screen(voltage, scaled_voltage):
     canvas.blit(range_text, rect)
     
     # vdg logo draw
-    canvas.blit(vdg_logo, (175, 67))
+    canvas.blit(vdg_logo, (175, 87))
 
     if activeCup < 5:
         draw_active_cup()
