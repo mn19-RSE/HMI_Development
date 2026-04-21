@@ -222,7 +222,7 @@ while running:
         os.replace("/tmp/frame_tmp.jpg", "/tmp/frame.jpg") # flicker reducing swap
         last_save_time = now
 
-    clock.tick(5)  # FPS
+    clock.tick(60)  # FPS
 
 pygame.quit()
 
