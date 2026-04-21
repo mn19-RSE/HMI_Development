@@ -54,9 +54,10 @@ CYAN = (0, 255, 255)
 GREEN = (0, 255, 0)
 RED = (255, 0, 0)
 PURPLE = (100, 0, 255)
+PINK = (255, 0, 255)
 
 # input selections
-input_names = ["OD CUP", "LE CUP", "HE CUP", "OBJ CUP", "IMG CUP", "TARGET 1", "TARGET 2", "TARGET 3", "TARGET 4", "TARGEt 5", "TARGET 6", "ERROR: INVALID INPUT"] 
+input_names = ["OD CUP", "LE CUP", "HE CUP", "OBJ CUP", "IMG CUP", "TARGET 1", "TARGET 2", "TARGET 3", "TARGET 4", "TARGET 5", "TARGET 6", "ERROR: INVALID INPUT"] 
 input_xlocations = [750, 610, 360, 290, 245, 10000, 10000, 10000, 10000, 10000, 10000, 10000]
 input_ylocations = [127, 127, 127, 127, 170, 10000, 10000, 10000, 10000, 10000, 10000, 10000]
 activeCup = 11
@@ -77,7 +78,7 @@ SAVE_INTERVAL = 0.1  # 10 FPS
 
 
 def draw_active_cup():
-    pygame.draw.circle(canvas, PURPLE, (input_xlocations[activeCup], input_ylocations[activeCup]), 10, 10)
+    pygame.draw.circle(canvas, PINK, (input_xlocations[activeCup], input_ylocations[activeCup]), 10, 10)
 
 def draw_bar(voltage):
 
