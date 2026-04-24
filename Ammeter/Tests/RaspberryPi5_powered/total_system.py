@@ -166,13 +166,7 @@ def decrement():
 def send_all_data():
     ts = time.time()
     # UDP message string
-    msg = (
-        f"Timestamp: {ts:.6f}\n"
-        f"Input selection: {input_names[activeCup]}\n"
-        f"Current value: {scaled_voltage:.5f}\n"
-        f"Current unit: {scale_units[scale_value]}\n"
-    )
-
+    msg = {"ch_picoam_time": ts, "ch_picoam_cup": input_names[activeCup], "ch_picoam_ival": scaled_voltage, "ch_picoam_unit": scale_units[scale_value]}
     sock.sendto(msg.encode(), (UDP_IP, UDP_PORT))
 
 # reads rotary switch
