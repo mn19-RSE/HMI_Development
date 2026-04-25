@@ -4,6 +4,7 @@ import time
 from gpiozero import LED, Button
 import socket
 import os
+import json 
 
 # daqhats init
 hat = mcc118(0)
@@ -167,7 +168,8 @@ def send_all_data():
     ts = time.time()
     # UDP message string
     msg = {"ch_picoam_time": ts, "ch_picoam_cup": input_names[activeCup], "ch_picoam_ival": scaled_voltage, "ch_picoam_unit": scale_units[scale_value]}
-    sock.sendto(msg.encode(), (UDP_IP, UDP_PORT))
+    msg_bytes = json.dumps(msg).encode('utf-8') # needed (maybe) to put a dict in a UDP packet 
+    sock.sendto(msg_bytes, (UDP_IP, UDP_PORT))
 
 # reads rotary switch
  
