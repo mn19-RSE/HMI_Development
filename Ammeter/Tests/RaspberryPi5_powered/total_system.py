@@ -4,7 +4,7 @@ import time
 from gpiozero import LED, Button
 import socket
 import os
-import json 
+# import json 
 
 # daqhats init
 hat = mcc118(0)
