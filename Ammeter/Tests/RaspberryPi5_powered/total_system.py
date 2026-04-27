@@ -65,7 +65,7 @@ activeCup = 11
 
 # scale selections
 scale_names = ["100 pA", "1 nA", "10 nA", "100 nA", "1 μA", "10 μA", "100 μA", "1 mA"]
-scale_voltage_multipliers = [.01, .1, 1, .01, .1, 1, .01, .1]
+scale_voltage_multipliers = [.01, .1, 1, 10, .1, 1, 10, .01]
 scale_units = ["pA", "nA", "nA", "nA", "μA", "μA", "μA", "mA"]
 scale_value = 2
 
