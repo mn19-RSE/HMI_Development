@@ -19,7 +19,7 @@ sock.setblocking(False) # needed for listening to not pause script
 
 # gpio init
 # scale output pins (LSB - MSB)
-pins = [LED(21), LED(20), LED(19)]
+pins = [LED(21), LED(20), LED(19)] # tested, seems correct 21, 20, 19
 # scale button pins
 btn_up = Button(4, pull_up=True, bounce_time=0.1)
 btn_down = Button(27, pull_up=True, bounce_time=0.1)
@@ -65,7 +65,7 @@ activeCup = 11
 
 # scale selections
 scale_names = ["1 nA", "10 nA", "100 nA", "1 μA", "10 μA", "100 μA", "1 mA", "10 mA"]
-scale_voltage_multipliers = [.1, 1, 10, .1, 1, 10, .1, 1]
+scale_voltage_multipliers = [.01, .1, 1, .01, .1, 1, .01, .1]
 scale_units = ["nA", "nA", "nA", "μA", "μA", "μA", "mA", "mA"]
 scale_value = 2
 
