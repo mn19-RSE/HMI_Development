@@ -194,7 +194,7 @@ while running:
     scaled_voltage = voltage * scale_voltage_multipliers[scale_value]
     # reduces zero hunting 
     # remove if not needed with current amp
-    if abs(voltage) < .05:
+    if abs(voltage) < .5: # changed from .05
         scaled_voltage = 0
         voltage = 0
     draw_screen(voltage, scaled_voltage)
