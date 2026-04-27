@@ -64,9 +64,9 @@ input_ylocations = [127, 127, 127, 127, 170, 10000, 10000, 10000, 10000, 10000, 
 activeCup = 11
 
 # scale selections
-scale_names = ["1 nA", "10 nA", "100 nA", "1 μA", "10 μA", "100 μA", "1 mA", "10 mA"]
+scale_names = ["100 pA", "1 nA", "10 nA", "100 nA", "1 μA", "10 μA", "100 μA", "1 mA"]
 scale_voltage_multipliers = [.01, .1, 1, .01, .1, 1, .01, .1]
-scale_units = ["nA", "nA", "nA", "μA", "μA", "μA", "mA", "mA"]
+scale_units = ["pA", "nA", "nA", "nA", "μA", "μA", "mμ", "mA"]
 scale_value = 2
 
 # daq read vairables
