@@ -19,7 +19,7 @@ sock.setblocking(False) # needed for listening to not pause script
 
 # gpio init
 # scale output pins (LSB - MSB)
-pins = [LED(20), LED(19), LED(21)]
+pins = [LED(21), LED(20), LED(19)]
 # scale button pins
 btn_up = Button(4, pull_up=True, bounce_time=0.1)
 btn_down = Button(27, pull_up=True, bounce_time=0.1)
