@@ -1,3 +1,6 @@
+# deprecitated, newest code in /Ammeter/Code_builds/Python_Ammeter/
+
+
 from flask import Flask, send_file
 import socket
 
