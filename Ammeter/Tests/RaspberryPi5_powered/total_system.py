@@ -10,7 +10,7 @@ import os
 hat = mcc118(0)
 
 # network variables
-UDP_IP = "192.168.0.111" # Change to 42.15 for final implementation
+UDP_IP = "192.168.42.15" # Change to 42.15 for final implementation
 UDP_PORT = 1196 # destination port
 LISTEN_PORT = 5005 # port to listen on 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -167,7 +167,12 @@ def decrement():
 def send_all_data():
     ts = time.time()
     # UDP message string
-    msg = {"ch_picoam_time": ts, "ch_picoam_cup": input_names[activeCup], "ch_picoam_ival": scaled_voltage, "ch_picoam_unit": scale_units[scale_value]}
+    msg = {
+        "ch_picoam_time": ts,
+        "ch_picoam_cup": input_names[activeCup],
+        "ch_picoam_ival": scaled_voltage,
+        "ch_picoam_unit": scale_units[scale_value]
+    }
     msg_bytes = json.dumps(msg).encode('utf-8') # needed (maybe) to put a dict in a UDP packet 
     sock.sendto(msg_bytes, (UDP_IP, UDP_PORT))
 
