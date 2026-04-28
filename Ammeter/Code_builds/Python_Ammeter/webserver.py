@@ -12,17 +12,37 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 def index():
     return """
     <html>
-    <body style="margin:0; background:black; text-align:center;">
+    <head>
+    <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background: black;
+        overflow: hidden;
+    }
 
-    <img id="stream" src="/frame.jpg" style="
-        max-width: 100vw;
-        max-height: 100vh;
-        width: auto;
-        height: auto;
+    #container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #stream {
+        width: 100%;
+        height: 100%;
         object-fit: contain;
-        display: block;
-        margin: auto;
-    ">
+    }
+    </style>
+    </head>
+
+    <body>
+
+    <div id="container">
+        <img id="stream" src="/frame.jpg">
+    </div>
 
     <br><br>
 
@@ -34,7 +54,6 @@ def index():
         const img = document.getElementById("stream");
         img.src = "/frame.jpg?t=" + new Date().getTime();
     }
-
     setInterval(updateImage, 100);
 
     function sendCmd(cmd) {
