@@ -178,12 +178,12 @@ def update_outputs():
 
 def increment():
     global scale_value
-    scale_value = (scale_value + 1) % 8
+    scale_value = (scale_value + 1) % 5
     update_outputs()
 
 def decrement():
     global scale_value
-    scale_value = (scale_value - 1) % 8
+    scale_value = (scale_value - 1) % 5
     update_outputs()
 
 def send_all_data():
