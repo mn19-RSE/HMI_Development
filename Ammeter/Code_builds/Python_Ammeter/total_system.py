@@ -64,10 +64,17 @@ input_ylocations = [127, 127, 127, 127, 170, 10000, 10000, 10000, 10000, 10000, 
 activeCup = 11
 
 # scale selections
+'''
 scale_names = ["100 pA", "1 nA", "10 nA", "100 nA", "1 μA", "10 μA", "100 μA", "1 mA"]
 scale_voltage_multipliers = [10, .1, 1, 10, .1, 1, 10, .1]
 scale_units = ["pA", "nA", "nA", "nA", "μA", "μA", "μA", "mA"]
 scale_value = 2
+'''
+# testing truncating scales that dont work or are not needed
+scale_names = ["10 nA", "100 nA", "1 μA", "10 μA", "100 μA"]
+scale_voltage_multipliers = [1, 10, .1, 1, 10]
+scale_units = ["nA", "nA", "μA", "μA", "μA"]
+scale_value = 1
 
 # daq read vairables
 voltage = 0.0
@@ -148,11 +155,26 @@ def read_voltage():
 
 # set scale output decimal to binary 
 def update_outputs():
-    for i in range(3):
-        if (scale_value >> i) & 1:
-            pins[i].on()
-        else:
-            pins[i].off()
+    if scale_value == 0:
+        pins[3].off()
+        pins[2].on()
+        pins[1].off()
+    if scale_value == 1:
+        pins[3].off()
+        pins[2].on()
+        pins[1].on()
+    if scale_value == 2:
+        pins[3].on()
+        pins[2].off()
+        pins[1].off()
+    if scale_value == 3:
+        pins[3].on()
+        pins[2].off()
+        pins[1].on()
+    if scale_value == 4:
+        pins[3].on()
+        pins[2].on()
+        pins[1].off()
 
 def increment():
     global scale_value

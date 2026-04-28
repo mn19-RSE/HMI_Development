@@ -1,5 +1,5 @@
 # deprecitated, newest code in /Ammeter/Code_builds/Python_Ammeter/
-
+'''
 from daqhats import mcc118
 import pygame
 import time
@@ -251,3 +251,4 @@ while running:
 
 pygame.quit()
 
+'''
