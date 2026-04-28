@@ -14,7 +14,7 @@ def index():
     <html>
     <body style="margin:0; background:black; text-align:center;">
 
-    <img id="stream" src="/frame.jpg" width="800">
+    <img id="stream" src="/frame.jpg" width:100%>
 
     <br><br>
 
