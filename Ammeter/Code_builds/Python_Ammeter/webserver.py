@@ -14,7 +14,15 @@ def index():
     <html>
     <body style="margin:0; background:black; text-align:center;">
 
-    <img id="stream" src="/frame.jpg" width:100%>
+    <img id="stream" src="/frame.jpg" style="
+        max-width: 100vw;
+        max-height: 100vh;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        display: block;
+        margin: auto;
+    ">
 
     <br><br>
 
