@@ -157,11 +157,26 @@ def read_voltage():
 
 # set scale output decimal to binary 
 def update_outputs():
-    for i in range(3):
-        if (scale_value >> i) & 1:
-            pins[i].on()
-        else:
-            pins[i].off()
+    if scale_value == 0:
+        pins[3].off()
+        pins[2].on()
+        pins[1].off()
+    if scale_value == 1:
+        pins[3].off()
+        pins[2].on()
+        pins[1].on()
+    if scale_value == 2:
+        pins[3].on()
+        pins[2].off()
+        pins[1].off()
+    if scale_value == 3:
+        pins[3].on()
+        pins[2].off()
+        pins[1].on()
+    if scale_value == 4:
+        pins[3].on()
+        pins[2].on()
+        pins[1].off()
 
 def increment():
     global scale_value
