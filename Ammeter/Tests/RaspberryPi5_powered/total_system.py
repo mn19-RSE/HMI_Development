@@ -66,10 +66,17 @@ input_ylocations = [127, 127, 127, 127, 170, 10000, 10000, 10000, 10000, 10000, 
 activeCup = 11
 
 # scale selections
+'''
 scale_names = ["100 pA", "1 nA", "10 nA", "100 nA", "1 μA", "10 μA", "100 μA", "1 mA"]
 scale_voltage_multipliers = [10, .1, 1, 10, .1, 1, 10, .1]
 scale_units = ["pA", "nA", "nA", "nA", "μA", "μA", "μA", "mA"]
 scale_value = 2
+'''
+# testing truncating scales that dont work or are not needed
+scale_names = ["10 nA", "100 nA", "1 μA", "10 μA", "100 μA"]
+scale_voltage_multipliers = [1, 10, .1, 1, 10]
+scale_units = ["nA", "nA", "μA", "μA", "μA"]
+scale_value = 1
 
 # daq read vairables
 voltage = 0.0
@@ -158,12 +165,12 @@ def update_outputs():
 
 def increment():
     global scale_value
-    scale_value = (scale_value + 1) % 8
+    scale_value = (scale_value + 1) % 5 # set to 8 for all scales
     update_outputs()
 
 def decrement():
     global scale_value
-    scale_value = (scale_value - 1) % 8
+    scale_value = (scale_value - 1) % 5 # set to 8 for all scales
     update_outputs()
 
 def send_all_data():
