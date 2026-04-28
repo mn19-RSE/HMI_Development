@@ -205,7 +205,7 @@ while running:
     draw_screen(voltage, scaled_voltage)
     # set scale binary word
     update_outputs()
-    send_all_data() # UDP packets in new form still dont work?
+    # send_all_data() # UDP packets in new form still dont work?
     try:
         data, addr = sock.recvfrom(1024)
         cmd = data.decode().strip()
