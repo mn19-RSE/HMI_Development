@@ -46,7 +46,7 @@ def index():
 
     /* CONTROL PANEL */
     #controls {
-        width: 220px;
+        width: 300px;
         background: #111;
         display: flex;
         flex-direction: column;
@@ -61,7 +61,7 @@ def index():
         padding: 12px;
         border: none;
         border-radius: 10px;
-        background: #2d6cdf;
+        background: #35f25e;
         color: white;
         font-size: 14px;
         cursor: pointer;
@@ -69,7 +69,7 @@ def index():
     }
 
     button:hover {
-        background: #1f4fa3;
+        background: #2bad47;
         transform: scale(1.05);
     }
 

@@ -28,7 +28,7 @@ Built around Keithley 18000-20 current amplifier
         [Service]
         User=root
         WorkingDirectory=/home/vdg
-        ExecStart=/usr/bin/python3 /home/vdg/HMI_Development/Code_builds/Python_Ammeter/main.py 
+        ExecStart=/usr/bin/python3 /home/vdg/HMI_Development/Ammeter/Code_builds/Python_Ammeter/main.py 
         Type=simple
         Restart=on-failure 
         
@@ -40,5 +40,5 @@ sudo systemctl enable myservice
 sudo systemctl start myservice
 2. SSH vsg@ammeter.local to pull updates and observe system health
 3. View logs to troubleshoot issues
-    - journalctl -u ammeter.service  # View all logs
+    - journalctl -u ammeter.service
 
