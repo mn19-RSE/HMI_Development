@@ -16,18 +16,26 @@ def index():
     <style>
     html, body {
         margin: 0;
-        padding: 0;
         height: 100%;
         background: black;
         overflow: hidden;
+        font-family: Arial, sans-serif;
     }
 
-    #container {
-        width: 100vw;
-        height: 100vh;
+    /* MAIN LAYOUT */
+    #app {
         display: flex;
-        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    /* IMAGE AREA */
+    #viewer {
+        flex: 1;
+        display: flex;
         align-items: center;
+        justify-content: center;
+        background: black;
     }
 
     #stream {
@@ -35,19 +43,58 @@ def index():
         height: 100%;
         object-fit: contain;
     }
+
+    /* CONTROL PANEL */
+    #controls {
+        width: 220px;
+        background: #111;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 15px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    /* BUTTON STYLE */
+    button {
+        padding: 12px;
+        border: none;
+        border-radius: 10px;
+        background: #2d6cdf;
+        color: white;
+        font-size: 14px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    button:hover {
+        background: #1f4fa3;
+        transform: scale(1.05);
+    }
+
+    button:active {
+        transform: scale(0.95);
+    }
     </style>
     </head>
 
     <body>
 
-    <div id="container">
-        <img id="stream" src="/frame.jpg">
+    <div id="app">
+
+        <!-- IMAGE SIDE -->
+        <div id="viewer">
+            <img id="stream" src="/frame.jpg">
+        </div>
+
+        <!-- CONTROLS SIDE -->
+        <div id="controls">
+            <button onclick="sendCmd('UP')">Scale Up</button>
+            <button onclick="sendCmd('DOWN')">Scale Down</button>
+        </div>
+
     </div>
-
-    <br><br>
-
-    <button onclick="sendCmd('UP')">Scale Up</button>
-    <button onclick="sendCmd('DOWN')">Scale Down</button>
 
     <script>
     function updateImage() {
