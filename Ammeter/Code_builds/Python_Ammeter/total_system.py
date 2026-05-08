@@ -169,17 +169,8 @@ def draw_screen(voltage, scaled_voltage):
     screen.blit(rotated, (0, 0))
     pygame.display.flip()
 
-def read_voltage_oversampled(n=4): #4 is default (2-4)
-    # average multiple reads per loop
-    total = 0
-    for _ in range(n):
-        total += hat.a_in_read(0)
-    return total / n
-
-def apply_ema(new_value):
-    global ema_voltage
-    ema_voltage = (EMA_ALPHA * new_value) + ((1 - EMA_ALPHA) * ema_voltage)
-    return ema_voltage
+def read_voltage():
+    return hat.a_in_read(0)
 
 # set scale output decimal to binary 
 def update_outputs():
@@ -206,12 +197,12 @@ def update_outputs():
 
 def increment():
     global scale_value
-    scale_value = (scale_value + 1) % 5
+    scale_value = (scale_value + 1) % 5 # set to 8 for all scales
     update_outputs()
 
 def decrement():
     global scale_value
-    scale_value = (scale_value - 1) % 5
+    scale_value = (scale_value - 1) % 5 # set to 8 for all scales
     update_outputs()
 
 def send_all_data():
@@ -254,21 +245,7 @@ while running:
             running = False
 
     activeCup = get_active_cup()
-
-    # oversampling
-    raw = read_voltage_oversampled() # default is 4
-
-    # rolling average
-    samples.append(raw)
-    avg_voltage = sum(samples) / len(samples)
-
-    # Exponential moving average 
-    voltage = apply_ema(avg_voltage)
-
-    # less abrupt zero clamp
-    if abs(voltage) < DEADBAND:
-        voltage *= 0.2
-
+    voltage = read_voltage() 
     scaled_voltage = voltage * scale_voltage_multipliers[scale_value]
 
     draw_screen(voltage, scaled_voltage)
