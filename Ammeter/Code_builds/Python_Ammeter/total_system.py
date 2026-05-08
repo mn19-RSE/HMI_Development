@@ -150,8 +150,6 @@ def draw_screen(voltage, scaled_voltage):
     screen.blit(rotated, (0, 0))
     pygame.display.flip()
 
-def read_voltage():
-    return hat.a_in_read(0)
 
 # set scale output decimal to binary 
 def update_outputs():
@@ -178,12 +176,12 @@ def update_outputs():
 
 def increment():
     global scale_value
-    scale_value = (scale_value + 1) % 5
+    scale_value = (scale_value + 1) % 5 # set to 8 for all scales
     update_outputs()
 
 def decrement():
     global scale_value
-    scale_value = (scale_value - 1) % 5
+    scale_value = (scale_value - 1) % 5 # set to 8 for all scales
     update_outputs()
 
 def send_all_data():
@@ -217,7 +215,10 @@ while running:
             running = False
 
     activeCup = get_active_cup()
-    voltage = read_voltage() 
+    samples = []
+    for _ in range(16): # oversampling
+        samples.append(hat.a_in_read(0))
+    voltage = sum(samples) / len(samples) # averaging
     scaled_voltage = voltage * scale_voltage_multipliers[scale_value]
     # reduces zero hunting 
     # remove if not needed with current amp
