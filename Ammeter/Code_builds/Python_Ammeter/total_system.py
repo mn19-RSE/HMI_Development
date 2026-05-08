@@ -5,14 +5,23 @@ from gpiozero import LED, Button
 import socket
 import os
 import json 
+from collections import deque
+
+
 
 # daqhats init
 hat = mcc118(0)
+ema_voltage = 0.0
+EMA_ALPHA = 0.2  # 0.1 = very smooth, 0.3 = more responsive
+
+#oversample definitions
+SAMPLE_COUNT = 16  # adjust (8–32 is typical)
+samples = deque(maxlen=SAMPLE_COUNT)
 
 # network variables
 UDP_IP = "192.168.42.15" # Change to 42.15 for final implementation
-UDP_PORT = 1196 # destination port
-LISTEN_PORT = 5005 # port to listen on 
+UDP_PORT = 60000 # destination port
+LISTEN_PORT = 60000 # port to listen on 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock.bind(("0.0.0.0", LISTEN_PORT))
 sock.setblocking(False) # needed for listening to not pause script
@@ -58,10 +67,15 @@ PURPLE = (100, 0, 255)
 PINK = (255, 0, 255)
 
 # input selections
-input_names = ["OD CUP", "LE CUP", "HE CUP", "OBJ CUP", "IMG CUP", "TARGET 1", "TARGET 2", "TARGET 3", "TARGET 4", "TARGET 5", "TARGET 6", "ERROR: INVALID INPUT"] 
+input_names = ["OD CUP", "LE CUP", "HE CUP", "OBJ CUP", "IMG CUP", "6", "7", "8", "9", "10", "11", "ERROR: INVALID INPUT"] 
 input_xlocations = [750, 610, 360, 290, 245, 10000, 10000, 10000, 10000, 10000, 10000, 10000]
 input_ylocations = [127, 127, 127, 127, 170, 10000, 10000, 10000, 10000, 10000, 10000, 10000]
 activeCup = 11
+
+input_keys = [
+    "od", "le", "he", "obj", "img",
+    "6", "7", "8", "9", "10", "11"
+]
 
 # scale selections
 '''
@@ -74,7 +88,7 @@ scale_value = 2
 scale_names = ["10 nA", "100 nA", "1 μA", "10 μA", "100 μA"]
 scale_voltage_multipliers = [1, 10, .1, 1, 10]
 scale_units = ["nA", "nA", "μA", "μA", "μA"]
-scale_value = 1
+scale_value = 0
 
 # daq read vairables
 voltage = 0.0
@@ -84,6 +98,12 @@ scaled_voltage = 0.0
 last_save_time = 0
 SAVE_INTERVAL = 0.1  # 10 FPS
 
+# UDP send rate
+last_udp_time = 0
+UDP_INTERVAL = 0.1  # 10 Hz 
+
+# zero clamp width
+DEADBAND = 0.05
 
 def draw_active_cup():
     pygame.draw.circle(canvas, PINK, (input_xlocations[activeCup], input_ylocations[activeCup]), 10, 10)
@@ -136,13 +156,12 @@ def draw_screen(voltage, scaled_voltage):
         rect = volt_text.get_rect()
         rect.topright = (1260, 220)
         canvas.blit(volt_text, rect)
-    elif abs(voltage) >= 10:
+    else:
         over_limit = font_large.render("OL", True, RED)
         rect = over_limit.get_rect()
         rect.topright = (1260, 220)
         canvas.blit(over_limit, rect)
         DYNAMIC_COLOR = RED
-
     # Bar graph
     draw_bar(voltage)
 
@@ -150,8 +169,17 @@ def draw_screen(voltage, scaled_voltage):
     screen.blit(rotated, (0, 0))
     pygame.display.flip()
 
-def read_voltage():
-    return hat.a_in_read(0)
+def read_voltage_oversampled(n=4): #4 is default (2-4)
+    # average multiple reads per loop
+    total = 0
+    for _ in range(n):
+        total += hat.a_in_read(0)
+    return total / n
+
+def apply_ema(new_value):
+    global ema_voltage
+    ema_voltage = (EMA_ALPHA * new_value) + ((1 - EMA_ALPHA) * ema_voltage)
+    return ema_voltage
 
 # set scale output decimal to binary 
 def update_outputs():
@@ -187,19 +215,28 @@ def decrement():
     update_outputs()
 
 def send_all_data():
-    ts = time.time()
-    # UDP message string
-    msg = {
-        "ch_picoam_time": ts,
-        "ch_picoam_cup": input_names[activeCup],
-        "ch_picoam_ival": scaled_voltage,
-        "ch_picoam_unit": scale_units[scale_value]
-    }
-    msg_bytes = json.dumps(msg).encode('utf-8') # needed (maybe) to put a dict in a UDP packet 
-    sock.sendto(msg_bytes, (UDP_IP, UDP_PORT))
+    if activeCup == ERROR_INDEX:
+        return  # do not send anything
+    try:
+        value_nA = convert_to_nA(scaled_voltage, scale_units[scale_value])
+        input_key = f"ch_{input_keys[activeCup]}_ival"
+        msg = {
+            "ts": time.time(),
+            input_key: float(value_nA)
+        }
+        msg_bytes = json.dumps(msg).encode('utf-8')
+        sock.sendto(msg_bytes, (UDP_IP, UDP_PORT))
+    except Exception as e:
+        print("UDP send error:", e)
+
+# converts all values to nA for easier graphing
+def convert_to_nA(value, unit):
+    if unit == "μA":
+        return value * 1e3
+    else:
+        return value
 
 # reads rotary switch
- 
 def get_active_cup():
     for i, btn in enumerate(input_buttons):
         if btn.is_pressed:
@@ -217,17 +254,31 @@ while running:
             running = False
 
     activeCup = get_active_cup()
-    voltage = read_voltage() 
+
+    # oversampling
+    raw = read_voltage_oversampled() # default is 4
+
+    # rolling average
+    samples.append(raw)
+    avg_voltage = sum(samples) / len(samples)
+
+    # Exponential moving average 
+    voltage = apply_ema(avg_voltage)
+
+    # less abrupt zero clamp
+    if abs(voltage) < DEADBAND:
+        voltage *= 0.2
+
     scaled_voltage = voltage * scale_voltage_multipliers[scale_value]
-    # reduces zero hunting 
-    # remove if not needed with current amp
-    if abs(voltage) < .5: # changed from .05
-        scaled_voltage = 0
-        voltage = 0
+
     draw_screen(voltage, scaled_voltage)
-    # set scale binary word
-    update_outputs()
-    # send_all_data() # UDP packets in new form still dont work?
+
+    # UDP packet send at reduced rate
+    now = time.time()
+    if now - last_udp_time > UDP_INTERVAL:
+        send_all_data()
+        last_udp_time = now
+
     try:
         data, addr = sock.recvfrom(1024)
         cmd = data.decode().strip()
