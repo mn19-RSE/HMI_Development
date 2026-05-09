@@ -12,10 +12,10 @@ from collections import deque
 # daqhats init
 hat = mcc118(0)
 ema_voltage = 0.0
-EMA_ALPHA = 0.01  # 0.1 = very smooth, 0.3 = more responsive
+EMA_ALPHA = 0.1  # 0.1 = very smooth, 0.3 = more responsive
 
 #oversample definitions
-SAMPLE_COUNT = 32  # adjust (8–32 is typical)
+SAMPLE_COUNT = 8  # adjust (8–32 is typical)
 samples = deque(maxlen=SAMPLE_COUNT)
 
 # network variables
@@ -103,6 +103,7 @@ last_udp_time = 0
 UDP_INTERVAL = 1  # 1 Hz 
 
 # text display rate
+last_text_voltage = 0.0
 last_volt_time = 0
 VOLT_INTERVAL = 1 # 1 Hz
 
@@ -156,20 +157,21 @@ def draw_screen(voltage, scaled_voltage):
 
     now = time.time()
     if now - last_volt_time > VOLT_INTERVAL:
-        # Big voltage display
-        if abs(voltage) < 10: 
-            volt_text = font_large.render(f"{scaled_voltage:+.5f} {scale_units[scale_value]}", True, DYNAMIC_COLOR)
-            rect = volt_text.get_rect()
-            rect.topright = (1260, 220)
-            canvas.blit(volt_text, rect)
-        else:
+        last_volt_time = now
+        last_text_voltage = scaled_voltage
+
+    if abs(last_text_voltage) < 10:
+        volt_text = font_large.render(f"{last_text_voltage:+.5f} {scale_units[scale_value]}", True, DYNAMIC_COLOR)
+        rect = volt_text.get_rect()
+        rect.topright = (1260, 220)
+        canvas.blit(volt_text, rect)
+    else:
             over_limit = font_large.render("OL", True, RED)
             rect = over_limit.get_rect()
             rect.topright = (1260, 220)
             canvas.blit(over_limit, rect)
             DYNAMIC_COLOR = RED
-
-        
+         
     # Bar graph
     draw_bar(voltage)
 
