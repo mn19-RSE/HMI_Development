@@ -102,6 +102,10 @@ SAVE_INTERVAL = 0.1  # 10 FPS
 last_udp_time = 0
 UDP_INTERVAL = 0.1  # 10 Hz 
 
+# text display rate
+last_volt_time = 0
+VOLT_INTERVAL = .1 # 10 Hz
+
 # zero clamp width
 DEADBAND = 0.05
 
@@ -150,18 +154,22 @@ def draw_screen(voltage, scaled_voltage):
     if activeCup < 5:
         draw_active_cup()
 
-    # Big voltage display
-    if abs(voltage) < 10: 
-        volt_text = font_large.render(f"{scaled_voltage:+.5f} {scale_units[scale_value]}", True, DYNAMIC_COLOR)
-        rect = volt_text.get_rect()
-        rect.topright = (1260, 220)
-        canvas.blit(volt_text, rect)
-    else:
-        over_limit = font_large.render("OL", True, RED)
-        rect = over_limit.get_rect()
-        rect.topright = (1260, 220)
-        canvas.blit(over_limit, rect)
-        DYNAMIC_COLOR = RED
+    now = time.time()
+    if now - last_volt_time > VOLT_INTERVAL:
+        # Big voltage display
+        if abs(voltage) < 10: 
+            volt_text = font_large.render(f"{scaled_voltage:+.5f} {scale_units[scale_value]}", True, DYNAMIC_COLOR)
+            rect = volt_text.get_rect()
+            rect.topright = (1260, 220)
+            canvas.blit(volt_text, rect)
+        else:
+            over_limit = font_large.render("OL", True, RED)
+            rect = over_limit.get_rect()
+            rect.topright = (1260, 220)
+            canvas.blit(over_limit, rect)
+            DYNAMIC_COLOR = RED
+
+        
     # Bar graph
     draw_bar(voltage)
 
