@@ -12,7 +12,7 @@ from collections import deque
 # daqhats init
 hat = mcc118(0)
 ema_voltage = 0.0
-EMA_ALPHA = 0.2  # 0.1 = very smooth, 0.3 = more responsive
+EMA_ALPHA = 0.1  # 0.1 = very smooth, 0.3 = more responsive
 
 #oversample definitions
 SAMPLE_COUNT = 16  # adjust (8–32 is typical)
@@ -100,11 +100,11 @@ SAVE_INTERVAL = 0.1  # 10 FPS
 
 # UDP send rate
 last_udp_time = 0
-UDP_INTERVAL = 0.1  # 10 Hz 
+UDP_INTERVAL = 1  # 10 Hz 
 
 # text display rate
 last_volt_time = 0
-VOLT_INTERVAL = .1 # 10 Hz
+VOLT_INTERVAL = 0.5 # 10 Hz
 
 # zero clamp width
 DEADBAND = 0.05
