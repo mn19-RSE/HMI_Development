@@ -6,13 +6,16 @@ import socket
 import os
 import json 
 from collections import deque
-
-
+import SM16relind
 
 # daqhats init
 hat = mcc118(0)
 ema_voltage = 0.0
 EMA_ALPHA = 0.1  # 0.1 = very smooth, 0.3 = more responsive
+
+# relay board init
+rel0 = SM16relind.SM16relind(0) # 1-12 (closest to inputs)
+rel1 = SM16relind.SM16relind(1) # 13-24
 
 #oversample definitions
 SAMPLE_COUNT = 8  # adjust (8–32 is typical)
@@ -31,11 +34,11 @@ sock.setblocking(False) # needed for listening to not pause script
 pins = [LED(21), LED(20), LED(19)] # tested, seems correct 21, 20, 19
 # scale button pins
 btn_up = Button(4, pull_up=True, bounce_time=0.1)
-btn_down = Button(27, pull_up=True, bounce_time=0.1)
-# cup input rotary switch pins
-input_button_pins = [3, 2, 22, 23, 16, 6, 5, 25, 24, 18, 17]
-input_buttons = [Button(pin, pull_up=True, bounce_time=0.05) for pin in input_button_pins]
-ERROR_INDEX = len(input_button_pins) 
+btn_down = Button(27, pull_up=True, bounce_time=0.1) 
+
+# input button pins
+cup_btn_up = Button(3, pull_up=True, bounce_time=0.1)
+cup_btn_down = Button(2, pull_up=True, bounce_time=0.1)
 
 # pygame init
 screen_width = 1280
@@ -67,15 +70,13 @@ PURPLE = (100, 0, 255)
 PINK = (255, 0, 255)
 
 # input selections
-input_names = ["OD CUP", "LE CUP", "HE CUP", "OBJ CUP", "IMG CUP", "6", "7", "8", "9", "10", "11", "ERROR: INVALID INPUT"] 
+input_names = ["OD CUP", "LE CUP", "HE CUP", "OBJ CUP", "IMG CUP", "6", "7", "8", "9", "10", "11", "12"] 
 input_xlocations = [750, 610, 360, 290, 245, 10000, 10000, 10000, 10000, 10000, 10000, 10000]
 input_ylocations = [127, 127, 127, 127, 170, 10000, 10000, 10000, 10000, 10000, 10000, 10000]
-activeCup = 11
 
-input_keys = [
-    "od", "le", "he", "obj", "img",
-    "6", "7", "8", "9", "10", "11"
-]
+activeCup = 1 # defaults to LE cup when power cycled
+input_key = "ch_lecup_ival"
+previous_cup = 0
 
 # scale selections
 '''
@@ -110,6 +111,53 @@ VOLT_INTERVAL = 1 # 1 Hz
 # zero clamp width
 DEADBAND = 0.1
 
+
+def set_cup(activeCup):
+    if activeCup != previous_cup:
+        # close conductor relay, open shield relay
+        # keep all other shield relays closed and conductor relays open
+        rel0.set_all(1) # connect all shields to conductors 
+        rel1.set_all(0) # disconnect all conductors from input
+        time.sleep(.1) # small debaounce
+        rel0.set(activeCup+1, 0) # disconnect active cup condcutor from shield 
+        rel1.set(activeCup+1, 1) # connect active cup conductor to input
+
+        global input_key
+        if activeCup == 0:
+            input_key = "ch_odcup_ival"
+        if activeCup == 1:
+            input_key = "ch_lecup_ival"
+        if activeCup == 2:
+            input_key = "ch_hecup_ival"
+        if activeCup == 3:
+            input_key = "ch_objcup_ival"
+        if activeCup == 4:
+            input_key = "ch_imgcup_ival"
+        if activeCup == 5:
+            input_key = "ch_6cup_ival"
+        if activeCup == 6:
+            input_key = "ch_7cup_ival"
+        if activeCup == 7:
+            input_key = "ch_8cup_ival"
+        if activeCup == 8:
+            input_key = "ch_9cup_ival"
+        if activeCup == 9:
+            input_key = "ch_10cup_ival"
+        if activeCup == 10:
+            input_key = "ch_11cup_ival"
+        if activeCup == 11:
+            input_key = "ch_12cup_ival"
+
+        previous_cup = activeCup
+
+def increment_cup():
+    global activeCup
+    activeCup = (activeCup + 1) % 11
+    
+def decrement_cup():
+    global activeCup
+    activeCup = (activeCup - 1) % 11
+    
 def draw_active_cup():
     pygame.draw.circle(canvas, PINK, (input_xlocations[activeCup], input_ylocations[activeCup]), 10, 10)
 
@@ -137,7 +185,7 @@ def draw_screen(voltage, scaled_voltage):
     canvas.fill(BLACK)
 
     # Top text
-    if activeCup == ERROR_INDEX:
+    if activeCup == len(input_names):
         INPUT_COLOR = RED
     else:
         INPUT_COLOR = CYAN
@@ -225,11 +273,8 @@ def decrement():
     update_outputs()
 
 def send_all_data():
-    if activeCup == ERROR_INDEX:
-        return  # do not send anything
     try:
         value_nA = convert_to_nA(scaled_voltage, scale_units[scale_value])
-        input_key = f"ch_{input_keys[activeCup]}_ival"
         msg = {
             "ts": time.time(),
             input_key: float(value_nA)
@@ -246,24 +291,21 @@ def convert_to_nA(value, unit):
     else:
         return value
 
-# reads rotary switch
-def get_active_cup():
-    for i, btn in enumerate(input_buttons):
-        if btn.is_pressed:
-            return i
-    return ERROR_INDEX   # nothing selected → ERROR
 
 # Main loop
 running = True
 clock = pygame.time.Clock()
 btn_up.when_pressed = increment
 btn_down.when_pressed = decrement
+cup_btn_up.when_pressed = increment_cup
+cup_btn_down.when_pressed = decrement_cup
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
 
-    activeCup = get_active_cup()
+    # set cup
+    set_cup(activeCup)     
 
     # oversampling
     raw = read_voltage_oversampled() # default is 4
