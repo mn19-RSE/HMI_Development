@@ -37,8 +37,8 @@ btn_up = Button(4, pull_up=True, bounce_time=0.1)
 btn_down = Button(27, pull_up=True, bounce_time=0.1) 
 
 # input button pins
-cup_btn_up = Button(3, pull_up=True, bounce_time=0.1)
-cup_btn_down = Button(2, pull_up=True, bounce_time=0.1)
+cup_btn_up = Button(23, pull_up=True, bounce_time=0.1)
+cup_btn_down = Button(22, pull_up=True, bounce_time=0.1)
 
 # pygame init
 screen_width = 1280
@@ -338,6 +338,10 @@ while running:
             increment()
         elif cmd == "DOWN":
             decrement()
+        elif cmd == "CUP_UP":
+            increment_cup()
+        elif cmd == "CUP_DOWN":
+            decrement_cup()
     except BlockingIOError:
         pass
 
