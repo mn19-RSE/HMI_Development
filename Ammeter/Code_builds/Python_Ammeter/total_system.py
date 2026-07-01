@@ -56,7 +56,7 @@ pygame.display.flip()
 font_small = pygame.font.SysFont(None, 50)
 font_large = pygame.font.SysFont(None, 180)
 # static image load
-vdg_logo = pygame.image.load("HMI_Development/Ammeter/Tests/RaspberryPi5_powered/vdg.png").convert_alpha()
+vdg_logo = pygame.image.load("vdg.png").convert_alpha()
 
 # color definitions
 WHITE = (255, 255, 255)
@@ -113,6 +113,7 @@ DEADBAND = 0.1
 
 
 def set_cup(activeCup):
+    global previous_cup	
     if activeCup != previous_cup:
         # close conductor relay, open shield relay
         # keep all other shield relays closed and conductor relays open
@@ -177,6 +178,8 @@ def draw_bar(voltage):
     pygame.draw.rect(canvas, DYNAMIC_COLOR, (bar_x, bar_y, fill_width, bar_height))
 
 def draw_screen(voltage, scaled_voltage):
+    global last_volt_time
+    global last_text_voltage
     global DYNAMIC_COLOR
     if voltage < 0:
         DYNAMIC_COLOR = BLUE
@@ -355,4 +358,3 @@ while running:
     clock.tick(60)  # FPS
 
 pygame.quit()
-
