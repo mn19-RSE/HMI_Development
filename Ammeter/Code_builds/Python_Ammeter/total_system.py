@@ -56,7 +56,7 @@ pygame.display.flip()
 font_small = pygame.font.SysFont(None, 50)
 font_large = pygame.font.SysFont(None, 180)
 # static image load
-vdg_logo = pygame.image.load("vdg.png").convert_alpha()
+vdg_logo = pygame.image.load("HMI_Development/Ammeter/Code_builds/Python_Ammeter/vdg.png").convert_alpha()
 
 # color definitions
 WHITE = (255, 255, 255)
