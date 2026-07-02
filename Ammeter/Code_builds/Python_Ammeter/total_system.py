@@ -8,6 +8,26 @@ import json
 from collections import deque
 import SM16relind
 
+
+
+# pygame init
+screen_width = 1280
+screen_height = 400
+pygame.init()
+screen = pygame.display.set_mode((400, 1280), pygame.FULLSCREEN)
+canvas = pygame.Surface((1280, 400))
+pygame.mouse.set_visible(False)
+# canvas.fill((0, 255, 0))
+rotated = pygame.transform.rotate(canvas, 90)
+screen.blit(rotated, (0, 0))
+pygame.display.flip()
+
+# pygame font sizes
+font_small = pygame.font.SysFont(None, 50)
+font_large = pygame.font.SysFont(None, 180)
+# static image load
+vdg_logo = pygame.image.load("HMI_Development/Ammeter/Code_builds/Python_Ammeter/vdg.png").convert_alpha()
+
 # daqhats init
 hat = mcc118(0)
 ema_voltage = 0.0
@@ -39,24 +59,6 @@ btn_down = Button(27, pull_up=True, bounce_time=0.1)
 # input button pins
 cup_btn_up = Button(23, pull_up=True, bounce_time=0.1)
 cup_btn_down = Button(22, pull_up=True, bounce_time=0.1)
-
-# pygame init
-screen_width = 1280
-screen_height = 400
-pygame.init()
-screen = pygame.display.set_mode((400, 1280), pygame.FULLSCREEN)
-canvas = pygame.Surface((1280, 400))
-pygame.mouse.set_visible(False)
-# canvas.fill((0, 255, 0))
-rotated = pygame.transform.rotate(canvas, 90)
-screen.blit(rotated, (0, 0))
-pygame.display.flip()
-
-# pygame font sizes
-font_small = pygame.font.SysFont(None, 50)
-font_large = pygame.font.SysFont(None, 180)
-# static image load
-vdg_logo = pygame.image.load("HMI_Development/Ammeter/Code_builds/Python_Ammeter/vdg.png").convert_alpha()
 
 # color definitions
 WHITE = (255, 255, 255)
