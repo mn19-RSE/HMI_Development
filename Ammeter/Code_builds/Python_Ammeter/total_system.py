@@ -225,7 +225,7 @@ def draw_screen(voltage, scaled_voltage):
 
     # display normal value while within range
     if abs(last_text_voltage) <= max_value:
-        # DYNAMIC_COLOR = RED
+        DYNAMIC_COLOR = RED
         volt_text = font_large.render(f"{last_text_voltage:+.5f} {scale_units[scale_value]}", True, DYNAMIC_COLOR)
         rect = volt_text.get_rect()
         rect.topright = (1260, 220)
@@ -238,14 +238,14 @@ def draw_screen(voltage, scaled_voltage):
         rect.topright = (1260, 220)
         canvas.blit(over_limit, rect)
          
-    # Bar graph
+    # bar graph
     draw_bar(voltage)
 
     rotated = pygame.transform.rotate(canvas, 90)
     screen.blit(rotated, (0, 0))
     pygame.display.flip()
 
-def read_voltage_oversampled(n=4): #4 is default (2-4)
+def read_voltage_oversampled(n=4): # 4 is default (2-4)
     # average multiple reads per loop
     total = 0
     for _ in range(n):
@@ -253,6 +253,7 @@ def read_voltage_oversampled(n=4): #4 is default (2-4)
     return total / n
 
 def apply_ema(new_value):
+    # smoothing
     global ema_voltage
     ema_voltage = (EMA_ALPHA * new_value) + ((1 - EMA_ALPHA) * ema_voltage)
     return ema_voltage
