@@ -119,8 +119,10 @@ def set_cup(activeCup):
     if activeCup != previous_cup:
         # close conductor relay, open shield relay
         # keep all other shield relays closed and conductor relays open
-        rel0.set_all(1) # connect all shields to conductors 
-        rel1.set_all(0) # disconnect all conductors from input
+        for i in range(11):
+            rel0.set(i, 1) # connect all shields to conductors 
+        for i in range(11):
+            rel1.set(i, 0) # disconnect all conductors from input
         time.sleep(.1) # small debaounce
         rel0.set(activeCup+1, 0) # disconnect active cup condcutor from shield 
         rel1.set(activeCup+1, 1) # connect active cup conductor to input
