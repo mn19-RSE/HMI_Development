@@ -34,10 +34,10 @@ ema_voltage = 0.0
 EMA_ALPHA = 0.1  # 0.1 = very smooth, 0.3 = more responsive
 
 # relay board init
-rel0 = SM16relind.SM16relind(0) # 1-12 (closest to inputs)
+rel0 = SM16relind.SM16relind(0) # 1-12 
 rel1 = SM16relind.SM16relind(1) # 13-24
 
-#oversample definitions
+# oversample definitions
 SAMPLE_COUNT = 8  # adjust (8–32 is typical)
 samples = deque(maxlen=SAMPLE_COUNT)
 
@@ -88,9 +88,14 @@ scale_units = ["pA", "nA", "nA", "nA", "μA", "μA", "μA", "mA"]
 scale_value = 2
 '''
 # testing truncating scales that dont work or are not needed
+# scale selections
 scale_names = ["10 nA", "100 nA", "1 μA", "10 μA", "100 μA"]
+# multiplier applied to the MCC118 voltage
 scale_voltage_multipliers = [1, 10, .1, 1, 10]
+# display units
 scale_units = ["nA", "nA", "μA", "μA", "μA"]
+# maximum display value for each range
+scale_max_values = [10, 100, 1, 10, 100]
 scale_value = 0
 
 # daq read vairables
@@ -157,11 +162,11 @@ def set_cup(activeCup):
 
 def increment_cup():
     global activeCup
-    activeCup = (activeCup + 1) % 11
+    activeCup = (activeCup + 1) % 12
     
 def decrement_cup():
     global activeCup
-    activeCup = (activeCup - 1) % 11
+    activeCup = (activeCup - 1) % 12
     
 def draw_active_cup():
     pygame.draw.circle(canvas, PINK, (input_xlocations[activeCup], input_ylocations[activeCup]), 10, 10)
@@ -215,17 +220,23 @@ def draw_screen(voltage, scaled_voltage):
         last_volt_time = now
         last_text_voltage = scaled_voltage
 
-    if abs(last_text_voltage) < 10:
+    # max value for selected range
+    max_value = scale_max_values[scale_value]
+
+    # display normal value while within range
+    if abs(last_text_voltage) <= max_value:
+        # DYNAMIC_COLOR = RED
         volt_text = font_large.render(f"{last_text_voltage:+.5f} {scale_units[scale_value]}", True, DYNAMIC_COLOR)
         rect = volt_text.get_rect()
         rect.topright = (1260, 220)
         canvas.blit(volt_text, rect)
+
+    # display OL when over range limit
     else:
-            over_limit = font_large.render("OL", True, RED)
-            rect = over_limit.get_rect()
-            rect.topright = (1260, 220)
-            canvas.blit(over_limit, rect)
-            DYNAMIC_COLOR = RED
+        over_limit = font_large.render("OL", True, RED)
+        rect = over_limit.get_rect()
+        rect.topright = (1260, 220)
+        canvas.blit(over_limit, rect)
          
     # Bar graph
     draw_bar(voltage)
