@@ -34,8 +34,8 @@ ema_voltage = 0.0
 EMA_ALPHA = 0.1  # 0.1 = very smooth, 0.3 = more responsive
 
 # relay board init
-rel0 = SM16relind.SM16relind(0) # 1-12 
-rel1 = SM16relind.SM16relind(1) # 13-24
+rel0 = SM16relind.SM16relind(0) # 1-12 sheilds
+rel1 = SM16relind.SM16relind(1) # 13-24 inputs
 
 # oversample definitions
 SAMPLE_COUNT = 8  # adjust (8–32 is typical)
