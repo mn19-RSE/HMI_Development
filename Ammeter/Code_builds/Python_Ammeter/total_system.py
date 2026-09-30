@@ -295,7 +295,7 @@ def send_all_data():
     try:
         value_nA = convert_to_nA(scaled_voltage, scale_units[scale_value])
         msg = {
-            "ts": time.time(),
+           # "ts": time.time(),
             input_key: float(value_nA)
         }
         msg_bytes = json.dumps(msg).encode('utf-8')
