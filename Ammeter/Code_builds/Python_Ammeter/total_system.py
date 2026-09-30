@@ -9,7 +9,6 @@ from collections import deque
 import SM16relind
 
 
-
 # pygame init
 screen_width = 1280
 screen_height = 400
@@ -190,9 +189,9 @@ def draw_screen(voltage, scaled_voltage):
     global last_volt_time
     global last_text_voltage
     global DYNAMIC_COLOR
-    if voltage < 0:
+    if voltage < -0.0001:
         DYNAMIC_COLOR = BLUE
-    elif voltage >= 0:
+    elif voltage >= 0.0001:
         DYNAMIC_COLOR = GREEN
     canvas.fill(BLACK)
 
@@ -225,7 +224,6 @@ def draw_screen(voltage, scaled_voltage):
 
     # display normal value while within range
     if abs(last_text_voltage) <= max_value:
-        DYNAMIC_COLOR = RED
         volt_text = font_large.render(f"{last_text_voltage:+.5f} {scale_units[scale_value]}", True, DYNAMIC_COLOR)
         rect = volt_text.get_rect()
         rect.topright = (1260, 220)
@@ -233,6 +231,7 @@ def draw_screen(voltage, scaled_voltage):
 
     # display OL when over range limit
     else:
+        DYNAMIC_COLOR = RED
         over_limit = font_large.render("OL", True, RED)
         rect = over_limit.get_rect()
         rect.topright = (1260, 220)
@@ -240,7 +239,6 @@ def draw_screen(voltage, scaled_voltage):
          
     # bar graph
     draw_bar(voltage)
-
     rotated = pygame.transform.rotate(canvas, 90)
     screen.blit(rotated, (0, 0))
     pygame.display.flip()
