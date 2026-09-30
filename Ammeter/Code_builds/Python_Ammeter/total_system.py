@@ -189,10 +189,12 @@ def draw_screen(voltage, scaled_voltage):
     global last_volt_time
     global last_text_voltage
     global DYNAMIC_COLOR
-    if voltage < -0.0001:
+    if voltage < -0.01:
         DYNAMIC_COLOR = BLUE
-    elif voltage >= 0.0001:
+    elif voltage >= 0.01:
         DYNAMIC_COLOR = GREEN
+    else: 
+        DYNAMIC_COLOR = CYAN
     canvas.fill(BLACK)
 
     # Top text
