@@ -92,6 +92,8 @@ def index():
         <div id="controls">
             <button onclick="sendCmd('UP')">Scale Up</button>
             <button onclick="sendCmd('DOWN')">Scale Down</button>
+            <button onclick="sendCmd('CUPUP')">Cup Up</button>
+            <button onclick="sendCmd('CUPDOWN')">Cup Down</button>
         </div>
 
     </div>

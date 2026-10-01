@@ -52,12 +52,12 @@ sock.setblocking(False) # needed for listening to not pause script
 # scale output pins (LSB - MSB)
 pins = [LED(21), LED(20), LED(19)] # tested, seems correct 21, 20, 19
 # scale button pins
-btn_up = Button(4, pull_up=True, bounce_time=0.1)
-btn_down = Button(27, pull_up=True, bounce_time=0.1) 
+btn_up = Button(4, pull_up=True, bounce_time=0.05)
+btn_down = Button(27, pull_up=True, bounce_time=0.05) 
 
 # input button pins
-cup_btn_up = Button(23, pull_up=True, bounce_time=0.1)
-cup_btn_down = Button(22, pull_up=True, bounce_time=0.1)
+cup_btn_up = Button(23, pull_up=True, bounce_time=0.05)
+cup_btn_down = Button(22, pull_up=True, bounce_time=0.05)
 
 # color definitions
 WHITE = (255, 255, 255)
@@ -95,7 +95,7 @@ scale_voltage_multipliers = [1, 10, .1, 1, 10]
 scale_units = ["nA", "nA", "μA", "μA", "μA"]
 # maximum display value for each range
 scale_max_values = [10, 100, 1, 10, 100]
-scale_value = 0
+scale_value = 0 # defualts to 10nA scale when power cycled
 
 # daq read vairables
 voltage = 0.0
@@ -189,9 +189,9 @@ def draw_screen(voltage, scaled_voltage):
     global last_volt_time
     global last_text_voltage
     global DYNAMIC_COLOR
-    if voltage < -0.01:
+    if voltage < -0.05:
         DYNAMIC_COLOR = BLUE
-    elif voltage >= 0.01:
+    elif voltage >= 0.05:
         DYNAMIC_COLOR = GREEN
     else: 
         DYNAMIC_COLOR = CYAN
@@ -318,6 +318,7 @@ btn_up.when_pressed = increment
 btn_down.when_pressed = decrement
 cup_btn_up.when_pressed = increment_cup
 cup_btn_down.when_pressed = decrement_cup
+update_outputs() # run once to fix startup bug
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -357,9 +358,9 @@ while running:
             increment()
         elif cmd == "DOWN":
             decrement()
-        elif cmd == "CUP_UP":
+        elif cmd == "CUPUP":
             increment_cup()
-        elif cmd == "CUP_DOWN":
+        elif cmd == "CUPDOWN":
             decrement_cup()
     except BlockingIOError:
         pass
