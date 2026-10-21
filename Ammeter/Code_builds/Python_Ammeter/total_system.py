@@ -310,6 +310,19 @@ def convert_to_nA(value, unit):
     else:
         return value
 
+def handle_touch_cups(x, y):
+    global activeCup
+
+    for i in range(5):
+        cx = input_xlocations[i]
+        cy = input_ylocations[i]
+
+        radius = 35
+        if (x - cx)**2 + (y - cy)**2 <= radius**2:
+            activeCup = i
+            print(f"Selected cup: {input_names[i]}", flush=True)
+            return
+
 
 # Main loop
 running = True
@@ -321,8 +334,19 @@ cup_btn_down.when_pressed = decrement_cup
 update_outputs() # run once to fix startup bug
 while running:
     for event in pygame.event.get():
+        # print("EVENT RECEIVED:", event, flush=True)
         if event.type == pygame.QUIT:
             running = False
+
+        elif event.type == pygame.FINGERDOWN:
+            x = int((1.0 - event.y) * screen_width)
+            y = int(event.x * screen_height)
+
+            # print(f"canvas touch: ({x}, {y})", flush=True)
+            handle_touch_cups(x, y)
+
+
+
 
     # set cup
     set_cup(activeCup)     
