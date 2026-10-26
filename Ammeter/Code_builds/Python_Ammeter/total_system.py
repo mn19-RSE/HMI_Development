@@ -95,7 +95,7 @@ scale_voltage_multipliers = [1, 10, .1, 1, 10]
 scale_units = ["nA", "nA", "μA", "μA", "μA"]
 # maximum display value for each range
 scale_max_values = [10, 100, 1, 10, 100]
-scale_value = 0 # defualts to 10nA scale when power cycled
+scale_value = 2 # defualts to 1uA scale when power cycled
 
 # daq read vairables
 voltage = 0.0
