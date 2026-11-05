@@ -170,6 +170,7 @@ def decrement_cup():
 def draw_active_cup():
     pygame.draw.circle(canvas, PINK, (input_xlocations[activeCup], input_ylocations[activeCup]), 10, 10)
 
+
 def draw_bar(voltage):
 
     # Map absolute value of -10V to +10V to screen width
@@ -179,6 +180,26 @@ def draw_bar(voltage):
     bar_width = screen_width 
     
     pygame.draw.rect(canvas, GRAY, (bar_x, bar_y, bar_width, bar_height))
+    
+    pygame.draw.rect(canvas, WHITE, (bar_x, bar_y, 2, bar_height))
+    pygame.draw.rect(canvas, WHITE, (bar_x + (bar_width / 2), bar_y, 2, bar_height))
+    pygame.draw.rect(canvas, WHITE, (bar_x + (bar_width / 4), bar_y, 2, bar_height))
+    pygame.draw.rect(canvas, WHITE, (bar_x + (3 * bar_width / 4), bar_y, 2, bar_height))
+    pygame.draw.rect(canvas, WHITE, (bar_x + bar_width - 2, bar_y, 2, bar_height))
+
+    pygame.draw.rect(canvas, WHITE, (bar_x + (bar_width / 8), bar_y, 2, bar_height / 2))
+    pygame.draw.rect(canvas, WHITE, (bar_x + (3 * bar_width / 8), bar_y, 2, bar_height / 2))
+    pygame.draw.rect(canvas, WHITE, (bar_x + (5 * bar_width / 8), bar_y, 2, bar_height / 2))
+    pygame.draw.rect(canvas, WHITE, (bar_x + (7 * bar_width / 8), bar_y, 2, bar_height / 2))
+
+    pygame.draw.rect(canvas, WHITE, (bar_x + (bar_width / 16), bar_y, 2, bar_height / 3))
+    pygame.draw.rect(canvas, WHITE, (bar_x + (3 * bar_width / 16), bar_y, 2, bar_height / 3))
+    pygame.draw.rect(canvas, WHITE, (bar_x + (5 * bar_width / 16), bar_y, 2, bar_height / 3))
+    pygame.draw.rect(canvas, WHITE, (bar_x + (7 * bar_width / 16), bar_y, 2, bar_height / 3))
+    pygame.draw.rect(canvas, WHITE, (bar_x + (9 * bar_width / 16), bar_y, 2, bar_height / 3))
+    pygame.draw.rect(canvas, WHITE, (bar_x + (11 * bar_width / 16), bar_y, 2, bar_height / 3))
+    pygame.draw.rect(canvas, WHITE, (bar_x + (13 * bar_width / 16), bar_y, 2, bar_height / 3))
+    pygame.draw.rect(canvas, WHITE, (bar_x + (15 * bar_width / 16), bar_y, 2, bar_height / 3))
 
     # Normalize voltage
     norm = abs(voltage / 10)  # 0 to 1
