@@ -33,8 +33,18 @@ ema_voltage = 0.0
 EMA_ALPHA = 0.1  # 0.1 = very smooth, 0.3 = more responsive
 
 # relay board init
-rel0 = SM16relind.SM16relind(0) # 1-12 sheilds
-rel1 = SM16relind.SM16relind(1) # 13-24 inputs
+for attempt in range(10):
+    try:
+         rel0 = SM16relind.SM16relind(0) # 1-12 shields
+         rel1 = SM16relind.SM16relind(1) # 13-24
+         break
+    except Exception as e:
+         print(f"relay board init failed (attmpt {attempt + 1}/10): {e}")
+         time.sleep(10)
+else:
+    raise RuntimeError("Could not initialize sm16 relay boards after 10 attempts")
+
+
 
 # oversample definitions
 SAMPLE_COUNT = 8  # adjust (8–32 is typical)
@@ -88,13 +98,13 @@ scale_value = 2
 '''
 # testing truncating scales that dont work or are not needed
 # scale selections
-scale_names = ["10 nA", "100 nA", "1 μA", "10 μA", "100 μA"]
+scale_names = ["10 nA", "100 nA", "1 μA", "10 μA", "50 μA"]
 # multiplier applied to the MCC118 voltage
-scale_voltage_multipliers = [1, 10, .1, 1, 10]
+scale_voltage_multipliers = [1, 10, .1, 1, 5]
 # display units
 scale_units = ["nA", "nA", "μA", "μA", "μA"]
 # maximum display value for each range
-scale_max_values = [10, 100, 1, 10, 100]
+scale_max_values = [10, 100, 1, 10, 50]
 scale_value = 2 # defualts to 1uA scale when power cycled
 
 # daq read vairables
@@ -118,46 +128,54 @@ VOLT_INTERVAL = 1 # 1 Hz
 DEADBAND = 0.1
 
 
+def write_board_safe(board, mask, label, retries=5):
+    for attempt in range(retries):
+        try:
+            board.set_all(mask)
+            return True
+        except Exception as e:
+            print(f"I2C write failed on {label} (attempt {attempt + 1}/{retries}): {e}", flush=True)
+            time.sleep(0.05)
+    return False
+
+
 def set_cup(activeCup):
-    global previous_cup	
-    if activeCup != previous_cup:
-        # close conductor relay, open shield relay
-        # keep all other shield relays closed and conductor relays open
-        for i in range(11):
-            rel0.set(i+1, 1) # connect all shields to conductors 
-        for i in range(11):
-            rel1.set(i+1, 0) # disconnect all conductors from input
-        time.sleep(.1) # small debaounce
-        rel0.set(activeCup+1, 0) # disconnect active cup condcutor from shield 
-        rel1.set(activeCup+1, 1) # connect active cup conductor to input
+    global previous_cup, input_key
+    if activeCup == previous_cup:
+        return
 
-        global input_key
-        if activeCup == 0:
-            input_key = "ch_odcup_ival"
-        if activeCup == 1:
-            input_key = "ch_lecup_ival"
-        if activeCup == 2:
-            input_key = "ch_hecup_ival"
-        if activeCup == 3:
-            input_key = "ch_objcup_ival"
-        if activeCup == 4:
-            input_key = "ch_imgcup_ival"
-        if activeCup == 5:
-            input_key = "ch_6cup_ival"
-        if activeCup == 6:
-            input_key = "ch_7cup_ival"
-        if activeCup == 7:
-            input_key = "ch_8cup_ival"
-        if activeCup == 8:
-            input_key = "ch_9cup_ival"
-        if activeCup == 9:
-            input_key = "ch_10cup_ival"
-        if activeCup == 10:
-            input_key = "ch_11cup_ival"
-        if activeCup == 11:
-            input_key = "ch_12cup_ival"
+    # Disconnect ALL conductors from the amplifier first (zero overlap between cups, no amp-to-shield short)
+    if not write_board_safe(rel1, 0x0000, "rel1 open all conductors"):
+        return
+    time.sleep(0.02)  # Wait 20ms for mechanical reed relay to fully release
 
-        previous_cup = activeCup
+    # Connect ALL 12 conductors to their shields (no floating conductors)
+    if not write_board_safe(rel0, 0x0FFF, "rel0 close all shields"):
+        return
+    time.sleep(0.02)  # Wait 20ms for shield reed relay to close
+
+    # Disconnect ONLY the desired cup from its shield
+    shield_mask = 0x0FFF & ~(1 << activeCup)
+    if not write_board_safe(rel0, shield_mask, f"rel0 open shield {activeCup + 1}"):
+        return
+    time.sleep(0.02)  # Wait 20ms for shield reed relay to release before connecting amp
+
+    # Connect ONLY the desired cup to the amplifier
+    cond_mask = (1 << activeCup)
+    if not write_board_safe(rel1, cond_mask, f"rel1 close conductor {activeCup + 1}"):
+        # Fail-safe: re-ground target cup to shield so it never remains floating
+        write_board_safe(rel0, 0x0FFF, "rel0 fail-safe ground all")
+        return
+
+    cup_keys = [
+        "ch_odcup_ival", "ch_lecup_ival", "ch_hecup_ival", "ch_objcup_ival",
+        "ch_imgcup_ival", "ch_6cup_ival", "ch_7cup_ival", "ch_8cup_ival",
+        "ch_9cup_ival", "ch_10cup_ival", "ch_11cup_ival", "ch_12cup_ival"
+    ]
+    input_key = cup_keys[activeCup]
+    previous_cup = activeCup
+
+
 
 def increment_cup():
     global activeCup

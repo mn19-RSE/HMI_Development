@@ -1,5 +1,6 @@
 from flask import Flask, send_file
 import socket
+import os
 
 app = Flask(__name__)
 
@@ -116,7 +117,12 @@ def index():
 
 @app.route('/frame.jpg')
 def frame():
-    return send_file("/tmp/frame.jpg", mimetype='image/jpeg')
+    if not os.path.exists("/tmp/frame.jpg"):
+        return "", 204
+    try:
+        return send_file("/tmp/frame.jpg", mimetype='image/jpeg')
+    except (FileNotFoundError, PermissionError, OSError):
+        return "", 204
 
 @app.route('/cmd/<command>')
 def cmd(command):
