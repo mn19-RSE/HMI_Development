@@ -98,13 +98,13 @@ scale_value = 2
 '''
 # testing truncating scales that dont work or are not needed
 # scale selections
-scale_names = ["10 nA", "100 nA", "1 μA", "10 μA", "50 μA"]
+scale_names = ["10 nA", "100 nA", "1 μA", "10 μA", "30 μA"]
 # multiplier applied to the MCC118 voltage
-scale_voltage_multipliers = [1, 10, .1, 1, 5]
+scale_voltage_multipliers = [1, 10, .1, 1, 10]
 # display units
 scale_units = ["nA", "nA", "μA", "μA", "μA"]
 # maximum display value for each range
-scale_max_values = [10, 100, 1, 10, 50]
+scale_max_values = [10, 100, 1, 10, 30]
 scale_value = 3 # defualts to 10uA scale when power cycled
 
 # daq read vairables
@@ -190,7 +190,6 @@ def draw_active_cup():
 
 
 def draw_bar(voltage):
-
     # Map absolute value of -10V to +10V to screen width
     bar_x = 0
     bar_height = 50
@@ -198,6 +197,13 @@ def draw_bar(voltage):
     bar_width = screen_width 
     
     pygame.draw.rect(canvas, GRAY, (bar_x, bar_y, bar_width, bar_height))
+
+    # Normalize voltage
+    norm = abs(voltage / 10)  # 0 to 1
+    if scale_value == 4:
+        norm  = norm * 3.333333
+    fill_width = int(norm * bar_width)
+    pygame.draw.rect(canvas, DYNAMIC_COLOR, (bar_x, bar_y, fill_width, bar_height))
     
     pygame.draw.rect(canvas, WHITE, (bar_x, bar_y, 2, bar_height))
     pygame.draw.rect(canvas, WHITE, (bar_x + (bar_width / 2), bar_y, 2, bar_height))
@@ -218,11 +224,6 @@ def draw_bar(voltage):
     pygame.draw.rect(canvas, WHITE, (bar_x + (11 * bar_width / 16), bar_y, 2, bar_height / 3))
     pygame.draw.rect(canvas, WHITE, (bar_x + (13 * bar_width / 16), bar_y, 2, bar_height / 3))
     pygame.draw.rect(canvas, WHITE, (bar_x + (15 * bar_width / 16), bar_y, 2, bar_height / 3))
-
-    # Normalize voltage
-    norm = abs(voltage / 10)  # 0 to 1
-    fill_width = int(norm * bar_width)
-    pygame.draw.rect(canvas, DYNAMIC_COLOR, (bar_x, bar_y, fill_width, bar_height))
 
 def draw_screen(voltage, scaled_voltage):
     global last_volt_time
