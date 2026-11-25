@@ -23,6 +23,7 @@ def index():
         font-family: Arial, sans-serif;
     }
 
+
     /* MAIN LAYOUT */
     #app {
         display: flex;
@@ -30,14 +31,17 @@ def index():
         width: 100vw;
     }
 
+
     /* IMAGE AREA */
     #viewer {
         flex: 1;
+        min-width: 0; /* Allows viewer to shrink properly inside flexbox */
         display: flex;
         align-items: center;
         justify-content: center;
         background: black;
     }
+
 
     #stream {
         width: 100%;
@@ -45,39 +49,46 @@ def index():
         object-fit: contain;
     }
 
+
     /* CONTROL PANEL */
     #controls {
-        width: 300px;
+        width: clamp(140px, 20vw, 300px); /* Scales between 140px and 300px */
+        flex-shrink: 0;
         background: #111;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 15px;
-        padding: 20px;
+        gap: clamp(8px, 1.5vh, 15px);
+        padding: clamp(10px, 2vw, 20px);
         box-sizing: border-box;
     }
 
+
     /* BUTTON STYLE */
     button {
-        padding: 12px;
+        padding: clamp(8px, 1.2vh, 12px) clamp(8px, 1vw, 12px);
         border: none;
         border-radius: 10px;
         background: #35f25e;
         color: white;
-        font-size: 14px;
+        font-size: clamp(11px, 1.1vw, 14px);
+        white-space: nowrap;
         cursor: pointer;
         transition: 0.2s;
     }
+
 
     button:hover {
         background: #2bad47;
         transform: scale(1.05);
     }
 
+
     button:active {
         transform: scale(0.95);
     }
     </style>
+
     </head>
 
     <body>
