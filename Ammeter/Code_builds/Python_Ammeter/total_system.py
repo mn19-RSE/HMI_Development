@@ -1,4 +1,5 @@
-from daqhats import mcc118
+from daqhats import OptionFlags, mcc118
+import numpy as np
 import pygame
 import time
 from gpiozero import LED, Button
@@ -23,14 +24,19 @@ pygame.display.flip()
 
 # pygame font sizes
 font_small = pygame.font.SysFont(None, 50)
-font_large = pygame.font.SysFont(None, 180)
+font_large = pygame.font.SysFont(None, 150)
 # static image load
 vdg_logo = pygame.image.load("HMI_Development/Ammeter/Code_builds/Python_Ammeter/vdg.png").convert_alpha()
 
 # daqhats init
 hat = mcc118(0)
 ema_voltage = 0.0
-EMA_ALPHA = 0.1  # 0.1 = very smooth, 0.3 = more responsive
+EMA_ALPHA = 0.15  # 0.1 = very smooth, 0.3 = more responsive
+
+# Start continuous hardware scan at 1200 Hz on channel 0
+SCAN_RATE = 1200.0
+BUFFER_SIZE = 12000
+hat.a_in_scan_start(1 << 0, BUFFER_SIZE, SCAN_RATE, OptionFlags.CONTINUOUS)
 
 # relay board init
 for attempt in range(10):
@@ -192,7 +198,7 @@ def draw_active_cup():
 def draw_bar(voltage):
     # Map absolute value of -10V to +10V to screen width
     bar_x = 0
-    bar_height = 50
+    bar_height = 100
     bar_y = screen_height - bar_height
     bar_width = screen_width 
     
@@ -224,6 +230,9 @@ def draw_bar(voltage):
     pygame.draw.rect(canvas, WHITE, (bar_x + (11 * bar_width / 16), bar_y, 2, bar_height / 3))
     pygame.draw.rect(canvas, WHITE, (bar_x + (13 * bar_width / 16), bar_y, 2, bar_height / 3))
     pygame.draw.rect(canvas, WHITE, (bar_x + (15 * bar_width / 16), bar_y, 2, bar_height / 3))
+    
+    #bar graph tick mark
+    pygame.draw.rect(canvas, RED, (fill_width - 4, bar_y, 4, bar_height))
 
 def draw_screen(voltage, scaled_voltage):
     global last_volt_time
@@ -268,7 +277,7 @@ def draw_screen(voltage, scaled_voltage):
     if abs(last_text_voltage) <= max_value:
         volt_text = font_large.render(f"{last_text_voltage:+.5f} {scale_units[scale_value]}", True, DYNAMIC_COLOR)
         rect = volt_text.get_rect()
-        rect.topright = (1260, 220)
+        rect.topright = (1260, 200)
         canvas.blit(volt_text, rect)
 
     # display OL when over range limit
@@ -276,7 +285,7 @@ def draw_screen(voltage, scaled_voltage):
         DYNAMIC_COLOR = RED
         over_limit = font_large.render("OL", True, RED)
         rect = over_limit.get_rect()
-        rect.topright = (1260, 220)
+        rect.topright = (1260, 200)
         canvas.blit(over_limit, rect)
          
     # bar graph
@@ -285,12 +294,13 @@ def draw_screen(voltage, scaled_voltage):
     screen.blit(rotated, (0, 0))
     pygame.display.flip()
 
-def read_voltage_oversampled(n=4): # 4 is default (2-4)
-    # average multiple reads per loop
-    total = 0
-    for _ in range(n):
-        total += hat.a_in_read(0)
-    return total / n
+def read_voltage_oversampled():
+    # Drain all samples collected by the MCC 118 hardware since the last frame
+    read_result = hat.a_in_scan_read(-1, 0.0)
+    if len(read_result.data) > 0:
+        return float(np.mean(read_result.data))
+    return ema_voltage  # Fallback if a frame runs faster than 1 sample period
+
 
 def apply_ema(new_value):
     # smoothing
@@ -437,5 +447,7 @@ while running:
         last_save_time = now
 
     clock.tick(60)  # FPS
-
+    
+hat.a_in_scan_stop()
+hat.a_in_scan_cleanup()
 pygame.quit()

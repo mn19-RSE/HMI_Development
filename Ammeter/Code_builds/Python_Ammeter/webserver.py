@@ -17,6 +17,7 @@ def index():
     <style>
     html, body {
         margin: 0;
+        width: 100%;
         height: 100%;
         background: black;
         overflow: hidden;
@@ -27,15 +28,16 @@ def index():
     /* MAIN LAYOUT */
     #app {
         display: flex;
-        height: 100vh;
-        width: 100vw;
+        height: 100%;
+        width: 100%;
     }
 
 
     /* IMAGE AREA */
     #viewer {
         flex: 1;
-        min-width: 0; /* Allows viewer to shrink properly inside flexbox */
+        min-width: 0;
+        min-height: 0;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -52,30 +54,34 @@ def index():
 
     /* CONTROL PANEL */
     #controls {
-        width: clamp(140px, 20vw, 300px); /* Scales between 140px and 300px */
+        /* Edit these 3 numbers: min width, target %, max width */
+        width: clamp(50px, 15%, 300px);
         flex-shrink: 0;
         background: #111;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: clamp(8px, 1.5vh, 15px);
-        padding: clamp(10px, 2vw, 20px);
+        gap: clamp(4px, 2vmin, 15px);
+        padding: clamp(4px, 2vmin, 20px);
         box-sizing: border-box;
     }
 
 
     /* BUTTON STYLE */
     button {
-        padding: clamp(8px, 1.2vh, 12px) clamp(8px, 1vw, 12px);
+        padding: clamp(4px, 1vmin, 12px) clamp(5px, 1.5vmin, 12px);
         border: none;
-        border-radius: 10px;
+        border-radius: clamp(5px, 1.5vmin, 10px);
         background: #35f25e;
         color: white;
-        font-size: clamp(11px, 1.1vw, 14px);
+        font-size: clamp(6px, .8vmin, 14px);
         white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         cursor: pointer;
         transition: 0.2s;
     }
+
 
 
     button:hover {
